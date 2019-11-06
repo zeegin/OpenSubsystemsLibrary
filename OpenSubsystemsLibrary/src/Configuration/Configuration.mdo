@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fd1ce605-d2b0-4974-a730-16148cf388df">
+  <name>OpenSubsystemsLibrary</name>
+  <synonym>
+    <key>en</key>
+    <value>Open Subsystems Library</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="d5fa2bbd-2b77-4fca-a812-51f830a84db0"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="3c5c6341-252d-4a13-8f40-86ef50bbed7f"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="5c589eaf-c50c-4e4b-ad5f-051c96571e96"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="d1f2b399-6ccb-434c-8eaf-432110850934"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="ebfc8180-7ac5-480c-8680-66b7b8942fe6"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="d79c0de9-8a57-4d07-807e-a905a5dafe52"/>
+  <configurationExtensionCompatibilityMode>8.3.14</configurationExtensionCompatibilityMode>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <usePurposes>MobileDevice</usePurposes>
+  <defaultRoles>Role.FullAccess</defaultRoles>
+  <vendor>Ingvar Vilkman</vendor>
+  <version>0.1.1</version>
+  <mainSectionPicture/>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <copyright>
+    <key>en</key>
+    <value>Copyright © Ingvar Vilkman</value>
+  </copyright>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.14</compatibilityMode>
+  <languages uuid="c568f157-83c5-4b6e-8821-f9eda36d18f3">
+    <name>English</name>
+    <synonym>
+      <key>en</key>
+      <value>English</value>
+    </synonym>
+    <languageCode>en</languageCode>
+  </languages>
+  <languages uuid="4ebf55ed-c01c-4c6b-8db9-b646d26cb32d">
+    <name>Russian</name>
+    <synonym>
+      <key>en</key>
+      <value>Russian</value>
+    </synonym>
+    <languageCode>ru</languageCode>
+  </languages>
+  <subsystems>Subsystem.AdministrativeTools</subsystems>
+  <subsystems>Subsystem.Demo</subsystems>
+  <subsystems>Subsystem.System</subsystems>
+  <commonPictures>CommonPicture.AdministrativeTools</commonPictures>
+  <commonPictures>CommonPicture.Demo</commonPictures>
+  <commonPictures>CommonPicture.DevelopmentTools</commonPictures>
+  <sessionParameters>SessionParameter.CurrentUser</sessionParameters>
+  <roles>Role.BaseAccess</roles>
+  <roles>Role.FullAccess</roles>
+  <commonModules>CommonModule.Assert</commonModules>
+  <commonModules>CommonModule.Collections</commonModules>
+  <commonModules>CommonModule.Cryptography</commonModules>
+  <commonModules>CommonModule.Database</commonModules>
+  <commonModules>CommonModule.DataHistoryImpl</commonModules>
+  <commonModules>CommonModule.FullTextSearchImpl</commonModules>
+  <commonModules>CommonModule.GlobalExceptions</commonModules>
+  <commonModules>CommonModule.HTTPAuthDigest</commonModules>
+  <commonModules>CommonModule.HTTPRequests</commonModules>
+  <commonModules>CommonModule.Json</commonModules>
+  <commonModules>CommonModule.OS</commonModules>
+  <commonModules>CommonModule.Strings</commonModules>
+  <commonModules>CommonModule.Users</commonModules>
+  <scheduledJobs>ScheduledJob.MergePartialFullTextSearchIndex</scheduledJobs>
+  <scheduledJobs>ScheduledJob.UpdateDataHistory</scheduledJobs>
+  <scheduledJobs>ScheduledJob.UpdatePartialFullTextSearchIndex</scheduledJobs>
+  <commonForms>CommonForm.HomePage</commonForms>
+  <catalogs>Catalog.UserGroups</catalogs>
+  <catalogs>Catalog.UserRoles</catalogs>
+  <catalogs>Catalog.Users</catalogs>
+  <dataProcessors>DataProcessor.HTTPResponse</dataProcessors>
+  <dataProcessors>DataProcessor.HTTPSession</dataProcessors>
+  <dataProcessors>DataProcessor.TelegramNotification</dataProcessors>
+</mdclass:Configuration>

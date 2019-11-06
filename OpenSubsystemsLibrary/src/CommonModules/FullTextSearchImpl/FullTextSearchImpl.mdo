@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a801fe16-0fa7-4844-829b-a2d583842f3c">
+  <name>FullTextSearchImpl</name>
+  <synonym>
+    <key>en</key>
+    <value>Full text search impl</value>
+  </synonym>
+  <server>true</server>
+</mdclass:CommonModule>

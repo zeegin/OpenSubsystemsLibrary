@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b2ef2c85-2cda-4b96-8c58-090289ed110c">
+  <producedTypes>
+    <objectType typeId="d44ffaea-4fb2-42ee-8dc9-3785b3c5da07" valueTypeId="aeb361a0-a5d8-4027-9120-c1952d8ec845"/>
+    <managerType typeId="7c393ab2-af79-4cb2-95b0-766efad8762b" valueTypeId="d30f052a-a164-412d-be9e-70f03ad3e399"/>
+  </producedTypes>
+  <name>HTTPSession</name>
+  <synonym>
+    <key>en</key>
+    <value>HTTP session</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>HTTP сессия</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+</mdclass:DataProcessor>

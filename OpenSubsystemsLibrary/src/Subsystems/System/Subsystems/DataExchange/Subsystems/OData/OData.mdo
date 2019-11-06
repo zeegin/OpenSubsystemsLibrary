@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0cd884e7-2ff4-43a4-b793-11a248fbdf30">
+  <name>OData</name>
+  <synonym>
+    <key>en</key>
+    <value>OData</value>
+  </synonym>
+  <parentSubsystem>Subsystem.System.Subsystem.DataExchange</parentSubsystem>
+</mdclass:Subsystem>

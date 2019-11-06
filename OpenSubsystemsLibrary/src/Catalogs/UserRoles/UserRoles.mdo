@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1f33c0c5-5e1f-48cf-9a60-bb7628b1e582">
+  <producedTypes>
+    <objectType typeId="4866f3b5-81e4-4492-85e7-eecb3d123ef7" valueTypeId="2ce436ed-0c17-42ea-bff9-99a07e7861ce"/>
+    <refType typeId="c02fa35d-6499-467b-a212-0e17d85f158f" valueTypeId="727bffcf-119d-424a-85d9-b8ebb7cf74b7"/>
+    <selectionType typeId="6c4b3d67-3914-4925-b189-a2d2ff495a6a" valueTypeId="7e53c286-5d25-4af7-af4a-b92b396dc99c"/>
+    <listType typeId="32da8f25-0e31-4f62-96d1-ef1cf59db7cc" valueTypeId="527df576-cadb-4de4-9854-19b4002cd269"/>
+    <managerType typeId="66a20834-d1e7-43b8-9342-47b5e7e17933" valueTypeId="bad8280b-d914-4da0-b2f0-ffb4bb7a5b33"/>
+  </producedTypes>
+  <name>UserRoles</name>
+  <synonym>
+    <key>en</key>
+    <value>User roles</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.UserRoles.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

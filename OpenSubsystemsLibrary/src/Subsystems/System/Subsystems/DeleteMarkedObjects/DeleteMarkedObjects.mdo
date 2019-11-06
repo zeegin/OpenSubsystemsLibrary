@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="599a645a-a6ee-49ff-84ce-ebabea6b3999">
+  <name>DeleteMarkedObjects</name>
+  <synonym>
+    <key>en</key>
+    <value>Delete marked objects</value>
+  </synonym>
+  <parentSubsystem>Subsystem.System</parentSubsystem>
+</mdclass:Subsystem>

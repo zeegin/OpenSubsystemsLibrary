@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0ef73daa-7f16-4366-beaf-3db63d872506">
+  <name>FullTextSearch</name>
+  <synonym>
+    <key>en</key>
+    <value>Full text search</value>
+  </synonym>
+  <content>CommonModule.FullTextSearchImpl</content>
+  <parentSubsystem>Subsystem.System</parentSubsystem>
+</mdclass:Subsystem>

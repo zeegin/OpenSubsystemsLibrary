@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8c57736d-f6a9-407b-9658-085206c0548d">
+  <name>Telegram</name>
+  <synonym>
+    <key>en</key>
+    <value>Telegram</value>
+  </synonym>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <content>DataProcessor.TelegramNotification</content>
+  <parentSubsystem>Subsystem.System.Subsystem.Notifications</parentSubsystem>
+</mdclass:Subsystem>

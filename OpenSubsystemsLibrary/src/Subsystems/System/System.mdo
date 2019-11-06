@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4fa1fee6-273a-43b9-80e9-b32ae9c99799">
+  <name>System</name>
+  <synonym>
+    <key>en</key>
+    <value>System</value>
+  </synonym>
+  <content>CommonModule.GlobalExceptions</content>
+  <content>CommonModule.Collections</content>
+  <content>CommonModule.Assert</content>
+  <content>CommonModule.Database</content>
+  <content>Role.FullAccess</content>
+  <content>CommonModule.Json</content>
+  <content>CommonModule.Strings</content>
+  <content>CommonModule.OS</content>
+  <content>CommonModule.Cryptography</content>
+  <subsystems>AggregatesAndTotals</subsystems>
+  <subsystems>BackgroundJobs</subsystems>
+  <subsystems>DataExchange</subsystems>
+  <subsystems>DataHistory</subsystems>
+  <subsystems>DeleteMarkedObjects</subsystems>
+  <subsystems>DigitalSignature</subsystems>
+  <subsystems>EventLog</subsystems>
+  <subsystems>FullTextSearch</subsystems>
+  <subsystems>HTTPRequests</subsystems>
+  <subsystems>LockDataByDate</subsystems>
+  <subsystems>Notifications</subsystems>
+  <subsystems>Reports</subsystems>
+  <subsystems>ScheduledJobs</subsystems>
+  <subsystems>SecureStorage</subsystems>
+  <subsystems>SessionsLock</subsystems>
+  <subsystems>StoredFiles</subsystems>
+  <subsystems>Tasks</subsystems>
+  <subsystems>Update</subsystems>
+  <subsystems>Users</subsystems>
+</mdclass:Subsystem>

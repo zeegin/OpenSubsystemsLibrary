@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ScheduledJob xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f4c97fb2-161d-4ad6-b37e-70211e9d0b56">
+  <name>UpdateDataHistory</name>
+  <synonym>
+    <key>en</key>
+    <value>Update data history</value>
+  </synonym>
+  <methodName>CommonModule.DataHistoryImpl._UpdateDataHistory</methodName>
+  <use>true</use>
+  <predefined>true</predefined>
+  <restartCountOnFailure>3</restartCountOnFailure>
+  <restartIntervalOnFailure>10</restartIntervalOnFailure>
+</mdclass:ScheduledJob>

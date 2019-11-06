@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonPicture xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="341c1861-9efa-4663-8c30-278e02bcc2c3">
+  <name>DevelopmentTools</name>
+  <synonym>
+    <key>en</key>
+    <value>Development tools</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Разработка</value>
+  </synonym>
+</mdclass:CommonPicture>

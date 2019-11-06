@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="750ae600-be8b-4aea-bfa2-e7b2698d7c52">
+  <name>DataExchange</name>
+  <synonym>
+    <key>en</key>
+    <value>Data exchange</value>
+  </synonym>
+  <subsystems>DistributedInfoBase</subsystems>
+  <subsystems>OData</subsystems>
+  <parentSubsystem>Subsystem.System</parentSubsystem>
+</mdclass:Subsystem>

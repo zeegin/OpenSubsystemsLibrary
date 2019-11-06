@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ScheduledJob xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="dd7d8ae1-fcee-41d8-9a27-30b611422c1a">
+  <name>MergePartialFullTextSearchIndex</name>
+  <synonym>
+    <key>en</key>
+    <value>Merge partial full text search index</value>
+  </synonym>
+  <methodName>CommonModule.FullTextSearchImpl._MergePartialFullTextSearchIndex</methodName>
+  <use>true</use>
+  <predefined>true</predefined>
+  <restartCountOnFailure>3</restartCountOnFailure>
+  <restartIntervalOnFailure>10</restartIntervalOnFailure>
+</mdclass:ScheduledJob>

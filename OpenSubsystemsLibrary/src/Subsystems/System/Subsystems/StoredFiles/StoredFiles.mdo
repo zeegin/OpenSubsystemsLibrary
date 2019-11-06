@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d2b3d34d-a910-4d41-930d-2d1f69f88314">
+  <name>StoredFiles</name>
+  <synonym>
+    <key>en</key>
+    <value>Stored files</value>
+  </synonym>
+  <subsystems>AmazonS3</subsystems>
+  <subsystems>Dropbox</subsystems>
+  <subsystems>GoogleDisk</subsystems>
+  <subsystems>NetworkDisk</subsystems>
+  <subsystems>OneDrive</subsystems>
+  <subsystems>YandexDisk</subsystems>
+  <parentSubsystem>Subsystem.System</parentSubsystem>
+</mdclass:Subsystem>

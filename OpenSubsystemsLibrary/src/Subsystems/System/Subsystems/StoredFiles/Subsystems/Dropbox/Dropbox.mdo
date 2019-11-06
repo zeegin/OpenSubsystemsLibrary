@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9bdc8b94-d30f-4fc1-b35a-0558c806a6bf">
+  <name>Dropbox</name>
+  <synonym>
+    <key>en</key>
+    <value>Dropbox</value>
+  </synonym>
+  <parentSubsystem>Subsystem.System.Subsystem.StoredFiles</parentSubsystem>
+</mdclass:Subsystem>

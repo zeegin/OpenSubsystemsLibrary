@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="95dab167-6d1b-4003-8a3d-38e6b19d5c77">
+  <name>DigitalSignature</name>
+  <synonym>
+    <key>en</key>
+    <value>Digital signature</value>
+  </synonym>
+  <parentSubsystem>Subsystem.System</parentSubsystem>
+</mdclass:Subsystem>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cd319405-50f1-45a4-889e-f7ee912b9c3d">
+  <name>Slack</name>
+  <synonym>
+    <key>en</key>
+    <value>Slack</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Slack</value>
+  </synonym>
+  <parentSubsystem>Subsystem.System.Subsystem.Notifications</parentSubsystem>
+</mdclass:Subsystem>

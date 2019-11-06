@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ScheduledJob xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a503e466-28ce-40ad-b345-3d9eee2a64a5">
+  <name>UpdatePartialFullTextSearchIndex</name>
+  <synonym>
+    <key>en</key>
+    <value>Update partial full text search index</value>
+  </synonym>
+  <methodName>CommonModule.FullTextSearchImpl._UpdatePartialFullTextSearchIndex</methodName>
+  <use>true</use>
+  <predefined>true</predefined>
+  <restartCountOnFailure>3</restartCountOnFailure>
+  <restartIntervalOnFailure>10</restartIntervalOnFailure>
+</mdclass:ScheduledJob>

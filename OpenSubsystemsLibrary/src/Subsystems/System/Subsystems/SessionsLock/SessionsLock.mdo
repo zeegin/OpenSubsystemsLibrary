@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b15e857f-2d4c-49e4-8bb2-2785416a0507">
+  <name>SessionsLock</name>
+  <synonym>
+    <key>en</key>
+    <value>Sessions lock</value>
+  </synonym>
+  <parentSubsystem>Subsystem.System</parentSubsystem>
+</mdclass:Subsystem>

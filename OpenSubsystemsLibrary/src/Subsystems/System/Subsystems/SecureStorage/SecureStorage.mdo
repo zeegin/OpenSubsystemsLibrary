@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="47b7d960-b577-4fa5-9a8f-6377eaad9e7a">
+  <name>SecureStorage</name>
+  <synonym>
+    <key>en</key>
+    <value>Secure storage</value>
+  </synonym>
+  <parentSubsystem>Subsystem.System</parentSubsystem>
+</mdclass:Subsystem>

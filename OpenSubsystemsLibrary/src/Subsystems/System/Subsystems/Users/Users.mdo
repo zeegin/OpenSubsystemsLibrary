@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6da09929-3aa5-468b-bc49-92b5cb441314">
+  <name>Users</name>
+  <synonym>
+    <key>en</key>
+    <value>Users</value>
+  </synonym>
+  <content>Catalog.Users</content>
+  <content>SessionParameter.CurrentUser</content>
+  <content>CommonModule.Users</content>
+  <content>Catalog.UserGroups</content>
+  <parentSubsystem>Subsystem.System</parentSubsystem>
+</mdclass:Subsystem>

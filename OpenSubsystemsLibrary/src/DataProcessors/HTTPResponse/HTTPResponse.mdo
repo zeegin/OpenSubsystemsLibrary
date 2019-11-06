@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7a6ad978-fcc6-45c2-8cb9-27de3e4e3043">
+  <producedTypes>
+    <objectType typeId="2672c806-59bb-434f-830b-62ee5c547b28" valueTypeId="7a6a0fc0-d4bc-4b42-9945-9aefb925a54b"/>
+    <managerType typeId="5c6298cd-1ee5-4c17-a88f-1096a4bd1281" valueTypeId="4a4a8aaa-ba62-449c-839c-59225f98cc4c"/>
+  </producedTypes>
+  <name>HTTPResponse</name>
+  <synonym>
+    <key>en</key>
+    <value>HTTP response</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>HTTP ответ</value>
+  </synonym>
+</mdclass:DataProcessor>

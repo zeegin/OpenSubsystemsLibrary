@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a28d4128-fc44-4030-90c5-718cfc98d93f">
+  <name>HTTPRequests</name>
+  <synonym>
+    <key>en</key>
+    <value>HTTP requests</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>HTTP запросы</value>
+  </synonym>
+  <content>CommonModule.HTTPRequests</content>
+  <content>DataProcessor.HTTPResponse</content>
+  <content>CommonModule.HTTPAuthDigest</content>
+  <content>DataProcessor.HTTPSession</content>
+  <parentSubsystem>Subsystem.System</parentSubsystem>
+</mdclass:Subsystem>

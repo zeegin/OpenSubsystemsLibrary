@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7a9d817a-7ef4-4000-8a7b-f8206fa0543e">
+  <name>GoogleDisk</name>
+  <synonym>
+    <key>en</key>
+    <value>Google disk</value>
+  </synonym>
+  <parentSubsystem>Subsystem.System.Subsystem.StoredFiles</parentSubsystem>
+</mdclass:Subsystem>

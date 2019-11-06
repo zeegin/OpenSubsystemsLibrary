@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4c46f87e-4fa4-4245-a756-8e9ab3c83e09">
+  <name>LockDataByDate</name>
+  <synonym>
+    <key>en</key>
+    <value>Lock data by date</value>
+  </synonym>
+  <parentSubsystem>Subsystem.System</parentSubsystem>
+</mdclass:Subsystem>

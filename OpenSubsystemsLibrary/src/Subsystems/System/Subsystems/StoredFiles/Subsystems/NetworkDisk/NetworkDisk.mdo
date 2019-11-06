@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3e167455-4f0e-4ffa-80c5-c96cbefdafcb">
+  <name>NetworkDisk</name>
+  <synonym>
+    <key>en</key>
+    <value>Network disk</value>
+  </synonym>
+  <parentSubsystem>Subsystem.System.Subsystem.StoredFiles</parentSubsystem>
+</mdclass:Subsystem>

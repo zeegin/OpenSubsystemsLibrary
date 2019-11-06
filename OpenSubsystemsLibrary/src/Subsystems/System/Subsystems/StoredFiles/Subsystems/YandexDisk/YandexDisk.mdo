@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="616da5e0-476c-4c3b-ae18-4269ad31f1af">
+  <name>YandexDisk</name>
+  <synonym>
+    <key>en</key>
+    <value>Yandex disk</value>
+  </synonym>
+  <parentSubsystem>Subsystem.System.Subsystem.StoredFiles</parentSubsystem>
+</mdclass:Subsystem>
