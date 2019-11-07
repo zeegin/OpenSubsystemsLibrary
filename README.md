@@ -8,7 +8,7 @@ Open Subsystems Library provide what you don't want to do — no more, no less.
 
 ## Goals and limitations
 
-1. Concept of no-thik and no-COM configuration.
+1. Concept of no-thick and no-COM configuration.
 1. Small configuration size.
 1. No SaaS mode.
 1. No External data processors or reports in any internal storage support.
