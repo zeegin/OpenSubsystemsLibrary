@@ -70,7 +70,7 @@ This project built with:
 | + Custom headers                       | Support     |
 | + Autodetect sending content type      | Support     |
 | + POST x-www-form-urlencoded           | Support     |
-| + POST multypart/form-data             | Support     |
+| + POST multipart/form-data             | Support     |
 | + Timeouts                             | Support     |
 | + Redirects                            | Support     |
 | + GZip response content encoding       | Support     |
@@ -91,7 +91,7 @@ This project built with:
 | Secure storage                         | Not started |
 | Sessions lock                          | Not started |
 | + Set sessions lock wizard             | Not started |
-| + Auto disconect sessions              | Not started |
+| + Auto disconnect sessions             | Not started |
 | Stored files                           | Not started |
 | + Amazon S3                            | Not started |
 | + Dropbox                              | Not started |
