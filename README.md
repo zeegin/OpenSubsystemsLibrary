@@ -2,6 +2,8 @@
 
 Open Subsystems Library is a simple.
 
+[Quickstart Guide](docs/en/QuickstartGuide.md)
+
 ## Philosophy
 
 Open Subsystems Library provide what you don't want to do — no more, no less.
