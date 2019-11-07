@@ -1,5 +1,3 @@
-#If Server Then
-
 #Region EventHandlers
 
 Procedure OnCopy(CopiedObject)
@@ -9,5 +7,3 @@ Procedure OnCopy(CopiedObject)
 EndProcedure
 
 #EndRegion
-
-#EndIf
