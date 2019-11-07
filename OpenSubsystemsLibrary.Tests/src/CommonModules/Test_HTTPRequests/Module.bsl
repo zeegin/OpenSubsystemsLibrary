@@ -406,12 +406,14 @@ Procedure Test_GetTimeout(Context) Export
         
         HTTPRequests.Get("https://httpbin.org/delay/10", , Param);
     Except
-        LegalException = 
-            ?(CurrentSystemLanguage() = "en",
-                "Timeout exceeded",
-                "Превышено время ожидания"
-            ); 
-        Assert.IsLegalException(LegalException, ErrorInfo());
+        Assert.IsLegalException(
+            NStr(
+                "en = 'Timeout exceeded';
+                |ru = 'Превышено время ожидания'",
+                Lang.SystemLanguage()
+            ),
+            ErrorInfo()
+        );
     EndTry;
     
 EndProcedure
