@@ -1,0 +1,36 @@
+name: sonar-scanner
+
+on:
+  pull_request:
+    branches:
+    - master 
+  push: 
+    branches: 
+    - master  
+
+jobs:
+  SonarScanner:
+    if: github.repository == 'zeegin/OpenSubsystemsLibrary'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Setup SonarQube scanner
+      uses: warchant/setup-sonar-scanner@v1
+    - name: Run SonarQube on push
+      if: github.event_name == 'push'
+      run: sonar-scanner
+        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        -Dsonar.host.url=https://sonar.openbsl.ru
+        -Dsonar.projectKey=osl
+        -Dsonar.branch.name=${{ github.ref }}    
+    - name: Run SonarQube on pull request
+      if: github.event_name == 'pull_request' 
+      run: sonar-scanner
+        -X
+        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        -Dsonar.host.url=https://sonar.openbsl.ru
+        -Dsonar.projectKey=osl
+        -Dsonar.pullrequest.key=${{ github.head_ref }}
+        -Dsonar.pullrequest.branch=${{ github.base_ref }}
+        -Dsonar.pullrequest.base=master 

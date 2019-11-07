@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonar.openbsl.ru/api/project_badges/measure?project=osl&metric=alert_status)](https://sonar.openbsl.ru/dashboard?id=osl)
+
 # Open Subsystems Library
 
 Open Subsystems Library is a simple.
