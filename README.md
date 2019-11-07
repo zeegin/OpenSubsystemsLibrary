@@ -8,7 +8,7 @@ Open Subsystems Library provide what you don't want to do — no more, no less.
 
 ## Goals and limitations
 
-1. Concept of no-thik and no-COM configuration.
+1. Concept of no-thick and no-COM configuration.
 1. Small configuration size.
 1. No SaaS mode.
 1. No External data processors or reports in any internal storage support.
@@ -70,7 +70,7 @@ This project built with:
 | + Custom headers                       | Support     |
 | + Autodetect sending content type      | Support     |
 | + POST x-www-form-urlencoded           | Support     |
-| + POST multypart/form-data             | Support     |
+| + POST multipart/form-data             | Support     |
 | + Timeouts                             | Support     |
 | + Redirects                            | Support     |
 | + GZip response content encoding       | Support     |
@@ -91,7 +91,7 @@ This project built with:
 | Secure storage                         | Not started |
 | Sessions lock                          | Not started |
 | + Set sessions lock wizard             | Not started |
-| + Auto disconect sessions              | Not started |
+| + Auto disconnect sessions             | Not started |
 | Stored files                           | Not started |
 | + Amazon S3                            | Not started |
 | + Dropbox                              | Not started |
