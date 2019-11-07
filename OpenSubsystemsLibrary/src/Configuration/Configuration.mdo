@@ -64,6 +64,7 @@
   <commonModules>CommonModule.HTTPAuthDigest</commonModules>
   <commonModules>CommonModule.HTTPRequests</commonModules>
   <commonModules>CommonModule.Json</commonModules>
+  <commonModules>CommonModule.Lang</commonModules>
   <commonModules>CommonModule.OS</commonModules>
   <commonModules>CommonModule.Strings</commonModules>
   <commonModules>CommonModule.Users</commonModules>
