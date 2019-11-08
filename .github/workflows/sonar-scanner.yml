@@ -15,21 +15,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-    - name: Setup SonarQube scanner
-      uses: warchant/setup-sonar-scanner@v1
-    - name: Run SonarQube on push
-      if: github.event_name == 'push'
-      run: sonar-scanner
-        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-        -Dsonar.host.url=https://sonar.openbsl.ru
-        -Dsonar.projectKey=osl    
-    - name: Run SonarQube on pull request
-      if: github.event_name == 'pull_request' 
-      run: sonar-scanner
-        -X
-        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-        -Dsonar.host.url=https://sonar.openbsl.ru
-        -Dsonar.projectKey=osl
-        -Dsonar.pullrequest.key=${{ github.head_ref }}
-        -Dsonar.pullrequest.branch=${{ github.base_ref }}
-        -Dsonar.pullrequest.base=master 
+    - name: Run SonarQube
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONARCLOUD_URL: https://sonar.openbsl.ru
