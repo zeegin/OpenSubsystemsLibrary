@@ -12,6 +12,7 @@ Procedure AreEqual(Expected, Actual, Message = "") Export
     EndIf;
     
     IsTrue(Expected = Actual, Message);
+    ;;;;;
     
 EndProcedure
 
