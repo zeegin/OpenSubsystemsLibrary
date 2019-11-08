@@ -1,6 +1,6 @@
 name: sonar-scanner
 
-on: [push, pull_request]
+on: push
 
 jobs:
   SonarScanner:
