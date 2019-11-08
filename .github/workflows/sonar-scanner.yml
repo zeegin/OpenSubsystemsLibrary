@@ -1,6 +1,12 @@
 name: sonar-scanner
 
-on: [push, pull_request]
+on:
+  pull_request:
+    branches:
+    - master 
+  push: 
+    branches: 
+    - master
 
 jobs:
   SonarScanner:
@@ -19,8 +25,6 @@ jobs:
         -Dsonar.branch.name=${GITHUB_REF#refs/heads/}
     - name: Run SonarQube on pull request
       if: github.event_name == 'pull_request'
-          && github.event.pull_request.head.repo.full_name == github.event.repository.full_name
-          && github.event.pull_request.repo.full_name != github.repository
       run: sonar-scanner
         -X
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
