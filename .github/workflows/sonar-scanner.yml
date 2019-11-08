@@ -29,6 +29,9 @@ jobs:
         -X
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         -Dsonar.host.url=https://sonar.openbsl.ru
+        -Dsonar.pullrequest.provider=github
+        -Dsonar.pullrequest.github.repository=${{ github.repository }}
+        -Dsonar.pullrequest.github.token.secured=${{ secrets.GITHUB_TOKEN }}
         -Dsonar.pullrequest.key=${{ github.event.pull_request.number }}
         -Dsonar.pullrequest.branch=${{ github.event.pull_request.head.ref }}
         -Dsonar.pullrequest.base=${{ github.event.pull_request.base.ref }}
