@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   SonarScanner:
-    if: github.repository == 'zeegin/OpenSubsystemsLibrary'
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.event.repository.full_name
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
