@@ -16,7 +16,7 @@ jobs:
       run: sonar-scanner
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         -Dsonar.host.url=https://sonar.openbsl.ru
-        -Dsonar.branch.name=${{ github.ref }}
+        -Dsonar.branch.name=${GITHUB_REF#*/}
     - name: Run SonarQube on pull request
       if: github.event_name == 'pull_request' || github.event.pull_request.head.repo.full_name == github.event.repository.full_name
       run: sonar-scanner
