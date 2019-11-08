@@ -4,8 +4,7 @@ Procedure AreEqual(Expected, Actual, Message = "") Export
     
     If IsBlankString(Message) Then 
         Message = StrTemplate(
-            NStr("en = 'Expected: <%1> Actual: <%2>.';
-                 |ru = 'Ожидается: <%1> Текущее: <%2>.'"),
+            NStr("en = 'Expected: <%1> Actual: <%2>.'"),
             Expected,
             Actual
         );
