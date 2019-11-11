@@ -60,7 +60,7 @@
   <commonModules>CommonModule.Database</commonModules>
   <commonModules>CommonModule.DataHistoryImpl</commonModules>
   <commonModules>CommonModule.FullTextSearchImpl</commonModules>
-  <commonModules>CommonModule.GlobalExceptions</commonModules>
+  <commonModules>CommonModule.ExceptionsGlobal</commonModules>
   <commonModules>CommonModule.HTTPAuthDigest</commonModules>
   <commonModules>CommonModule.HTTPRequests</commonModules>
   <commonModules>CommonModule.Json</commonModules>

@@ -12,9 +12,23 @@ Function TypeError(Message = "") Export
     
 EndFunction
 
-Function AssertError(Message = "") Export
+Function AssertError(Expected, Actual, Message = "") Export
     
-    Return "[AssertError] " + Message;
+    ErrorText = StrTemplate(
+        "[AssertError]
+        |[Expected]
+        |%1
+        |[Actual]
+        |%2",
+        Expected,
+        Actual
+    );
+    
+    If Not IsBlankString(Message) Then
+        ErrorText = ErrorText + Chars.LF + "[Message]" + Chars.LF + Message;
+    EndIf;
+    
+    Return ErrorText;
     
 EndFunction
 

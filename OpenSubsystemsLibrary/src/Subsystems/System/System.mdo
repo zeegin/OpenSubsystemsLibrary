@@ -5,7 +5,7 @@
     <key>en</key>
     <value>System</value>
   </synonym>
-  <content>CommonModule.GlobalExceptions</content>
+  <content>CommonModule.ExceptionsGlobal</content>
   <content>CommonModule.Collections</content>
   <content>CommonModule.Assert</content>
   <content>CommonModule.Database</content>
