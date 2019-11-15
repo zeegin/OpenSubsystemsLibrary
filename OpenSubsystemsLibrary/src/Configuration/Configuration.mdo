@@ -59,13 +59,14 @@
   <commonModules>CommonModule.Cryptography</commonModules>
   <commonModules>CommonModule.Database</commonModules>
   <commonModules>CommonModule.DataHistoryImpl</commonModules>
-  <commonModules>CommonModule.FullTextSearchImpl</commonModules>
   <commonModules>CommonModule.ExceptionsGlobal</commonModules>
+  <commonModules>CommonModule.FullTextSearchImpl</commonModules>
   <commonModules>CommonModule.HTTPAuthDigest</commonModules>
   <commonModules>CommonModule.HTTPRequests</commonModules>
   <commonModules>CommonModule.Json</commonModules>
   <commonModules>CommonModule.Lang</commonModules>
   <commonModules>CommonModule.OS</commonModules>
+  <commonModules>CommonModule.Reflection</commonModules>
   <commonModules>CommonModule.Strings</commonModules>
   <commonModules>CommonModule.Users</commonModules>
   <scheduledJobs>ScheduledJob.MergePartialFullTextSearchIndex</scheduledJobs>

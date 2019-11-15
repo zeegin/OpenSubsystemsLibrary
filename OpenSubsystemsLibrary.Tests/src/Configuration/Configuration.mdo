@@ -51,5 +51,10 @@
   </languages>
   <commonModules>CommonModule.Test_Assert</commonModules>
   <commonModules>CommonModule.Test_HTTPRequests</commonModules>
+  <commonModules>CommonModule.Test_Json</commonModules>
   <commonModules>CommonModule.Test_Metadata</commonModules>
+  <commonModules>CommonModule.Test_Reflection</commonModules>
+  <commonModules>CommonModule.Test_Reflection_MockModule</commonModules>
+  <commonModules>CommonModule.Test_Reflection_MockModuleClient</commonModules>
+  <dataProcessors>DataProcessor.Test_Reflection_MockDataProcess</dataProcessors>
 </mdclass:Configuration>

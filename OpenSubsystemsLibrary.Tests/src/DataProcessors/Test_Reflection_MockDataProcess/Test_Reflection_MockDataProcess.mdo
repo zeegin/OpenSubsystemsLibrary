@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d2716b89-edcd-4115-9bb3-c914a6fe1c23">
+  <producedTypes>
+    <objectType typeId="f13f24b4-20ba-4bd4-99d0-23efa8a3b7dc" valueTypeId="f6078b11-47cf-4c13-96ae-6fc9802cae3c"/>
+    <managerType typeId="0cfca556-f692-4d4d-ba01-7f849db98582" valueTypeId="6e357779-a28e-4dad-bdae-5c2511748cb2"/>
+  </producedTypes>
+  <name>Test_Reflection_MockDataProcess</name>
+  <synonym>
+    <key>en</key>
+    <value>Reflection mock data process</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+</mdclass:DataProcessor>
