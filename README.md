@@ -18,6 +18,7 @@ Open Subsystems Library provide what you don't want to do — no more, no less.
 1. No External data processors or reports in any internal storage support.
 1. No RLS support.
 1. No collaboration system support.
+1. No predefined value.
 1. Develop simple understandable standards (based on PEP8 for python).
 
 ## Dependencies
