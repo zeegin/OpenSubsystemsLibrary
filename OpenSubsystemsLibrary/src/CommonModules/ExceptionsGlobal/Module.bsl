@@ -2,13 +2,13 @@
 
 Function RuntimeError(Message = "") Export
     
-    Return "[RuntimeError] " + Message;
+    Return "[RuntimeError]" + Chars.LF + Message;
     
 EndFunction
 
 Function TypeError(Message = "") Export
     
-    Return "[TypeError] " + Message;
+    Return "[TypeError]" + Chars.LF + Message;
     
 EndFunction
 
@@ -34,7 +34,7 @@ EndFunction
 
 Function NotImplementedError(Message = "") Export 
     
-    Return "[NotImplementedError] " + Message;
+    Return "[NotImplementedError]" + Chars.LF + Message;
     
 EndFunction
 

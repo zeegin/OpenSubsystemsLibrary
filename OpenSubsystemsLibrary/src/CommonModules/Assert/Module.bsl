@@ -59,7 +59,7 @@ EndProcedure
 Procedure IsNull(Value, Message = "") Export
     
     If Value <> Null Then
-        Raise AssertError(Value, Null, Message);
+        Raise AssertError(Null, Value, Message);
     EndIf;
     
 EndProcedure
@@ -67,7 +67,7 @@ EndProcedure
 Procedure IsNotNull(Value, Message = "") Export
     
     If Value = Null Then
-        Raise AssertError(Value, Null, Message);
+        Raise AssertError(Null, Value, Message);
     EndIf;
     
 EndProcedure
@@ -77,7 +77,7 @@ Procedure IsLegalException(LegalErrorFragment, ErrorInfo, Message = "") Export
     ErrorDescription = DetailErrorDescription(ErrorInfo);
     
     If Not StrFind(ErrorDescription, LegalErrorFragment) Then
-        Raise AssertError(ErrorDescription, LegalErrorFragment, Message);
+        Raise AssertError(LegalErrorFragment, ErrorDescription, Message);
     EndIf;
     
 EndProcedure
@@ -86,10 +86,28 @@ Procedure AreCollectionEmpty(Value, Message = "") Export
     
     If Value.Count() = 0 Then 
         Raise AssertError(
-            Value, 
             NStr("ru = 'Пустая коллекция.'; en = 'Empty collection.'"),
+            Value,
             Message);
     EndIf;
+    
+EndProcedure
+
+&AtServer
+Procedure AreUserMessagesContains(LegalMessageFragment, Message = "") Export
+    
+    UserMessages = GetUserMessages();
+    
+    UserMessagesParts = New Array;
+    
+    For Each UserMessage In UserMessages Do
+        If StrFind(UserMessage.Text, LegalMessageFragment) Then
+            Return;
+        EndIf;
+        UserMessagesParts.Add(UserMessage.Text);
+    EndDo;
+    
+    Raise AssertError(LegalMessageFragment, StrConcat(UserMessagesParts, Chars.LF), Message);
     
 EndProcedure
 
