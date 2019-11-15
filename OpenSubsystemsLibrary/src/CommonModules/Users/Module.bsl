@@ -19,7 +19,7 @@ EndFunction
 // 
 Procedure SessionInit() Export
     
-    UserObject = _CurrentUser();
+    UserObject = CurrentUserObject();
     
     SetPrivilegedMode(True);
     SessionParameters.CurrentUser = UserObject.Ref;
@@ -31,21 +31,21 @@ EndProcedure
 
 #Region Private
 
-Function _CurrentUser()
+Function CurrentUserObject()
     
     CurrentInfoBaseUser = InfoBaseUsers.CurrentUser();
     
     If IsBlankString(CurrentInfoBaseUser.Name) Then
-        Self = _DefaultUserObject();
+        Self = DefaultUserObject();
     Else    
-        Self = _InfoBaseUserObject(CurrentInfoBaseUser);
+        Self = InfoBaseUserObject(CurrentInfoBaseUser);
     EndIf;
          
     Return Self;
     
 EndFunction
 
-Function _UserObject()
+Function UserObject()
     
     Self = New Structure;
     Self.Insert("Ref", Undefined);
@@ -57,30 +57,30 @@ Function _UserObject()
     
 EndFunction
 
-Function _DefaultUserObject()
+Function DefaultUserObject()
     
-    Self = _UserObject();
-    Self.Ref = Catalogs.Users._DefaultUserRef();
+    Self = UserObject();
+    Self.Ref = Catalogs.Users.DefaultUserRef();
     Self.FullName = NStr("en = '<Not specified>'; ru = '<Не указан>'");
     Self.Service = True;
     
     If Not Database.Exists(Self.Ref) Then
-        Catalogs.Users._CreateBy(Self);
+        Catalogs.Users.CreateBy(Self);
     EndIf;
     
     Return Self;
     
 EndFunction
 
-Function _InfoBaseUserObject(InfoBaseUser)
+Function InfoBaseUserObject(InfoBaseUser)
     
-    Self = _UserObject();
-    Self.Ref = Catalogs.Users._FindByUUID(InfoBaseUser.UUID);
+    Self = UserObject();
+    Self.Ref = Catalogs.Users.FindByUUID(InfoBaseUser.UUID);
     Self.FullName = InfoBaseUser.FullName;
     Self.UUID = InfoBaseUser.UUID;
     
     If Self.Ref.IsEmpty() Then
-        Self.Ref = Catalogs.Users._CreateBy(Self);
+        Self.Ref = Catalogs.Users.CreateBy(Self);
     EndIf;
     
     Return Self;

@@ -8,7 +8,7 @@ Var StatusCode Export;
 Var Encoding Export;
 Var URL Export;
 
-Var _HTTPResponse;
+Var HTTPResponse;
 
 #EndRegion
 
@@ -33,11 +33,11 @@ Function BinaryData() Export
     
 #If Not MobileAppServer Then
     If Lower(ContentEncoding) = "gzip" Then
-        Return _GZipStreamToBinaryData(_HTTPResponse.GetBodyAsStream());
+        Return GZipStreamToBinaryData(HTTPResponse.GetBodyAsStream());
     EndIf;
 #EndIf
     
-    Return _HTTPResponse.GetBodyAsBinaryData();
+    Return HTTPResponse.GetBodyAsBinaryData();
     
 EndFunction
 
@@ -156,17 +156,17 @@ EndFunction
 
 #Region Private
 
-Procedure _Ctor(HTTPResponse, URL_) Export 
+Procedure Ctor(HTTPResponse_, URL_) Export 
     
-    _HTTPResponse = HTTPResponse;
+    HTTPResponse = HTTPResponse_;
     Headers = New FixedMap(HTTPResponse.Headers);
     StatusCode = HTTPResponse.StatusCode;
-    Encoding = _ResponseEncoding(HTTPResponse);
+    Encoding = ResponseEncoding(HTTPResponse);
     URL = URL_;
     
 EndProcedure
 
-Function _ResponseEncoding(HTTPResponse)
+Function ResponseEncoding(HTTPResponse)
     
     ContentType = HTTPRequests.HeaderValue(HTTPResponse.Headers, "content-type", "");
     
@@ -186,7 +186,7 @@ EndFunction
 
 #If Not MobileAppServer Then
 
-Function _GZipStreamToBinaryData(Stream)
+Function GZipStreamToBinaryData(Stream)
     
     GZipPrefixSize = 10;
     GZipPostfixSize = 8;

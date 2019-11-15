@@ -1,12 +1,12 @@
 #Region Private
 
-Function _DefaultUserRef() Export
+Function DefaultUserRef() Export
     
     Return Catalogs.Users.GetRef(New UUID("aa00559e-ad84-4494-88fd-f0826edc46f0"));
     
 EndFunction
 
-Function _FindByUUID(UUID) Export
+Function FindByUUID(UUID) Export
     
     Query = New Query;
     Query.Parameters.Insert("UUID", UUID);
@@ -28,7 +28,7 @@ Function _FindByUUID(UUID) Export
     
 EndFunction
 
-Function _CreateBy(UserObject) Export
+Function CreateBy(UserObject) Export
     
     Self = Catalogs.Users.CreateItem();
     Self.SetNewObjectRef(UserObject.Ref);

@@ -1,6 +1,6 @@
 #Region Private
 
-Procedure _UpdateDataHistory() Export
+Procedure UpdateDataHistory() Export
     
 #If Not MobileAppServer Then
     DataHistory.UpdateHistory();

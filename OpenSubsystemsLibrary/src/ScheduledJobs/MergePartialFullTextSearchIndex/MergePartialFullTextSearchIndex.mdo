@@ -5,7 +5,7 @@
     <key>en</key>
     <value>Merge partial full text search index</value>
   </synonym>
-  <methodName>CommonModule.FullTextSearchImpl._MergePartialFullTextSearchIndex</methodName>
+  <methodName>CommonModule.FullTextSearchImpl.MergePartialFullTextSearchIndex</methodName>
   <use>true</use>
   <predefined>true</predefined>
   <restartCountOnFailure>3</restartCountOnFailure>

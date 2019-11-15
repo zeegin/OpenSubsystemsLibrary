@@ -222,7 +222,7 @@ Function Param() Export
     Auth.Insert("Pass", Undefined);
     
     Self = New Structure;
-    Self.Insert("Headers", _DefaultHeaders());
+    Self.Insert("Headers", DefaultHeaders());
     Self.Insert("Auth", Auth);
     Self.Insert("ValidateSSL", True);
     Self.Insert("AllowRedirect", True);
@@ -370,7 +370,7 @@ EndFunction
 
 #Region Private
 
-Function _DefaultHeaders()
+Function DefaultHeaders()
     
     Self = New Map;
 #If MobileAppServer Then

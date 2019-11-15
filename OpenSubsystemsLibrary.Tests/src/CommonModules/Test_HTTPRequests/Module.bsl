@@ -410,7 +410,7 @@ Procedure Test_GetTimeout(Context) Export
             NStr(
                 "en = 'Timeout exceeded';
                 |ru = 'Превышено время ожидания'",
-                Lang.SystemLanguage()
+                Locale.SystemLanguage()
             ),
             ErrorInfo()
         );

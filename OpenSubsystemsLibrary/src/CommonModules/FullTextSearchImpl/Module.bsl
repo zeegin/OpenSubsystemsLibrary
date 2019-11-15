@@ -1,6 +1,6 @@
 #Region Private
 
-Procedure _UpdatePartialFullTextSearchIndex() Export
+Procedure UpdatePartialFullTextSearchIndex() Export
     
     If FullTextSearch.GetFullTextSearchMode() = FullTextSearchMode.Enable
         And Not FullTextSearch.IndexTrue() Then 
@@ -10,7 +10,7 @@ Procedure _UpdatePartialFullTextSearchIndex() Export
     
 EndProcedure
 
-Procedure _MergePartialFullTextSearchIndex() Export
+Procedure MergePartialFullTextSearchIndex() Export
     
     If FullTextSearch.GetFullTextSearchMode() = FullTextSearchMode.Enable
         And Not FullTextSearch.IndexUpdateComplete() Then 

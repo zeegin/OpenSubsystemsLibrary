@@ -5,7 +5,7 @@
     <key>en</key>
     <value>Update data history</value>
   </synonym>
-  <methodName>CommonModule.DataHistoryImpl._UpdateDataHistory</methodName>
+  <methodName>CommonModule.DataHistoryImpl.UpdateDataHistory</methodName>
   <use>true</use>
   <predefined>true</predefined>
   <restartCountOnFailure>3</restartCountOnFailure>
