@@ -1,4 +1,4 @@
-// BSLLS:UsingHardcodePath-off
+// BSLLS:UsingHardcodeNetworkAddress-off
 
 // @unit-test
 Procedure Test_URLParsed(Context) Export
