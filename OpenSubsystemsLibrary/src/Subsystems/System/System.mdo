@@ -16,6 +16,7 @@
   <content>CommonModule.Cryptography</content>
   <content>CommonModule.Locale</content>
   <content>CommonModule.Reflection</content>
+  <content>SessionParameter.ClientContext</content>
   <subsystems>AggregatesAndTotals</subsystems>
   <subsystems>BackgroundJobs</subsystems>
   <subsystems>DataExchange</subsystems>

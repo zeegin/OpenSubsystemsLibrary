@@ -56,5 +56,6 @@
   <commonModules>CommonModule.Test_Reflection</commonModules>
   <commonModules>CommonModule.Test_Reflection_MockModule</commonModules>
   <commonModules>CommonModule.Test_Reflection_MockModuleClient</commonModules>
+  <dataProcessors>DataProcessor.Test_BackgroundWorker</dataProcessors>
   <dataProcessors>DataProcessor.Test_Reflection_MockDataProcess</dataProcessors>
 </mdclass:Configuration>

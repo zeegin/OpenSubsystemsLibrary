@@ -59,10 +59,12 @@
   <commonPictures>CommonPicture.AdministrativeTools</commonPictures>
   <commonPictures>CommonPicture.Demo</commonPictures>
   <commonPictures>CommonPicture.DevelopmentTools</commonPictures>
+  <sessionParameters>SessionParameter.ClientContext</sessionParameters>
   <sessionParameters>SessionParameter.CurrentUser</sessionParameters>
   <roles>Role.BaseAccess</roles>
   <roles>Role.FullAccess</roles>
   <commonModules>CommonModule.Assert</commonModules>
+  <commonModules>CommonModule.BackgroundWorker</commonModules>
   <commonModules>CommonModule.Collections</commonModules>
   <commonModules>CommonModule.Cryptography</commonModules>
   <commonModules>CommonModule.Database</commonModules>
@@ -74,13 +76,16 @@
   <commonModules>CommonModule.Json</commonModules>
   <commonModules>CommonModule.Locale</commonModules>
   <commonModules>CommonModule.OS</commonModules>
+  <commonModules>CommonModule.Platform</commonModules>
   <commonModules>CommonModule.Reflection</commonModules>
   <commonModules>CommonModule.Strings</commonModules>
+  <commonModules>CommonModule.SystemImplClient</commonModules>
+  <commonModules>CommonModule.SystemImplServerCall</commonModules>
   <commonModules>CommonModule.Users</commonModules>
   <scheduledJobs>ScheduledJob.MergePartialFullTextSearchIndex</scheduledJobs>
   <scheduledJobs>ScheduledJob.UpdateDataHistory</scheduledJobs>
   <scheduledJobs>ScheduledJob.UpdatePartialFullTextSearchIndex</scheduledJobs>
-  <commonForms>CommonForm.HomePage</commonForms>
+  <commonForms>CommonForm.Diagnostic</commonForms>
   <catalogs>Catalog.UserGroups</catalogs>
   <catalogs>Catalog.UserRoles</catalogs>
   <catalogs>Catalog.Users</catalogs>
