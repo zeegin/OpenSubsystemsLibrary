@@ -28,7 +28,7 @@
 
 2.1.3. We don't use `standard 1C configuration` term.
 
-2.1.4. Library supported works in every SDBL and OS that oficcialy suported by 1C:Enterprise platform.
+2.1.4. Library supported works in every SDBL and OS that officially supported by 1C:Enterprise platform.
 
 2.1.5. We have no plans to support thick-client (ordinary and managed application) and external COM-connection. This is a deliberate limitation.
 
@@ -36,9 +36,9 @@
 
 2.1.7. **!!! In the plans...** This is a requirement for the subsystem "System", not yet implemented.
 
-2.1.8. We dont use AddIns in the moment.
+2.1.8. We don't use AddIns in the moment.
 
-2.1.9. We write our copyright in the configuration properties for our demo configuration, but you simply rewrite it in your end-product.
+2.1.9. We write our copyright in the configuration properties for our demo configuration, but you can free rewrite it in your end-product.
 
 2.2.1. **!!! In the plans...** This is a requirement for the subsystem "Update", not yet implemented.
 
@@ -52,9 +52,9 @@
 
 2.3.2.2. Synonyms always concise.
 
-2.3.2.3. **!!! Make static analize** to control metadata standard attributes names for **Parent** and **Owner**.
+2.3.2.3. **!!! Make static analize** to control metadata standard attributes names for `Parent` and `Owner`.
 
-2.3.3. We dont use comments to metadata objects, it's always empty.
+2.3.3. We don't use comments to metadata objects, it's always empty.
 
 2.3.4. Static analize rule [BSLLS:YoLetterUsage](https://1c-syntax.github.io/bsl-language-server/en/diagnostics/YoLetterUsage/).
 
@@ -68,7 +68,7 @@
 
 2.3.9. We have managed transaction mode.
 
-2.4. [...] Interface styleguide is full compatible [#std (RU)](https://its.1c.ru/db/v8std#browse:13:-1:7).
+2.4. [...] Interface style guide is fully compatible to [#std (RU)](https://its.1c.ru/db/v8std#browse:13:-1:7).
 
 2.5.1. Static analize rule [BSLLS:OneStatementPerLine](https://1c-syntax.github.io/bsl-language-server/en/diagnostics/OneStatementPerLine/).
 
@@ -90,7 +90,7 @@
   - [BSLLS:LineLength](https://1c-syntax.github.io/bsl-language-server/en/diagnostics/LineLength/)
   - [BSLLS:SpaceAtStartComment](https://1c-syntax.github.io/bsl-language-server/en/diagnostics/SpaceAtStartComment/)
 
-2.5.9. All comments are polite and understandable.
+2.5.9. All comments are polite and clear.
 
 2.5.10. **!!! Make static analize** variables names.
 
@@ -153,7 +153,7 @@
 
 2.9.2. The library code does not use the code borrowed in standard 1C configurations.
 
-2.9.3. We dont use AddIns in the moment.
+2.9.3. We don't use AddIns in the moment.
 
 2.9.4. We write [CHANGELOG](../../CHANGELOG) that is based on  [Keep a Changelog](http://keepachangelog.com/).
 
