@@ -28,7 +28,8 @@
 
 2.1.3. We don't use `standard 1C configuration` term.
 
-2.1.4. Library supported works in every SDBL and OS that officially supported by 1C:Enterprise platform.
+2.1.4. Library supported works in every SDBL and OS that officially supported by 1C:Enterprise platform. Static analize rules
+  - [BSLLS:UsingObjectNotAvailableUnix](https://1c-syntax.github.io/bsl-language-server/en/diagnostics/UsingObjectNotAvailableUnix/)
 
 2.1.5. We have no plans to support thick-client (ordinary and managed application) and external COM-connection. This is a deliberate limitation.
 
@@ -62,11 +63,17 @@
 
 2.3.6. **!!! Make static analize** to control help pages and mayby genarate it from the markdown docs.
 
-2.3.7. Static analize rule [BSLLS:UnreachableCode](https://1c-syntax.github.io/bsl-language-server/en/diagnostics/UnreachableCode/).
+2.3.7. Static analize rules:
+  - [BSLLS:UnreachableCode](https://1c-syntax.github.io/bsl-language-server/en/diagnostics/UnreachableCode/)
+  - [BSLLS:EmptyCodeBlock](https://1c-syntax.github.io/bsl-language-server/en/diagnostics/EmptyCodeBlock/)
+  - [BSLLS:EmptyStatement](https://1c-syntax.github.io/bsl-language-server/en/diagnostics/EmptyStatement/)
 
 2.3.8. We don't use 1C:SL and use only native platform object `Metadata` instead of creating cached catalog with identifiers of metadata and havent headache with support it.
 
-2.3.9. We have managed transaction mode.
+2.3.9. We have managed transaction mode. Static analize rules:
+  - [BSLLS:BeginTransactionBeforeTryCatch](https://1c-syntax.github.io/bsl-language-server/en/diagnostics/BeginTransactionBeforeTryCatch/)
+  - [BSLLS:CommitTransactionOutsideTryCatch](https://1c-syntax.github.io/bsl-language-server/en/diagnostics/CommitTransactionOutsideTryCatch/)
+  - [BSLLS:PairingBrokenTransaction](https://1c-syntax.github.io/bsl-language-server/en/diagnostics/PairingBrokenTransaction/)
 
 2.4. [...] Interface style guide is fully compatible to [#std (RU)](https://its.1c.ru/db/v8std#browse:13:-1:7).
 
@@ -139,7 +146,9 @@
 
 2.8.3. Library provide `BackgroundWorker` thich warning about long-time actions.
 
-2.8.4. Modal dialogs not supported.
+2.8.4. Modal dialogs not supported. Static analize rules:
+  - [BSLLS:UsingModalWindows](https://1c-syntax.github.io/bsl-language-server/en/diagnostics/UsingModalWindows/)
+  - [BSLLS:UsingSynchronousCalls](https://1c-syntax.github.io/bsl-language-server/en/diagnostics/UsingSynchronousCalls/)
 
 2.8.5-2.8.9. [...] Manualy controlled all user interactions.
 
@@ -157,6 +166,6 @@
 
 2.9.4. We write [CHANGELOG](../../CHANGELOG) that is based on  [Keep a Changelog](http://keepachangelog.com/).
 
-2.10. **!!! In the plans...** This is a requirement for CI/CD, not yet implemented.
+2.10. [...] **!!! In the plans...** This is a requirement for CI/CD, not yet implemented.
 
 3-8. [...] Not required for the library.
