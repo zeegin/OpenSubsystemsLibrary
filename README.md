@@ -45,6 +45,7 @@ This project built with:
 | + Useful OS methods                    | In process  |
 | + Strings utils                        | In process  |
 | + Reflection                           | In process  |
+| + Background worker                    | In process  |
 | + No-thick client static analize       | Support     |
 | Aggregates and totals                  | Not started |
 | + Scheduled jobs                       | Not started |
