@@ -1,4 +1,5 @@
 // BSLLS:UsingHardcodeNetworkAddress-off
+// BSLLS:Typo-off
 
 // @unit-test
 Procedure Test_URLParsed(Context) Export
