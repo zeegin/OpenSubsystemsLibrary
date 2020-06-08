@@ -1,0 +1,18 @@
+{
+    "$schema": "https://1c-syntax.github.io/bsl-language-server/configuration/schema.json",
+    "language": "en",
+    "diagnostics": {
+        "computeTrigger": "onType",
+        "parameters": {
+            "CompilationDirectiveNeedLess": false,
+            "CommonModuleInvalidType": false,
+            "NestedFunctionInParameters": false,
+            "CyclomaticComplexity": {
+                "complexityThreshold": 30
+            },
+            "CognitiveComplexity": {
+                "complexityThreshold": 30
+            }
+        }
+    }
+}
