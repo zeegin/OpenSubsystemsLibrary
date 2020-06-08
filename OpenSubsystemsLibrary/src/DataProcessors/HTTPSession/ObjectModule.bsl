@@ -21,7 +21,7 @@ Var MaxRedirectCount Export; // MaxRedirects
 //
 Function Get(URL, Query = Undefined, Param = Undefined) Export
     
-    Return _HTTP("GET", URL, Query, Undefined, New Array, Param);
+    Return HTTP("GET", URL, Query, Undefined, New Array, Param);
     
 EndFunction
 
@@ -36,13 +36,13 @@ EndFunction
 //
 Function Options(URL, Param = Undefined) Export
     
-    Return _HTTP("OPTIONS", URL, Undefined, Undefined, New Array, Param);
+    Return HTTP("OPTIONS", URL, Undefined, Undefined, New Array, Param);
     
 EndFunction
 
 Function Head(URL, Param = Undefined) Export
     
-    Return _HTTP("HEAD", URL, Undefined, Undefined, New Array, Param);
+    Return HTTP("HEAD", URL, Undefined, Undefined, New Array, Param);
     
 EndFunction
 
@@ -52,25 +52,25 @@ Function Post(URL, Data = Undefined, Files = Undefined, Param = Undefined) Expor
         Files = New Array;
     EndIf;
     
-    Return _HTTP("POST", URL, Undefined, Data, Files, Param);
+    Return HTTP("POST", URL, Undefined, Data, Files, Param);
     
 EndFunction
 
 Function Put(URL, Data = Undefined, Param = Undefined) Export
     
-    Return _HTTP("PUT", URL, Undefined, Data, New Array, Param);
+    Return HTTP("PUT", URL, Undefined, Data, New Array, Param);
     
 EndFunction
 
 Function Patch(URL, Data = Undefined, Param = Undefined) Export
     
-    Return _HTTP("PATCH", URL, Undefined, Data, New Array, Param);
+    Return HTTP("PATCH", URL, Undefined, Data, New Array, Param);
     
 EndFunction
 
 Function Delete(URL, Data = Undefined, Param = Undefined) Export
     
-    Return _HTTP("DELETE", URL, Undefined, Data, New Array, Param);
+    Return HTTP("DELETE", URL, Undefined, Data, New Array, Param);
     
 EndFunction
 
@@ -124,7 +124,7 @@ EndProcedure
 // TRACE     RFC 2616 (http://tools.ietf.org/html/rfc2616).
 // UNLOCK    RFC 2518 (http://tools.ietf.org/html/rfc2518). Part of WebDAV.
 //
-Function _HTTP(Val Method, Val Href, Query, Data, Files, Param = Undefined, Redirection = 0)
+Function HTTP(Val Method, Val Href, Query, Data, Files, Param = Undefined, Redirection = 0)
     
     URL = HTTPRequests.URL(Href, Query);
     
@@ -154,13 +154,13 @@ Function _HTTP(Val Method, Val Href, Query, Data, Files, Param = Undefined, Redi
             If ValueIsFilled(Data) Then
                 For Each Item In Data Do
                     DataWriter.WriteLine("--" + Boundary + Chars.CR + Chars.LF);
-                    DataWriter.Write(_ToPostDataParamFiled(Item.Key, Item.Value));
+                    DataWriter.Write(ToPostDataParamFiled(Item.Key, Item.Value));
                 EndDo;
             EndIf;
             
             For Each File In Files Do
                 DataWriter.WriteLine("--" + Boundary + Chars.CR + Chars.LF);
-                DataWriter.Write(_ToPostDataParamFile(File));
+                DataWriter.Write(ToPostDataParamFile(File));
             EndDo;
             
             DataWriter.WriteLine("--" + Boundary + "--");
@@ -246,7 +246,7 @@ Function _HTTP(Val Method, Val Href, Query, Data, Files, Param = Undefined, Redi
     
     HTTPResponse = HTTPConnection.CallHTTPMethod(Method, HTTPRequest);
     
-    If Param.AllowRedirect And _IsRedirect(HTTPResponse.StatusCode) Then
+    If Param.AllowRedirect And IsRedirect(HTTPResponse.StatusCode) Then
         
         If Redirection > Param.MaxRedirectCount Then
             Raise RuntimeError(StrTemplate(
@@ -266,7 +266,7 @@ Function _HTTP(Val Method, Val Href, Query, Data, Files, Param = Undefined, Redi
         EndIf;
         Href = DecodeString(Href, StringEncodingMethod.URLInURLEncoding);
         
-        If _IsRelativeLocation(Href) Then
+        If IsRelativeLocation(Href) Then
             Href = URL.Origin + Href;
         EndIf;
         
@@ -287,14 +287,14 @@ Function _HTTP(Val Method, Val Href, Query, Data, Files, Param = Undefined, Redi
         
         
         // Query already parsed in URL and should not be used in redirection.
-        Return _HTTP(Method, Href, Undefined, Data, Param, Files, Redirection);
+        Return HTTP(Method, Href, Undefined, Data, Param, Files, Redirection);
     EndIf;
     
-    Return _Response(HTTPResponse, URL);
+    Return Response(HTTPResponse, URL);
     
 EndFunction
 
-Function _IsRedirect(StatusCode)
+Function IsRedirect(StatusCode)
     
     Return StatusCode = 301
         Or StatusCode = 302
@@ -304,21 +304,21 @@ Function _IsRedirect(StatusCode)
     
 EndFunction
 
-Function _IsRelativeLocation(Href)
+Function IsRelativeLocation(Href)
     
     Return Not StrFind(Href, "://");
     
 EndFunction
 
-Function _Response(HTTPResponse, URL)
+Function Response(HTTPResponse, URL)
     
     Self = DataProcessors.HTTPResponse.Create();
-    Self._Ctor(HTTPResponse, URL);
+    Self.Ctor(HTTPResponse, URL);
     Return Self;
     
 EndFunction
 
-Function _ToPostDataParamFiled(Field, Value)
+Function ToPostDataParamFiled(Field, Value)
     
     Stream = New MemoryStream();
     DataWriter = New DataWriter(Stream);
@@ -334,7 +334,7 @@ Function _ToPostDataParamFiled(Field, Value)
     
 EndFunction
 
-Function _ToPostDataParamFile(TransferedFile)
+Function ToPostDataParamFile(TransferedFile)
     
     Stream = New MemoryStream();
     DataWriter = New DataWriter(Stream);

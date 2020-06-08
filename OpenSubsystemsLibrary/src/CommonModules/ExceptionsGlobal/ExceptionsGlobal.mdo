@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ae005491-6de9-469f-b921-105ad3c3979e">
-  <name>GlobalExceptions</name>
+  <name>ExceptionsGlobal</name>
   <synonym>
     <key>en</key>
-    <value>Global exceptions</value>
+    <value>Exceptions global</value>
   </synonym>
   <global>true</global>
   <clientManagedApplication>true</clientManagedApplication>

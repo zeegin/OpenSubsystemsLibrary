@@ -5,7 +5,7 @@
     <key>en</key>
     <value>Update partial full text search index</value>
   </synonym>
-  <methodName>CommonModule.FullTextSearchImpl._UpdatePartialFullTextSearchIndex</methodName>
+  <methodName>CommonModule.FullTextSearchImpl.UpdatePartialFullTextSearchIndex</methodName>
   <use>true</use>
   <predefined>true</predefined>
   <restartCountOnFailure>3</restartCountOnFailure>

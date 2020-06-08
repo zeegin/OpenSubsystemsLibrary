@@ -6,9 +6,8 @@ Use 4 spaces per indentation level
 
 Make simple line, if function name is short.
 
+Yes:
 ```bsl
-// Yes:
-
 Function Foo(Param1, Param2)
     
     Return "Bar";
@@ -18,9 +17,8 @@ EndFunction
 
 More indentation included to distinguish this from the rest.
 
+Yes:
 ```bsl
-// Yes:
-
 Function LongFunctionName(
         Param1,
         Param2,
@@ -35,9 +33,8 @@ EndFunction
 
 Add some extra line on the conditional continuation line.
 
+Yes:
 ```bsl
-// Yes:
-
 If ThisIsOneIning
     And ThatIsAnotherThing Then
     
@@ -47,30 +44,31 @@ EndIf;
 
 The closing brace/bracket/parenthesis on multiline constructs must be lined up under the first character of the line that starts the multiline construct, as in:
 
+Yes:
 ```bsl
-// Yes:
-
 MyList = [
     1, 2, 3,
     4, 5, 6,
-]
+];
+```
 
-// Yes:
-
+Yes:
+```bsl
 Result = SomeFunctionThatTakesArguments(
-    'a', 'b', 'c',
-    'd', 'e', 'f',
-)
+    "First",
+    "Second",
+    "Third"
+);
+```
 
-// Yes:
-
-Result = SomeFunctionThatTakesArguments('a', 'b');
-
-// No:
-
-Result = SomeFunctionThatTakesArguments('a',
-                                        'b');
-
+Yes:
+```bsl
+Result = SomeFunctionThatTakesArguments("First", "Second");
+```
+No:
+```bsl
+Result = SomeFunctionThatTakesArguments("First",
+                                        "Second");
 ```
 
 ## Tabs or Spaces?
@@ -87,26 +85,25 @@ Limit all lines to a maximum of `120` characters.
 
 For decades the recommended style was to break after binary operators. But this can hurt readability in two ways: the operators tend to get scattered across different columns on the screen, and each operator is moved away from its operand and onto the previous line. Here, the eye has to do extra work to tell which items are added and which are subtracted:
 
-```bsl
-// No: operators sit far away from their operands
 
+No: operators sit far away from their operands
+```bsl
 Income = (GrossWages +
           TaxableInterest +
           (Dividends - QualifiedDividends) -
           IraDeduction -
-          StudentLoanInterest)
+          StudentLoanInterest);
 ```
 
 Following the tradition from mathematics usually results in more readable code:
 
-```bsl
 Yes: easy to match operators with operands
-
+```bsl
 Income = (GrossWages
           + TaxableInterest
           + (Dividends - QualifiedDividends)
           - IraDeduction
-          - StudentLoanInterest)
+          - StudentLoanInterest);
 ```
 
 ## Blank Lines
@@ -127,10 +124,12 @@ Yes: `Spam(Ham[1], Eggs(2))`
 
 No:  `Spam( Ham[ 1 ], Eggs (2) )`
 
-* Immediately before a comma, semicolon, or colon:
+* Immediately before a comma, semicolon, or colon,
+but used to separate commas when passing params into method:
 
-Yes: `Print(x,, y);`
+Yes: `Print(x, , y);`
 
+No:  `Print(x,, y);`
 No:  `Print(x , , y);`
 
 * Immediately before the open parenthesis that starts the argument list of a function call:
@@ -147,18 +146,18 @@ No:  `Dct ["key"] = Lst [Index]`
 
 * More than one space around an assignment (or other) operator to align it with another.
 
+Yes:
 ```bsl
-// Yes:
+First = 1;
+Second = 2;
+LongVariable = 3;
+```
 
-x = 1
-y = 2
-LongVariable = 3
-
-// No:
-
-x            = 1
-y            = 2
-LongVariable = 3
+No:
+```bsl
+First        = 1;
+Second       = 2;
+LongVariable = 3;
 ```
 ## Other Recommendations
 
@@ -168,33 +167,33 @@ LongVariable = 3
 
 * If operators with different priorities are used, consider adding whitespace around the operators with the lowest priority(ies). Use your own judgment; however, never use more than one space, and always have the same amount of whitespace on both sides of a binary operator.
 
+Yes:
 ```bsl
-// Yes:
+Index = Index + 1;
+PosX = PosX*2 - 1;
+Hypot2 = PosX*PosX + PosY*PosY;
+c = (a+b) * (a-b);
+```
 
-i = i + 1
-x = x*2 - 1
-Hypot2 = x*x + y*y
-c = (a+b) * (a-b)
-
-// No:
-
-i=i+1
-x = x * 2 - 1
-Hypot2 = x * x + y * y
-c = (a + b) * (a - b)
+No:
+```bsl
+Index=Index+1;
+PosX = PosX * 2 - 1;
+Hypot2 = PosX * PosX + PosY * PosY;
+c = (a + b) * (a - b);
 ```
 
 * Use spaces around the = sign when used to indicate a keyword argument or a default parameter value.
 
+Yes:
 ```bsl
-// Yes:
-
 Function Complex(real, imag = 0.0)
     Return Magic(real, imag);
 EndFunction
+```
 
-// No:
-
+No:
+```bsl
 Function Complex(real, imag=0.0)
     Return Magic(real, imag);
 EndFunction
@@ -202,19 +201,19 @@ EndFunction
 
 * Compound statements (multiple statements on the same line) are generally discouraged.
 
+Yes:
 ```bsl
-// Yes:
-
-If foo='blah' Then
+If Foo = "Blah" Then
     DoBlahThing();
 EndIf;
 DoOne();
 DoTwo();
 DoThree();
+```
 
-// No:
-
-If foo = 'blah' Then DoBlahThing() EndIf;
+No:
+```bsl
+If Foo = "Blah" Then DoBlahThing() EndIf;
 DoOne(); DoTwo(); DoThree();
 ```
 
@@ -255,9 +254,8 @@ The following naming styles are commonly distinguished:
 * `mixedCase` (differs from `CapitalizedWords` by initial lowercase character!)
 * `Capitalized_Words_With_Underscores` (ugly!)
 
-In addition, the following special forms using leading or trailing underscores are recognized (these can generally be combined with any case convention):
+In addition, the following special forms using trailing underscores are recognized (these can generally be combined with any case convention):
 
-* `_SingleLeadingUnderscore`: weak "internal use" indicator.
 * `SingleTrailingUnderscore_`: used by convention to avoid conflicts with 1C:Enterprise keyword.
 
 ## Global Variable Names
@@ -281,12 +279,8 @@ Any backwards compatibility guarantees apply only to public interfaces. Accordin
 Without underscore method name considered public, undescored declares them to be provisional or internal interfaces exempt from the usual backwards compatibility guarantees.
 
 Totaly 2 scope:
-- Public - using for everyone with backward compatibility.
-- Private - using inside only one subsystem.
-
-Public types with `CamelCases`.
-
-Private starts with `_` (dash) and types with `_CamelCases`.
+- `Public` - using for everyone with backward compatibility.
+- `Private` - using inside only one subsystem.
 
 ## Function as structure builder
 

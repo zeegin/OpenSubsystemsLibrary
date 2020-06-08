@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cef69da7-a541-4503-868e-a53f33cd1f2f">
+  <name>Test_Assert</name>
+  <synonym>
+    <key>en</key>
+    <value>Assert</value>
+  </synonym>
+  <server>true</server>
+</mdclass:CommonModule>

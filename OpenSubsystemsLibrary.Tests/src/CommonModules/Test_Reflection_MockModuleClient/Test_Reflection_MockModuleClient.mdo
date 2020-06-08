@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fdfc35ea-dba7-42fe-b479-00d6a121fb91">
+  <name>Test_Reflection_MockModuleClient</name>
+  <synonym>
+    <key>en</key>
+    <value>Reflection mock module client</value>
+  </synonym>
+  <clientManagedApplication>true</clientManagedApplication>
+</mdclass:CommonModule>

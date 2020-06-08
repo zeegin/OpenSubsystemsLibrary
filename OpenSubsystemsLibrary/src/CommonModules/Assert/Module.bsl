@@ -2,112 +2,73 @@
 
 Procedure AreEqual(Expected, Actual, Message = "") Export
     
-    If IsBlankString(Message) Then 
-        Message = StrTemplate(
-            NStr("en = 'Expected: <%1> Actual: <%2>.';
-                 |ru = 'Ожидается: <%1> Текущее: <%2>.'"),
-            Expected,
-            Actual
-        );
+    If Expected <> Actual Then
+        Raise AssertError(Expected, Actual, Message);
     EndIf;
-    
-    IsTrue(Expected = Actual, Message);
     
 EndProcedure
 
 Procedure AreNotEqual(NotExpected, Actual, Message = "") Export
     
-    If IsBlankString(Message) Then 
-        Message = StrTemplate(
-            NStr("en = 'Not expected: <%1> Actual: <%2>';
-                 |ru = 'Не ожидается: <%1> Текущее: <%2>'"),
-            NotExpected,
-            Actual
-        );
+    If NotExpected = Actual Then
+        Raise AssertError(NotExpected, Actual, Message);
     EndIf;
-    
-    IsFalse(NotExpected = Actual, Message);
     
 EndProcedure
 
 Procedure IsTrue(Condition, Message = "") Export
     
-    If TypeOf(Condition) <> Type("Boolean") Then
-        Raise TypeError(
-            NStr("en = 'Wrong condition in assert.'; 
-                 |ru = 'Неправильное выражение в утверждении.'")
-        );
-    EndIf;
-    
     If Not Condition Then
-        If IsBlankString(Message) Then 
-            Message = 
-                NStr("en = 'Condition is false.'; 
-                     |ru = 'Выражение ложно.'");
-        EndIf;
-        
-        Raise AssertError(Message);
+        Raise AssertError(True, Condition, Message);
     EndIf;
     
 EndProcedure
 
 Procedure IsFalse(Condition, Message = "") Export
     
-    If IsBlankString(Message) Then 
-        Message = 
-            NStr("en = 'Condition is true.'; 
-                 |ru = 'Выражение истинно.'");
+    If Condition Then
+        Raise AssertError(False, Not Condition, Message);
     EndIf;
-    
-    IsTrue(Not Condition, Message);
     
 EndProcedure
 
 Procedure IsInstanceOfType(ExpectedType, Value, Message = "") Export
     
-    AreEqual(TypeOf(Value), Type(ExpectedType), Message);
-    
-EndProcedure
-
-Procedure IsNotInstanceOfType(WrongType, Value, Message = "") Export
-    
-    AreNotEqual(TypeOf(Value), Type(WrongType), Message);
+    If TypeOf(Value) <> Type(ExpectedType) Then
+        Raise AssertError(Type(ExpectedType), TypeOf(Value), Message);
+    EndIf;
     
 EndProcedure
 
 Procedure IsUndefined(Value, Message = "") Export
     
-    If IsBlankString(Message) Then 
-        Message = 
-            NStr("en = 'Value is not undefined.'; 
-                 |ru = 'Значение определено.'");
+    If Value <> Undefined Then
+        Raise AssertError(Undefined, Value, Message);
     EndIf;
-    
-    AreEqual(Value, Undefined, Message);
     
 EndProcedure
 
 Procedure IsNotUndefined(Value, Message = "") Export
     
-    If IsBlankString(Message) Then 
-        Message = 
-            NStr("en = 'Value is undefined.'; 
-                 |ru = 'Значение неопределено.'");
+    If Value = Undefined Then
+        Raise AssertError(Undefined, Value, Message);
     EndIf;
-    
-    AreNotEqual(Value, Undefined, Message);
     
 EndProcedure
 
 Procedure IsNull(Value, Message = "") Export
     
-    AreEqual(Value, Null, Message);
+    If Value <> Null Then
+        Raise AssertError(Null, Value, Message);
+    EndIf;
     
 EndProcedure
 
 Procedure IsNotNull(Value, Message = "") Export
     
-    AreNotEqual(Value, Null, Message);
+    If Value = Null Then
+        Raise AssertError(Null, Value, Message);
+    EndIf;
     
 EndProcedure
 
@@ -116,37 +77,37 @@ Procedure IsLegalException(LegalErrorFragment, ErrorInfo, Message = "") Export
     ErrorDescription = DetailErrorDescription(ErrorInfo);
     
     If Not StrFind(ErrorDescription, LegalErrorFragment) Then
-        If IsBlankString(Message) Then 
-            Message = StrTemplate(
-                NStr("en = 'Exception is not legal:
-                           |%1';
-                           |Legal:';
-                           |%2';
-                     |ru = 'Недопустимое исключение:
-                           |%1'
-                           |Допустимо:'
-                           |%2'"),
-                ErrorDescription,
-                LegalErrorFragment
-            );
-        EndIf;
-        
-        Raise AssertError(Message);
+        Raise AssertError(LegalErrorFragment, ErrorDescription, Message);
     EndIf;
     
 EndProcedure
 
 Procedure AreCollectionEmpty(Value, Message = "") Export
     
-    If TypeOf(Value) = Type("Array")
-        Or TypeOf(Value) = Type("FixedArray")
-        Or TypeOf(Value) = Type("ValueTable") Then
-        
-        IsTrue(Value.Count() = 0, Message);
-        Return;
+    If Value.Count() = 0 Then 
+        Raise AssertError(
+            NStr("ru = 'Пустая коллекция.'; en = 'Empty collection.'"),
+            Value,
+            Message);
     EndIf;
     
-    Raise TypeError("Not a collection.");
+EndProcedure
+
+&AtServer
+Procedure AreUserMessagesContains(LegalMessageFragment, Message = "") Export
+    
+    UserMessages = GetUserMessages();
+    
+    UserMessagesParts = New Array;
+    
+    For Each UserMessage In UserMessages Do
+        If StrFind(UserMessage.Text, LegalMessageFragment) Then
+            Return;
+        EndIf;
+        UserMessagesParts.Add(UserMessage.Text);
+    EndDo;
+    
+    Raise AssertError(LegalMessageFragment, StrConcat(UserMessagesParts, Chars.LF), Message);
     
 EndProcedure
 

@@ -1,4 +1,4 @@
-// BSLLS:UsingHardcodePath-off
+// BSLLS:UsingHardcodeNetworkAddress-off
 
 // @unit-test
 Procedure Test_URLParsed(Context) Export
@@ -410,7 +410,7 @@ Procedure Test_GetTimeout(Context) Export
             NStr(
                 "en = 'Timeout exceeded';
                 |ru = 'Превышено время ожидания'",
-                Lang.SystemLanguage()
+                Locale.SystemLanguage()
             ),
             ErrorInfo()
         );
