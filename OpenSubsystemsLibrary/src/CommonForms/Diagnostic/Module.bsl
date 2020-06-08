@@ -9,6 +9,9 @@ Procedure OnCreateAtServer(Cancel, StandardProcessing)
     IsLinuxClientAtServer = Platform.IsLinuxClient();
     IsMacOSClientAtServer = Platform.IsMacOSClient();
     IsFileModeAtServer = Platform.IsFileMode();
+    IsWindowsServer = Platform.IsWindowsServer();
+    IsLinuxServer = Platform.IsLinuxServer();
+    IsMacOSServer = Platform.IsMacOSServer();
     
 EndProcedure
 
