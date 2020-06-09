@@ -177,7 +177,7 @@ Function HTTP(Val Method, Val Href, Query, Data, Files, Param = Undefined, Redir
                 HTTPRequest.SetBodyFromString(
                     HTTPRequests.ToFormURLEncode(Data),
                     TextEncoding.UTF8,
-                    ByteOrderMarkUsage.DontUse
+                    ByteOrderMarkUse.DontUse
                 );
                 
             ElsIf TypeOf(Data) = Type("String") Then
@@ -191,7 +191,7 @@ Function HTTP(Val Method, Val Href, Query, Data, Files, Param = Undefined, Redir
                 HTTPRequest.SetBodyFromString(
                     Data,
                     TextEncoding.UTF8,
-                    ByteOrderMarkUsage.DontUse
+                    ByteOrderMarkUse.DontUse
                 );
                 
             Else 

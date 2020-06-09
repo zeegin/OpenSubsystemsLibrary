@@ -1,4 +1,5 @@
 // BSLLS:UsingHardcodeNetworkAddress-off
+// BSLLS:Typo-off
 
 // @unit-test
 Procedure Test_URLParsed(Context) Export
@@ -180,7 +181,7 @@ Procedure Test_ResponseAsJsonGet(Context) Export
     
     Result = HTTPRequests.Get("http://httpbin.org/get").Json();
     
-    Assert.AreEqual("https://httpbin.org/get", Result["url"]);
+    Assert.AreEqual("http://httpbin.org/get", Result["url"]);
     
 EndProcedure
 
@@ -189,7 +190,7 @@ Procedure Test_ResponseAsJsonPost(Context) Export
     
     Result = HTTPRequests.Post("http://httpbin.org/post").Json();
     
-    Assert.AreEqual("https://httpbin.org/post", Result["url"]);
+    Assert.AreEqual("http://httpbin.org/post", Result["url"]);
     
 EndProcedure
 
@@ -255,7 +256,7 @@ Procedure Test_PostJsonWithDate(Context) Export
     
     Result = HTTPRequests.Post("http://httpbin.org/post", Json.Dumps(Object)).Json(DeserializerSettings);
     
-    Assert.AreEqual("https://httpbin.org/post", Result["url"]);
+    Assert.AreEqual("http://httpbin.org/post", Result["url"]);
     Assert.AreEqual('20190121002400', Result["json"]["Дата"]);
     Assert.AreEqual(5, Result["json"]["Число"]);
     Assert.IsTrue(Result["json"]["Булево"]);
@@ -425,7 +426,7 @@ Procedure Test_GetRelativeRedirect(Context) Export
     Result = Response.Json();
     
     Assert.AreEqual(200, Response.StatusCode);
-    Assert.AreEqual("https://httpbin.org/get", Result["url"]);
+    Assert.AreEqual("http://httpbin.org/get", Result["url"]);
     
 EndProcedure
 
@@ -436,7 +437,7 @@ Procedure Test_GetAbsoluteRedirect(Context) Export
     Result = Response.Json();
     
     Assert.AreEqual(200, Response.StatusCode);
-    Assert.AreEqual("https://httpbin.org/get", Result["url"]);
+    Assert.AreEqual("http://httpbin.org/get", Result["url"]);
     
 EndProcedure
 

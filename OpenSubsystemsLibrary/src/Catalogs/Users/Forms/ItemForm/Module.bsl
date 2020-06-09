@@ -1,5 +1,4 @@
-
-#Region Events
+#Region FormEventHandlers
 
 &AtServer
 Procedure OnReadAtServer(CurrentObject)
@@ -29,6 +28,10 @@ Procedure OnWriteAtServer(Cancel, CurrentObject, WriteParameters)
     EndIf;
     
 EndProcedure
+
+#EndRegion
+
+#Region FormHeaderItemsEventHandlers
 
 &AtClient
 Procedure RunModeClearing(Item, StandardProcessing)
