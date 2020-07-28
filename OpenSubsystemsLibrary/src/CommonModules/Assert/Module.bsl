@@ -84,9 +84,20 @@ EndProcedure
 
 Procedure AreCollectionEmpty(Value, Message = "") Export
     
+    If Value.Count() <> 0 Then 
+        Raise AssertError(
+            NStr("ru = 'Не пустая коллекция.'; en = 'Collection isn't empty.'"),
+            Value,
+            Message);
+    EndIf;
+    
+EndProcedure
+
+Procedure AreCollectionNotEmpty(Value, Message = "") Export
+    
     If Value.Count() = 0 Then 
         Raise AssertError(
-            NStr("ru = 'Пустая коллекция.'; en = 'Empty collection.'"),
+            NStr("ru = 'Пустая коллекция.'; en = 'Collection is empty.'"),
             Value,
             Message);
     EndIf;

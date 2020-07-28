@@ -3,217 +3,217 @@
 @tree
 @classname=ModuleExceptionPath
 
-Feature: HTTPRequests
+Feature: OpenSubsystemsLibrary.Tests.Test_HTTPRequests
 	As Developer
 	I want the returns value to be equal to expected value
 	That I can guarantee the execution of the method
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_URLParsed
+Scenario: Test_URLParsed
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_URLParsed(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_URLConvertHostnameToLower
+Scenario: Test_URLConvertHostnameToLower
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_URLConvertHostnameToLower(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_URLDontConvertPathToLower
+Scenario: Test_URLDontConvertPathToLower
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_URLDontConvertPathToLower(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_URLRemoveDefaultPort
+Scenario: Test_URLRemoveDefaultPort
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_URLRemoveDefaultPort(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_URLUnderstandsSlashAsPath
+Scenario: Test_URLUnderstandsSlashAsPath
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_URLUnderstandsSlashAsPath(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_URLIPv6
+Scenario: Test_URLIPv6
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_URLIPv6(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_URLIPv6Auth
+Scenario: Test_URLIPv6Auth
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_URLIPv6Auth(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_URLIPv4
+Scenario: Test_URLIPv4
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_URLIPv4(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_URLIPv4Auth
+Scenario: Test_URLIPv4Auth
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_URLIPv4Auth(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_URLDontConvertAuthToLower
+Scenario: Test_URLDontConvertAuthToLower
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_URLDontConvertAuthToLower(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_URLAcceptAtInPath
+Scenario: Test_URLAcceptAtInPath
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_URLAcceptAtInPath(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_URLSemanticAttack
+Scenario: Test_URLSemanticAttack
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_URLSemanticAttack(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_PassQueryToRequest
+Scenario: Test_PassQueryToRequest
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_PassQueryToRequest(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_PassQueryToRequestMult
+Scenario: Test_PassQueryToRequestMult
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_PassQueryToRequestMult(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_ResponseAsJsonGet
+Scenario: Test_ResponseAsJsonGet
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_ResponseAsJsonGet(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_ResponseAsJsonPost
+Scenario: Test_ResponseAsJsonPost
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_ResponseAsJsonPost(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_ResponseAsString
+Scenario: Test_ResponseAsString
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_ResponseAsString(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_ResponseAsBinaryData
+Scenario: Test_ResponseAsBinaryData
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_ResponseAsBinaryData(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_GetJsonToStructure
+Scenario: Test_GetJsonToStructure
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_GetJsonToStructure(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_PostJson
+Scenario: Test_PostJson
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_PostJson(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_PostJsonWithDate
+Scenario: Test_PostJsonWithDate
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_PostJsonWithDate(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_PutJson
+Scenario: Test_PutJson
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_PutJson(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_BasicAuthByURL
+Scenario: Test_BasicAuthByURL
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_BasicAuthByURL(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_BasicAuthByParam
+Scenario: Test_BasicAuthByParam
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_BasicAuthByParam(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_BasicAuthByParamOverride
+Scenario: Test_BasicAuthByParamOverride
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_BasicAuthByParamOverride(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_Error404
+Scenario: Test_Error404
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_Error404(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_Options
+Scenario: Test_Options
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_Options(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_Head
+Scenario: Test_Head
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_Head(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_Delete
+Scenario: Test_Delete
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_Delete(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_Patch
+Scenario: Test_Patch
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_Patch(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_GetWithCustomHeader
+Scenario: Test_GetWithCustomHeader
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_GetWithCustomHeader(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_PostFormData
+Scenario: Test_PostFormData
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_PostFormData(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_GetTimeout
+Scenario: Test_GetTimeout
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_GetTimeout(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_GetRelativeRedirect
+Scenario: Test_GetRelativeRedirect
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_GetRelativeRedirect(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_GetAbsoluteRedirect
+Scenario: Test_GetAbsoluteRedirect
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_GetAbsoluteRedirect(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_GetDisabledRedirect
+Scenario: Test_GetDisabledRedirect
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_GetDisabledRedirect(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_GetTooMoreRedirect
+Scenario: Test_GetTooMoreRedirect
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_GetTooMoreRedirect(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_GetGZip
+Scenario: Test_GetGZip
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_GetGZip(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_GetGZipYaRu
+Scenario: Test_GetGZipYaRu
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_GetGZipYaRu(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_PostMultipartFormDataAsDataFile
+Scenario: Test_PostMultipartFormDataAsDataFile
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_PostMultipartFormDataAsDataFile(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_PostMultipartFormDataAsStringFile
+Scenario: Test_PostMultipartFormDataAsStringFile
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_PostMultipartFormDataAsStringFile(Context());' |
 
 @OnServer
-Scenario: Test_HTTPRequests (server): Test_PostMultipartFormDataAsDataAndFiles
+Scenario: Test_PostMultipartFormDataAsDataAndFiles
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_PostMultipartFormDataAsDataAndFiles(Context());' |

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="23318486-0226-452f-9f22-5505e7aa7a40">
+  <name>SystemImplServerCall</name>
+  <synonym>
+    <key>en</key>
+    <value>System impl server call</value>
+  </synonym>
+  <server>true</server>
+  <serverCall>true</serverCall>
+</mdclass:CommonModule>

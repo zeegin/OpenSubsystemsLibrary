@@ -1,3 +1,5 @@
+// BSLLS:ExecuteExternalCodeInCommonModule-off
+
 #Region Public
 
 // Returns reference to the common module or manager module by name. 

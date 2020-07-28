@@ -11,13 +11,17 @@
   <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="d1f2b399-6ccb-434c-8eaf-432110850934"/>
   <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="ebfc8180-7ac5-480c-8680-66b7b8942fe6"/>
   <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="d79c0de9-8a57-4d07-807e-a905a5dafe52"/>
-  <configurationExtensionCompatibilityMode>8.3.14</configurationExtensionCompatibilityMode>
+  <configurationExtensionCompatibilityMode>8.3.16</configurationExtensionCompatibilityMode>
   <defaultRunMode>ManagedApplication</defaultRunMode>
   <usePurposes>PersonalComputer</usePurposes>
   <usePurposes>MobileDevice</usePurposes>
   <defaultRoles>Role.FullAccess</defaultRoles>
   <vendor>Ingvar Vilkman</vendor>
   <version>0.1.1</version>
+  <requiredMobileApplicationPermissions>
+    <permission>AllowOSBackup</permission>
+    <use>true</use>
+  </requiredMobileApplicationPermissions>
   <mainSectionPicture/>
   <defaultLanguage>Language.English</defaultLanguage>
   <copyright>
@@ -27,8 +31,8 @@
   <dataLockControlMode>Managed</dataLockControlMode>
   <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
   <modalityUseMode>DontUse</modalityUseMode>
-  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
-  <compatibilityMode>8.3.14</compatibilityMode>
+  <synchronousExtensionAndAddInCallUseMode>DontUse</synchronousExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.16</compatibilityMode>
   <languages uuid="c568f157-83c5-4b6e-8821-f9eda36d18f3">
     <name>English</name>
     <synonym>
@@ -59,10 +63,12 @@
   <commonPictures>CommonPicture.AdministrativeTools</commonPictures>
   <commonPictures>CommonPicture.Demo</commonPictures>
   <commonPictures>CommonPicture.DevelopmentTools</commonPictures>
+  <sessionParameters>SessionParameter.ClientContext</sessionParameters>
   <sessionParameters>SessionParameter.CurrentUser</sessionParameters>
   <roles>Role.BaseAccess</roles>
   <roles>Role.FullAccess</roles>
   <commonModules>CommonModule.Assert</commonModules>
+  <commonModules>CommonModule.BackgroundWorker</commonModules>
   <commonModules>CommonModule.Collections</commonModules>
   <commonModules>CommonModule.Cryptography</commonModules>
   <commonModules>CommonModule.Database</commonModules>
@@ -74,13 +80,16 @@
   <commonModules>CommonModule.Json</commonModules>
   <commonModules>CommonModule.Locale</commonModules>
   <commonModules>CommonModule.OS</commonModules>
+  <commonModules>CommonModule.Platform</commonModules>
   <commonModules>CommonModule.Reflection</commonModules>
   <commonModules>CommonModule.Strings</commonModules>
+  <commonModules>CommonModule.SystemImplClient</commonModules>
+  <commonModules>CommonModule.SystemImplServerCall</commonModules>
   <commonModules>CommonModule.Users</commonModules>
   <scheduledJobs>ScheduledJob.MergePartialFullTextSearchIndex</scheduledJobs>
   <scheduledJobs>ScheduledJob.UpdateDataHistory</scheduledJobs>
   <scheduledJobs>ScheduledJob.UpdatePartialFullTextSearchIndex</scheduledJobs>
-  <commonForms>CommonForm.HomePage</commonForms>
+  <commonForms>CommonForm.Diagnostic</commonForms>
   <catalogs>Catalog.UserGroups</catalogs>
   <catalogs>Catalog.UserRoles</catalogs>
   <catalogs>Catalog.Users</catalogs>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="774de592-3eb9-46b0-8045-42f96038d5d2">
+  <name>SystemImplClient</name>
+  <synonym>
+    <key>en</key>
+    <value>System impl client</value>
+  </synonym>
+  <clientManagedApplication>true</clientManagedApplication>
+</mdclass:CommonModule>

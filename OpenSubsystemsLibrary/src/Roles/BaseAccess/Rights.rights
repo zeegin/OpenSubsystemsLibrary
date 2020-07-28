@@ -51,6 +51,17 @@
 		</right>
 	</object>
 	<object>
+		<name>SessionParameter.ClientContext</name>
+		<right>
+			<name>Get</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Set</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Configuration.OpenSubsystemsLibrary</name>
 		<right>
 			<name>ThinClient</name>
@@ -62,6 +73,26 @@
 		</right>
 		<right>
 			<name>MobileClient</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeNormal</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeEmbeddedWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeFullscreenWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeKiosk</name>
 			<value>true</value>
 		</right>
 		<right>

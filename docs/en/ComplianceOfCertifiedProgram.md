@@ -10,7 +10,7 @@
 
 1.4. We use only the standard documented features of the 1C:Enterprise platform.
 
-1.5. **!!! In the plans...** This is a requirement for CI/CD, not yet implemented.
+1.5. **!!! In the plans... [#18](https://github.com/zeegin/OpenSubsystemsLibrary/issues/18)** This is a requirement for CI/CD, not yet implemented.
 
 1.6. We do not use the logo of 1C or 1C:Franchisee. Also, we have no plans to apply for certification 1C:Compatible. Despite the fact that we fulfill the requirements for this certification :)
 
@@ -35,15 +35,15 @@
 
 2.1.6. Library correctly works in multiple time zones.
 
-2.1.7. **!!! In the plans...** This is a requirement for the subsystem "System", not yet implemented.
+2.1.7. **!!! In the plans... [#19](https://github.com/zeegin/OpenSubsystemsLibrary/issues/19)** This is a requirement for the subsystem "System", not yet implemented.
 
 2.1.8. We don't use AddIns in the moment.
 
 2.1.9. We write our copyright in the configuration properties for our demo configuration, but you can free rewrite it in your end-product.
 
-2.2.1. **!!! In the plans...** This is a requirement for the subsystem "Update", not yet implemented.
+2.2.1. **!!! In the plans... [#20](https://github.com/zeegin/OpenSubsystemsLibrary/issues/20)** This is a requirement for the subsystem "Update", not yet implemented.
 
-2.2.2. **!!! In the plans...** This is a requirement for the subsystem "Update", not yet implemented.
+2.2.2. **!!! In the plans... [#20](https://github.com/zeegin/OpenSubsystemsLibrary/issues/20)** This is a requirement for the subsystem "Update", not yet implemented.
 
 2.3.1. Metadata names to contains not over 80 chars is controlled by 1C:Designer and 1C:EDT.
 
