@@ -229,9 +229,9 @@ Function HTTP(Val Method, Val Href, Query, Data, Files, Param = Undefined, Redir
     EndIf;
     
     Proxy = New InternetProxy(True);
-  	// getproxylist.com
-	// Proxy = New InternetProxy(False);
-	// Proxy.Set("https", "79.115.245.227", 8080);
+    // getproxylist.com
+    // Proxy = New InternetProxy(False);
+    // Proxy.Set("https", "79.115.245.227", 8080);
     
     HTTPConnection = New HTTPConnection(
         URL.Host,

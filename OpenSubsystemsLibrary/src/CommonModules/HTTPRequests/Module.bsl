@@ -376,7 +376,7 @@ Function DefaultHeaders()
 #If MobileAppServer Then
     Self.Insert("Accept", "*/*");
 #Else // Desktop
-	Self.Insert("Accept-Encoding", "gzip");
+    Self.Insert("Accept-Encoding", "gzip");
 #EndIf
     
     Return Self;

@@ -17,6 +17,7 @@
   <usePurposes>PersonalComputer</usePurposes>
   <usePurposes>MobileDevice</usePurposes>
   <defaultRoles>Role.FullAccess</defaultRoles>
+  <defaultRoles>Role.InteractiveOpenExt</defaultRoles>
   <vendor>Ingvar Vilkman</vendor>
   <version>0.1.1</version>
   <usedMobileApplicationFunctionalities>
@@ -37,7 +38,8 @@
   <dataLockControlMode>Managed</dataLockControlMode>
   <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
   <modalityUseMode>DontUse</modalityUseMode>
-  <compatibilityMode>8.3.16</compatibilityMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.18</compatibilityMode>
   <languages uuid="c568f157-83c5-4b6e-8821-f9eda36d18f3">
     <name>English</name>
     <synonym>
@@ -72,6 +74,7 @@
   <sessionParameters>SessionParameter.CurrentUser</sessionParameters>
   <roles>Role.BaseAccess</roles>
   <roles>Role.FullAccess</roles>
+  <roles>Role.InteractiveOpenExt</roles>
   <commonModules>CommonModule.Assert</commonModules>
   <commonModules>CommonModule.BackgroundWorker</commonModules>
   <commonModules>CommonModule.Collections</commonModules>

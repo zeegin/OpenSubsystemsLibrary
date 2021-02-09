@@ -33,7 +33,7 @@ http://capralow.ru/edt/bslls.validator/latest/
     - Click **Run As** and click **1C:Enterprise thin client**.
     - Select the infobase or create a new one (Waring! if you select the existing infobase, you can lost your data).
     - Change the access type to **Infobase**.
-    - Select a platform to **<8.3.16>**.
+    - Select a platform to **<8.3.18>**.
     - Click **OK**.
 
 6. Run unit tests:

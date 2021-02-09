@@ -4,7 +4,7 @@ Function Contains(Self, Value) Export
     
     If TypeOf(Self) = Type("Array")
         Or TypeOf(Self) = Type("FixedArray") Then
-        	
+        
         Return Self.Find(Value) <> Undefined;
     EndIf;
     
@@ -13,4 +13,3 @@ Function Contains(Self, Value) Export
 EndFunction
 
 #EndRegion
-

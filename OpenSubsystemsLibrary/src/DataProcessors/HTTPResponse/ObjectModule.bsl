@@ -43,7 +43,12 @@ EndFunction
 
 Function Text() Export
     
-    Stream = BinaryData().OpenStreamForRead();
+    BinaryData = BinaryData();
+    If Not ValueIsFilled(BinaryData) Then
+        Return "";
+    EndIf;
+    
+    Stream = BinaryData.OpenStreamForRead();
     
     TextReader = New TextReader(Stream, Encoding);
     Text = TextReader.Read();
@@ -60,7 +65,12 @@ Function Json(DeserializerSettings = Undefined) Export
         DeserializerSettings.Encoding = Encoding;
     EndIf;
     
-    Return Json.Loads(BinaryData(), DeserializerSettings);
+    BinaryData = BinaryData();
+    If Not ValueIsFilled(BinaryData) Then
+        Return ?(DeserializerSettings.ReadToMap, New Map, New Structure);
+    EndIf;
+    
+    Return Json.Loads(BinaryData, DeserializerSettings);
     
 EndFunction
 

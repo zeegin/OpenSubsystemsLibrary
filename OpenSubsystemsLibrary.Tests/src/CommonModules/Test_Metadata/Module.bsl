@@ -4,26 +4,37 @@ Procedure Test_UnsupportedConfigurationProperties(Context) Export
 #If Not MobileAppServer Then
     Assert.AreEqual(
         ClientRunMode.ManagedApplication,
-        Metadata.DefaultRunMode
+        Metadata.DefaultRunMode,
+        "DefaultRunMode"
     );
 #EndIf
-    Assert.IsFalse(Metadata.UseManagedFormInOrdinaryApplication);
-    Assert.IsFalse(Metadata.UseOrdinaryFormInManagedApplication);
+    Assert.IsFalse(
+        Metadata.UseManagedFormInOrdinaryApplication,
+        "UseManagedFormInOrdinaryApplication"
+    );
+    Assert.IsFalse(
+        Metadata.UseOrdinaryFormInManagedApplication,
+        "UseOrdinaryFormInManagedApplication"
+    );
     Assert.AreEqual(
         Metadata.ObjectProperties.ScriptVariant.English,
-        Metadata.ScriptVariant
+        Metadata.ScriptVariant,
+        "ScriptVariant"
     );
     Assert.AreEqual(
         Metadata.ObjectProperties.DefaultDataLockControlMode.Managed,
-        Metadata.DataLockControlMode
+        Metadata.DataLockControlMode,
+        "DataLockControlMode"
     );
     Assert.AreEqual(
         Metadata.ObjectProperties.ModalityUseMode.DontUse,
-        Metadata.ModalityUseMode
+        Metadata.ModalityUseMode,
+        "ModalityUseMode"
     );
     Assert.AreEqual(
         Metadata.ObjectProperties.SynchronousPlatformExtensionAndAddInCallUseMode.DontUse,
-        Metadata.SynchronousPlatformExtensionAndAddInCallUseMode
+        Metadata.SynchronousPlatformExtensionAndAddInCallUseMode,
+        "SynchronousPlatformExtensionAndAddInCallUseMode"
     );
     
 EndProcedure
@@ -33,9 +44,18 @@ Procedure Test_UnsupportedCommonModuleProperties(Context) Export
     
     For Each CommonModule In Metadata.CommonModules Do
         
-        Assert.IsFalse(CommonModule.ExternalConnection);
-        Assert.IsFalse(CommonModule.ClientOrdinaryApplication);
-        Assert.IsFalse(CommonModule.Privileged);
+        Assert.IsFalse(
+            CommonModule.ExternalConnection,
+            "ExternalConnection at " + CommonModule.Name
+        );
+        Assert.IsFalse(
+            CommonModule.ClientOrdinaryApplication,
+            "ClientOrdinaryApplication at " + CommonModule.Name
+        );
+        Assert.IsFalse(
+            CommonModule.Privileged,
+            "Privileged at " + CommonModule.Name
+        );
         
     EndDo;
     
@@ -46,12 +66,32 @@ Procedure Test_UnsupportedRoleRights(Context) Export
     
     For Each Role In Metadata.Roles Do
         
-        Assert.IsFalse(AccessRight("ThickClient", Metadata, Role));
-        Assert.IsFalse(AccessRight("ExternalConnection", Metadata, Role));
-        Assert.IsFalse(AccessRight("Automation", Metadata, Role));
-        Assert.IsFalse(AccessRight("CollaborationSystemInfoBaseRegistration", Metadata, Role));
-        // Assert.IsFalse(AccessRight("InteractiveOpenExtDataProcessors", Metadata, Role));
-        // Assert.IsFalse(AccessRight("InteractiveOpenExtReports", Metadata, Role));
+        Assert.IsFalse(
+            AccessRight("ThickClient", Metadata, Role),
+            "ThickClient at " + Role.Name
+        );
+        Assert.IsFalse(
+            AccessRight("ExternalConnection", Metadata, Role),
+            "ExternalConnection at " + Role.Name
+        );
+        Assert.IsFalse(
+            AccessRight("Automation", Metadata, Role),
+            "Automation at " + Role.Name
+        );
+        Assert.IsFalse(
+            AccessRight("CollaborationSystemInfoBaseRegistration", Metadata, Role),
+            "CollaborationSystemInfoBaseRegistration at " + Role.Name
+        );
+        If Role <> Metadata.Roles.InteractiveOpenExt Then
+            Assert.IsFalse(
+                AccessRight("InteractiveOpenExtDataProcessors", Metadata, Role),
+                "InteractiveOpenExtDataProcessors at " + Role.Name
+            );
+            Assert.IsFalse(
+                AccessRight("InteractiveOpenExtReports", Metadata, Role),
+                "InteractiveOpenExtReports at " + Role.Name
+            );
+        EndIf;
         
     EndDo;
     
