@@ -24,8 +24,8 @@ Open Subsystems Library provide what you don't want to do — no more, no less.
 ## Dependencies
 
 This project built with:
-1. [1C:Enterprise](https://1c-dn.com) 8.3.16.1502+ (8.3.16 compatibility mode)
-2. [1C:Enterprise Development Tools](https://edt.1c.ru) 2020.4 RC1
+1. [1C:Enterprise](https://1c-dn.com) 8.3.18.1289+ (8.3.16 compatibility mode)
+2. [1C:Enterprise Development Tools](https://edt.1c.ru) 2020.6.1
 3. [1Unit](https://github.com/DoublesunRUS/ru.capralow.dt.unit.launcher)
 4. [vanessa-automation](https://github.com/Pr-Mex/vanessa-automation)
 5. [dt.bslls.validator](https://github.com/DoublesunRUS/ru.capralow.dt.bslls.validator)

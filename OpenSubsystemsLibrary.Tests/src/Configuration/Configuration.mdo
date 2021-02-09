@@ -20,6 +20,7 @@
   <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="8c3acf03-9871-49c8-a540-02956c417343"/>
   <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="6d763206-ccd1-4de2-9d4b-0329928cdbfb"/>
   <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="05ee9299-8a87-4035-86bc-684ff5cf51c2"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="523702d4-24d9-4b31-b3c2-db2f6dabc878"/>
   <keepMappingToExtendedConfigurationObjectsByIDs>true</keepMappingToExtendedConfigurationObjectsByIDs>
   <namePrefix>Test_</namePrefix>
   <configurationExtensionCompatibilityMode>8.3.16</configurationExtensionCompatibilityMode>
@@ -30,10 +31,6 @@
   <vendor>Ingvar Vilkman</vendor>
   <version>0.1.1</version>
   <defaultLanguage>Language.English</defaultLanguage>
-  <dataLockControlMode>Managed</dataLockControlMode>
-  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
-  <modalityUseMode>DontUse</modalityUseMode>
-  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
   <compatibilityMode>8.3.16</compatibilityMode>
   <languages uuid="01e48210-56bd-4d51-b1ae-1f5714328c25">
     <name>English</name>
