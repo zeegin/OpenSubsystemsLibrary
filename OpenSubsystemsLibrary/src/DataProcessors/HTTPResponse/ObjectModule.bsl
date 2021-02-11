@@ -86,7 +86,8 @@ EndFunction
 //
 Function Reason() Export 
     
-    Return "OK";
+    // TODO:
+    Raise NotImplementedError();
     
 EndFunction
 

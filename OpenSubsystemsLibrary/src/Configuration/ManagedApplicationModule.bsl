@@ -1,6 +1,8 @@
+// BSLLS:ExportVariables-off
+
 #Region Variables
 
-// Used for stare application settings.
+// Used for store application settings.
 // For example: server context at client or cashed client settings.
 //
 Var AppSettings Export;

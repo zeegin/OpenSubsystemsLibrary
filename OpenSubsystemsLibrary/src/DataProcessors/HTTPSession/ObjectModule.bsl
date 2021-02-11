@@ -77,12 +77,17 @@ EndFunction
 // Closes all adapters and as such the session
 Function Close() Export 
     
+    // TODO:
+    Raise NotImplementedError();
+    
 EndFunction
 
 // Receives a Response. Returns a redirect URI or None
-Function GetRedirectTarget(Resp)
-
-
+Function GetRedirectTarget(Resp) Export
+    
+    // TODO:
+    Raise NotImplementedError();
+    
 EndFunction
 
 #EndRegion
@@ -93,6 +98,7 @@ Procedure _Ctor() Export
     
     Cookies = New Map;
     
+    // TODO:
     //Self.Insert("_Headers", _DefaultHeaders());
     //Self.Insert("_Auth", Undefined);
     //Self.Insert("_Proxy", Undefined);
@@ -273,17 +279,21 @@ Function HTTP(Val Method, Val Href, Query, Data, Files, Param = Undefined, Redir
         Redirection = Redirection + 1;
         
         
-        //rebuild_auth(prepared_request, response)
-        //When being redirected we may want to strip authentication from the request to avoid leaking credentials. This method intelligently removes and reapplies authentication where possible to avoid credential loss.
+        // TODO:
+        // rebuild_auth(prepared_request, response)
+        // When being redirected we may want to strip authentication from the request to avoid leaking credentials.
+        // This method intelligently removes and reapplies authentication where possible to avoid credential loss.
 
-        //rebuild_method(prepared_request, response)
-        //When being redirected we may want to change the method of the request based on certain specs or browser behavior.
+        // rebuild_method(prepared_request, response)
+        // When being redirected we may want to change the method of the request based on certain specs
+        // or browser behavior.
 
-        //rebuild_proxies(prepared_request, proxies)
-        //This method re-evaluates the proxy configuration by considering the environment variables. If we are redirected to a URL covered by NO_PROXY, we strip the proxy configuration. Otherwise, we set missing proxy keys for this URL (in case they were stripped by a previous redirect).
+        // rebuild_proxies(prepared_request, proxies)
+        // This method re-evaluates the proxy configuration by considering the environment variables.
+        // If we are redirected to a URL covered by NO_PROXY, we strip the proxy configuration.
+        // Otherwise, we set missing proxy keys for this URL (in case they were stripped by a previous redirect).
 
-        //This method also replaces the Proxy-Authorization header where necessary.
-        
+        // This method also replaces the Proxy-Authorization header where necessary.
         
         
         // Query already parsed in URL and should not be used in redirection.
