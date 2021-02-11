@@ -1,4 +1,6 @@
-// BSLLS:MissingParameterDescription-off
+// BSLLS:CommonModuleNameWords-off
+// BSLLS:PublicMethodsDescription-off
+// BSLLS:Typo-off
 
 // This mock module is used in unit tests:
 // - Test_GetCommonModule

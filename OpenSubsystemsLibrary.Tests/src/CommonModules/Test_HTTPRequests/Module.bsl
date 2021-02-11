@@ -109,7 +109,7 @@ Procedure Test_URLIPv4Auth(Context) Export
     URL = HTTPRequests.URL("http://user:password@222.148.142.13:8080");
     
     Assert.AreEqual("user", URL.Auth.User);
-    Assert.AreEqual("password",URL.Auth.Pass);
+    Assert.AreEqual("password", URL.Auth.Pass);
     Assert.AreEqual("222.148.142.13", URL.Host);
     Assert.AreEqual(8080, URL.Port);
     
@@ -451,7 +451,7 @@ Procedure Test_GetDisabledRedirect(Context) Export
     Param.AllowRedirect = False;
     
     Response = HTTPRequests.Get(
-        "http://httpbin.org/redirect-to?url=http%3A%2F%2Fhttpbin.org%2Fget&status_code=307",,
+        "http://httpbin.org/redirect-to?url=http%3A%2F%2Fhttpbin.org%2Fget&status_code=307", ,
         Param
     );
     
@@ -555,4 +555,3 @@ Procedure Test_PostMultipartFormDataAsDataAndFiles(Context) Export
     Assert.AreEqual("value2", Result["form"]["field2"]);
     
 EndProcedure
-
