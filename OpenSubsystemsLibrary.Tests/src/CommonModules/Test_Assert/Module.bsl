@@ -1,3 +1,7 @@
+// BSLLS:UsingServiceTag-off
+// BSLLS:MissingParameterDescription-off
+// BSLLS:CodeOutOfRegion-off
+
 // @unit-test
 Procedure Test_AssertErrorWithoutMessage(Context) Export
     

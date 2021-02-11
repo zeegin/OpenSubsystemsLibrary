@@ -1,5 +1,7 @@
-#Region GetModule
+// BSLLS:UsingServiceTag-off
+// BSLLS:CodeOutOfRegion-off
 
+#Region GetModule
 
 // @unit-test
 Procedure Test_GetCommonModule(Context) Export

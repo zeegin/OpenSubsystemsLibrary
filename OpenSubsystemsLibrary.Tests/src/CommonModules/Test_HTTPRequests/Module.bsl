@@ -1,3 +1,6 @@
+// BSLLS:UsingServiceTag-off
+// BSLLS:MissingParameterDescription-off
+// BSLLS:CodeOutOfRegion-off
 // BSLLS:UsingHardcodeNetworkAddress-off
 // BSLLS:Typo-off
 
