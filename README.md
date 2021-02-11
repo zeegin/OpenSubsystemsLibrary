@@ -28,23 +28,27 @@ This project built with:
 2. [1C:Enterprise Development Tools](https://edt.1c.ru) 2020.6.1
 3. [1Unit](https://github.com/DoublesunRUS/ru.capralow.dt.unit.launcher)
 4. [vanessa-automation](https://github.com/Pr-Mex/vanessa-automation)
-5. [dt.bslls.validator](https://github.com/DoublesunRUS/ru.capralow.dt.bslls.validator)
+5. [bslls-connector-for-edt](https://github.com/otymko/bslls-connector-for-edt)
 6. [BSL Language Server](https://github.com/1c-syntax/bsl-language-server)
 
 ## Features map
+<details>
+<summary>
+Expand table of feature status.
+</summary>
 
 | Subsystems                             | Status      |
 | -------------------------------------- | ----------- |
 | System                                 | In process  |
-| + Asserts                              | In process  |
+| + Asserts                              | Support     |
 | + Collections                          | In process  |
 | + Cryptography                         | In process  |
 | + Useful database queries              | In process  |
-| + Global exceptions                    | In process  |
+| + Global exceptions                    | Support     |
 | + Json serializer                      | Support     |
 | + Useful OS methods                    | In process  |
 | + Strings utils                        | In process  |
-| + Reflection                           | In process  |
+| + Reflection                           | Support     |
 | + Background worker                    | In process  |
 | + No-thick client static analize       | Support     |
 | Aggregates and totals                  | Not started |
@@ -116,3 +120,5 @@ This project built with:
 | + \<Not specified\> default user       | Support     |
 | + User item form                       | In process  |
 | + Manage users in Enterprise mode      | Not started |
+
+</details>

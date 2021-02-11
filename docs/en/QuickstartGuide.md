@@ -13,7 +13,7 @@
 3. Install EDT plugins ([video instruction](https://www.youtube.com/watch?v=2rro6MFjh2s&feature=youtu.be)) from the following repositories:
 ```
 http://capralow.ru/edt/unit.launcher/latest/
-http://capralow.ru/edt/bslls.validator/latest/
+https://otymko.github.io/bslls-connector-for-edt/update/bslls-connector-for-edt/latest/
 ```
 
 4. Clone this project:
