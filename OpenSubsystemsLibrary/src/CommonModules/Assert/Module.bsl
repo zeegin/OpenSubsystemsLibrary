@@ -34,8 +34,8 @@ EndProcedure
 
 Procedure IsInstanceOfType(ExpectedType, Value, Message = "") Export
     
-    If TypeOf(Value) <> Type(ExpectedType) Then
-        Raise AssertError(Type(ExpectedType), TypeOf(Value), Message);
+    If TypeOf(Value) <> ExpectedType Then
+        Raise AssertError(ExpectedType, TypeOf(Value), Message);
     EndIf;
     
 EndProcedure

@@ -6,7 +6,7 @@ Procedure Test_GetCommonModule(Context) Export
     
     Module = Reflection.GetModule("Test_Reflection_MockModule");
     
-    Assert.IsInstanceOfType("CommonModule", Module);
+    Assert.IsInstanceOfType(Type("CommonModule"), Module);
     
 EndProcedure
 
@@ -15,7 +15,7 @@ Procedure Test_GetDataProcessorManagerModule(Context) Export
     
     Module = Reflection.GetModule("DataProcessors.Test_Reflection_MockDataProcess");
     
-    Assert.IsInstanceOfType("DataProcessorManager.Test_Reflection_MockDataProcess", Module);
+    Assert.IsInstanceOfType(Type("DataProcessorManager.Test_Reflection_MockDataProcess"), Module);
     
 EndProcedure
 

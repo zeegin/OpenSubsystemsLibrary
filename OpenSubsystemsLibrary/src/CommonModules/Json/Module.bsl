@@ -1,15 +1,15 @@
 #Region Public
 
-// Description
+// Specifies settings for reading values from JSON format
 // 
 // Returns:
 //  Structure - contains:
-// * ReadToMap - Boolean - Description
-// * PropertiesWithDateValuesNames - Array contains String - Description
-//                                 - String - Description
-// * ExpectedDateFormat - JSONDateFormat - Description
-// * Encoding - TextEncoding - Description
-//            - String - Description
+// * ReadToMap - Boolean - default is True
+// * PropertiesWithDateValuesNames - Array contains String - for every fields with date values
+//                                 - String - if JSON has only one date field
+// * ExpectedDateFormat - JSONDateFormat - default is ISO "YYYY-MM-DDTHH:MM:SSZ" example "2009-02-15T00:00:00Z"
+// * Encoding - TextEncoding - default is UTF-8
+//            - String - JSONReader.OpenStream encodings
 // 
 Function DeserializerSettings() Export
     
@@ -23,15 +23,15 @@ Function DeserializerSettings() Export
     
 EndFunction
 
-// Description
+// Loads JSON string or binary data to 1C value.
 // 
 // Parameters:
-//  Object - String - Description
-//         - BinaryData - Description
+//  Object - String - loaded JSON
+//         - BinaryData - loaded JSON
 //  DeserializeSettings - see DeserializerSettings
 //
 // Returns:
-//  Arbitrary
+//  Arbitrary - converted object
 //
 Function Loads(Object, DeserializerSettings = Undefined) Export
     
@@ -41,10 +41,18 @@ Function Loads(Object, DeserializerSettings = Undefined) Export
     
     If TypeOf(Object) = Type("BinaryData") Then
         
+        If Not ValueIsFilled(Object) Then
+            Return ?(DeserializerSettings.ReadToMap, New Map, New Structure);
+        EndIf;
+        
         JSONReader = New JSONReader;
         JSONReader.OpenStream(Object.OpenStreamForRead(), DeserializerSettings.Encoding);
         
     ElsIf TypeOf(Object) = Type("String") Then
+        
+        If IsBlankString(Object) Then
+            Return ?(DeserializerSettings.ReadToMap, New Map, New Structure);
+        EndIf;
         
         JSONReader = New JSONReader;
         JSONReader.SetString(Object);
@@ -66,23 +74,23 @@ Function Loads(Object, DeserializerSettings = Undefined) Export
     
 EndFunction
 
-// Description
+// Dumps the 1C value to JSON string.
 // 
 // Parameters:
-// Value - String - Description
-//       - Number - Description
-//       - Boolean - Description
-//       - Date - Description
-//       - Array - Description
-//       - FixedArray - Description
-//       - Structure - Description
-//       - FixedStructure - Description
-//       - Map - Description
-//       - FixedMap - Description
-// SerializerSettings - JSONSerializerSettings - Description
+//  Value - String - converted object
+//        - Number - converted object
+//        - Boolean - converted object
+//        - Date - converted object
+//        - Array - converted object
+//        - FixedArray - converted object
+//        - Structure - converted object
+//        - FixedStructure - converted object
+//        - Map - converted object
+//        - FixedMap - converted object
+//  SerializerSettings - JSONSerializerSettings - for recording values in JSON format
 //
 // Returns:
-//  JSONWriter
+//  String - completes JSON 
 //
 Function Dumps(Value, SerializerSettings = Undefined) Export
     

@@ -65,12 +65,7 @@ Function Json(DeserializerSettings = Undefined) Export
         DeserializerSettings.Encoding = Encoding;
     EndIf;
     
-    BinaryData = BinaryData();
-    If Not ValueIsFilled(BinaryData) Then
-        Return ?(DeserializerSettings.ReadToMap, New Map, New Structure);
-    EndIf;
-    
-    Return Json.Loads(BinaryData, DeserializerSettings);
+    Return Json.Loads(BinaryData(), DeserializerSettings);
     
 EndFunction
 

@@ -208,7 +208,7 @@ Procedure Test_ResponseAsBinaryData(Context) Export
     
     Result = HTTPRequests.Get("http://httpbin.org/image/png").BinaryData();
     
-    Assert.IsInstanceOfType("BinaryData", Result);
+    Assert.IsInstanceOfType(Type("BinaryData"), Result);
     Assert.AreEqual("5cca6069f68fbf739fce37e0963f21e7", Cryptography.MD5(Result));
     
 EndProcedure
