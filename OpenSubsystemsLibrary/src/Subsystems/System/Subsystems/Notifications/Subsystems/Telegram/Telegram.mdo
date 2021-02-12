@@ -6,6 +6,5 @@
     <value>Telegram</value>
   </synonym>
   <includeInCommandInterface>true</includeInCommandInterface>
-  <content>DataProcessor.TelegramNotification</content>
   <parentSubsystem>Subsystem.System.Subsystem.Notifications</parentSubsystem>
 </mdclass:Subsystem>

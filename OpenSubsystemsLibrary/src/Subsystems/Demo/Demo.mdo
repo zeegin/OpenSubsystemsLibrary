@@ -14,6 +14,6 @@
   <picture xsi:type="core:PictureRef">
     <picture>CommonPicture.Demo</picture>
   </picture>
-  <content>CommonForm.Diagnostic</content>
+  <content>e9954eb3-5166-4519-92df-1ff0f273c2e5</content>
   <content>CommonPicture.Demo</content>
 </mdclass:Subsystem>

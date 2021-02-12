@@ -3,7 +3,7 @@
 // True, if current client platform is Windows.
 // 
 // Returns:
-//     Boolean
+//     Boolean - result
 //
 Function IsWindowsClient() Export 
     
@@ -20,7 +20,7 @@ EndFunction
 // True, if current server platform is Windows.
 // 
 // Returns:
-//     Boolean
+//     Boolean - result
 //
 &AtServer
 Function IsWindowsServer() Export
@@ -34,7 +34,7 @@ EndFunction
 // True, if current client platform is Linux.
 // 
 // Returns:
-//     Boolean
+//     Boolean - result
 //
 Function IsLinuxClient() Export 
     
@@ -51,7 +51,7 @@ EndFunction
 // True, if current server platform is Linux.
 // 
 // Returns:
-//     Boolean
+//     Boolean - result
 //
 &AtServer
 Function IsLinuxServer() Export
@@ -65,7 +65,7 @@ EndFunction
 // True, if current client platform is macOS.
 // 
 // Returns:
-//     Boolean
+//     Boolean - result
 //
 Function IsMacOSClient() Export 
     
@@ -82,7 +82,7 @@ EndFunction
 // True, if current server platform is macOS.
 // 
 // Returns:
-//     Boolean
+//     Boolean - result
 //
 &AtServer
 Function IsMacOSServer() Export
@@ -96,7 +96,7 @@ EndFunction
 // True, if current runtime is file mode.
 // 
 // Returns:
-//     Boolean
+//     Boolean - result
 //
 Function IsFileMode() Export
     

@@ -9,6 +9,7 @@
   <extension xsi:type="mdclassExtension:ConfigurationExtension">
     <defaultRunMode>Checked</defaultRunMode>
     <usePurposes>Checked</usePurposes>
+    <homePageWorkArea>Extended</homePageWorkArea>
     <defaultLanguage>Checked</defaultLanguage>
     <interfaceCompatibilityMode>Checked</interfaceCompatibilityMode>
     <compatibilityMode>Checked</compatibilityMode>
@@ -40,13 +41,17 @@
     </extension>
     <languageCode>en</languageCode>
   </languages>
+  <roles>Role.FullAccess</roles>
   <commonModules>CommonModule.Test_Assert</commonModules>
+  <commonModules>CommonModule.Test_Cryptography</commonModules>
   <commonModules>CommonModule.Test_HTTPRequests</commonModules>
   <commonModules>CommonModule.Test_Json</commonModules>
   <commonModules>CommonModule.Test_Metadata</commonModules>
   <commonModules>CommonModule.Test_Reflection</commonModules>
   <commonModules>CommonModule.Test_Reflection_MockModule</commonModules>
   <commonModules>CommonModule.Test_Reflection_MockModuleClient</commonModules>
+  <commonForms>CommonForm.Test_Diagnostic</commonForms>
+  <catalogs>Catalog.Users</catalogs>
   <dataProcessors>DataProcessor.Test_BackgroundWorker</dataProcessors>
   <dataProcessors>DataProcessor.Test_Reflection_MockDataProcess</dataProcessors>
 </mdclass:Configuration>

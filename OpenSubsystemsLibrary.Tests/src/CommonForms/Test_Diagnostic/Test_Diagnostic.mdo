@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:CommonForm xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e9954eb3-5166-4519-92df-1ff0f273c2e5">
-  <name>Diagnostic</name>
+<mdclass:CommonForm xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b788bbe0-853c-4dbe-95b7-059983b97a47">
+  <name>Test_Diagnostic</name>
   <synonym>
     <key>en</key>
     <value>Diagnostic</value>

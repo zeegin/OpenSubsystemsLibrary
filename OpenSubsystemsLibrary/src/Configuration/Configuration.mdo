@@ -97,11 +97,9 @@
   <scheduledJobs>ScheduledJob.MergePartialFullTextSearchIndex</scheduledJobs>
   <scheduledJobs>ScheduledJob.UpdateDataHistory</scheduledJobs>
   <scheduledJobs>ScheduledJob.UpdatePartialFullTextSearchIndex</scheduledJobs>
-  <commonForms>CommonForm.Diagnostic</commonForms>
   <catalogs>Catalog.UserGroups</catalogs>
   <catalogs>Catalog.UserRoles</catalogs>
   <catalogs>Catalog.Users</catalogs>
   <dataProcessors>DataProcessor.HTTPResponse</dataProcessors>
   <dataProcessors>DataProcessor.HTTPSession</dataProcessors>
-  <dataProcessors>DataProcessor.TelegramNotification</dataProcessors>
 </mdclass:Configuration>
