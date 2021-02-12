@@ -1,8 +1,11 @@
 // BSLLS:UsingServiceTag-off
 // BSLLS:MissingParameterDescription-off
 // BSLLS:CodeOutOfRegion-off
-// BSLLS:UsingHardcodeNetworkAddress-off
+// BSLLS:NonStandardRegion-off
 // BSLLS:Typo-off
+// BSLLS:UsingHardcodeNetworkAddress-off
+
+#Region URL
 
 // @unit-test
 Procedure Test_URLParsed(Context) Export
@@ -49,6 +52,8 @@ Procedure Test_URLRemoveDefaultPort(Context) Export
     
     Assert.AreEqual("example.com", URL.Host);
     Assert.AreEqual(80, URL.Port);
+    Assert.AreEqual("/", URL.Path);
+    Assert.AreEqual("/", URL.Resource);
     Assert.AreEqual("http://example.com", URL.Href);
     
 EndProcedure
@@ -61,6 +66,7 @@ Procedure Test_URLUnderstandsSlashAsPath(Context) Export
     Assert.AreEqual("example.com", URL.Host);
     Assert.AreEqual(80, URL.Port);
     Assert.AreEqual("/", URL.Path);
+    Assert.AreEqual("/", URL.Resource);
     Assert.AreEqual("http://example.com", URL.Href);
     
 EndProcedure
@@ -128,6 +134,18 @@ Procedure Test_URLDontConvertAuthToLower(Context) Export
 EndProcedure
 
 // @unit-test
+Procedure Test_URLEmptyAuth(Context) Export
+    
+    URL = HTTPRequests.URL("HTTP://EXAMPLE.COM");
+    
+    Assert.AreEqual("http", URL.Scheme);
+    Assert.IsUndefined(URL.Auth.User);
+    Assert.IsUndefined(URL.Auth.Pass);
+    Assert.AreEqual("example.com", URL.Host);
+    
+EndProcedure
+
+// @unit-test
 Procedure Test_URLAcceptAtInPath(Context) Export
     
     // At is @
@@ -141,11 +159,56 @@ EndProcedure
 // @unit-test
 Procedure Test_URLSemanticAttack(Context) Export
     
-    URL = HTTPRequests.URL("ftp://cnn.example.com&story=breaking_news@10.0.0.1/top_story.htm");
+    URL = HTTPRequests.URL("http://cnn.example.com&story=breaking_news@10.0.0.1/top_story.htm");
     
     Assert.AreEqual("10.0.0.1", URL.Host);
     
 EndProcedure
+
+// @unit-test
+Procedure Test_URLJQLQuery(Context) Export
+    
+    URL = HTTPRequests.URL(
+        "https://httpbin.org/anything?jql=worklogDate >= 2017-04-01 AND worklogDate <= 2017-05-01&j&i=2"
+    );
+    
+    Assert.AreEqual("https", URL.Scheme);
+    Assert.AreEqual("httpbin.org", URL.Host);
+    Assert.AreEqual(443, URL.Port);
+    Assert.AreEqual("/anything", URL.Path);
+    Assert.AreEqual("worklogDate >= 2017-04-01 AND worklogDate <= 2017-05-01", URL.Query["jql"]);
+    Assert.AreEqual(True, URL.Query["j"]);
+    Assert.AreEqual("2", URL.Query["i"]);
+    Assert.AreEqual("", URL.Fragment);
+    
+EndProcedure
+
+// @unit-test
+Procedure Test_URLQueryArrayArgs(Context) Export
+    
+    URL = HTTPRequests.URL("http://httpbin.org/anything?i=v1&j=w1&j=w2&i=v2&i=v3");
+    
+    Assert.IsInstanceOfType(Type("Array"), URL.Query["i"]);
+    Assert.IsInstanceOfType(Type("Array"), URL.Query["j"]);
+    Assert.AreEqual("v1|v2|v3", StrConcat(URL.Query["i"], "|"));
+    Assert.AreEqual("w1|w2", StrConcat(URL.Query["j"], "|"));
+    
+EndProcedure
+
+// @unit-test
+Procedure Test_URLIncludeURLEncoded(Context) Export
+    
+    URL = HTTPRequests.URL("https://www.example.ru?url=http%3A%2F%2Fwww.kuku.ru%2F%3Fs%3D1%26b%3D2&OTHER=1");
+    
+    Assert.AreEqual(2, URL.Query.Count());
+    Assert.AreEqual("http://www.kuku.ru/?s=1&b=2", URL.Query["url"]);
+    Assert.AreEqual("1", URL.Query["OTHER"]);
+    
+EndProcedure
+
+#EndRegion
+
+#Region BasicRequests
 
 // @unit-test
 Procedure Test_PassQueryToRequest(Context) Export
@@ -157,8 +220,6 @@ Procedure Test_PassQueryToRequest(Context) Export
     Response = HTTPRequests.Get("https://httpbin.org/anything/params", Query);
     Result = Response.Json();
     
-    Assert.AreEqual("https://httpbin.org/anything/params?name=Иванов&name=Петров&salary=100000", Response.URL.Href);
-    Assert.AreEqual("https://httpbin.org/anything/params?name=Иванов&name=Петров&salary=100000", Result["url"]);
     Assert.AreEqual("100000", Result["args"]["salary"]);
     Assert.AreEqual("Иванов|Петров", StrConcat(Result["args"]["name"], "|"));
     
@@ -401,6 +462,10 @@ Procedure Test_PostFormData(Context) Export
     
 EndProcedure
 
+#EndRegion
+
+#Region Timeout
+
 // @unit-test
 Procedure Test_GetTimeout(Context) Export
     
@@ -421,6 +486,10 @@ Procedure Test_GetTimeout(Context) Export
     EndTry;
     
 EndProcedure
+
+#EndRegion
+
+#Region Redirects
 
 // @unit-test
 Procedure Test_GetRelativeRedirect(Context) Export
@@ -470,6 +539,10 @@ Procedure Test_GetTooMoreRedirect(Context) Export
     
 EndProcedure
 
+#EndRegion
+
+#Region Gzip
+
 // @unit-test
 Procedure Test_GetGZip(Context) Export
     
@@ -487,6 +560,10 @@ Procedure Test_GetGZipYaRu(Context) Export
     Assert.AreEqual(1, StrFind(Result, "<!DOCTYPE html>"));
     
 EndProcedure
+
+#EndRegion
+
+#Region MultipartData
 
 // @unit-test
 Procedure Test_PostMultipartFormDataAsDataFile(Context) Export
@@ -555,3 +632,5 @@ Procedure Test_PostMultipartFormDataAsDataAndFiles(Context) Export
     Assert.AreEqual("value2", Result["form"]["field2"]);
     
 EndProcedure
+
+#EndRegion

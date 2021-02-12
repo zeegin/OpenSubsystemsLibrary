@@ -62,7 +62,11 @@ Function AssertError(Expected, Actual, Message = "") Export
         Actual
     );
     
-    Return NewError(ErrorText, Message);
+    If IsBlankString(Message) Then
+        Return ErrorText;
+    Else
+        Return ErrorText + Chars.LF + "[Message]" + Chars.LF + Message;
+    EndIf;
     
 EndFunction
 

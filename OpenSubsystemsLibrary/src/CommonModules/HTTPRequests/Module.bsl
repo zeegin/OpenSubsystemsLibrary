@@ -7,7 +7,7 @@
 // This module raised exception for:
 // - RuntimeError Too more redirection
 // - RuntimeError Cannot redirect
-// - NotImplementedError Not supported default protocol Scheme port
+// - RuntimeError Not supported protocol
 // - NotImplementedError Not supported authentication type
 // To raise exception for wrong status code use RaiseForStatus() method
 
@@ -31,10 +31,17 @@
 //  * Origin - String - Description
 //  * Href - String - Description
 //
+//
+// BSLLS:CommentedCode-off
+// BSLLS:Typo-off
+// BSLLS:MethodSize-off
+//
 Function URL(Val String, Query = Undefined) Export
     
-    // http://username:password@hostname:8080/path?arg=value#anchor
-    
+    // +------------------------------------------------------------+
+    // |http://username:password@hostname:8080/path?arg=value#anchor|
+    // +------------------------------------------------------------+
+
     Auth = New Structure;
     Auth.Insert("User", Undefined); // username
     Auth.Insert("Pass", Undefined); // password
@@ -45,7 +52,7 @@ Function URL(Val String, Query = Undefined) Export
     Self.Insert("Host", "");        // hostname
     Self.Insert("Port", 0);         // 8080
     Self.Insert("Resource", "");    // /path?arg=value#anchor
-    Self.Insert("Path", "");        // /path
+    Self.Insert("Path", "/");       // /path
     Self.Insert("Query", New Map);  // arg=value
     Self.Insert("Fragment", "");    // anchor
     Self.Insert("Origin", "");      // http://hostname:8080
@@ -54,6 +61,15 @@ Function URL(Val String, Query = Undefined) Export
     // Trim first-end spaces
     String = TrimAll(String);
     
+    //                                                       +--------+
+    //                                                       |Fragment|
+    // +--------------------------------------------------------------+
+    // |http://username:password@hostname:8080/path?arg=value#anchor|
+    // +-----------------------------------------------------+------+
+    //                                                       |
+    //                                                       +
+    //                                                      Pos
+
     // Extract fragment
     Pos = StrFind(String, "#");
     If Pos > 0 Then 
@@ -61,33 +77,91 @@ Function URL(Val String, Query = Undefined) Export
         String = Left(String, Pos - 1);
     EndIf;
     
+    //                                             +---------+
+    //                                             |Key|Value|
+    //                                             +---------+
+    //                                             |Query    |
+    // +-----------------------------------------------------+
+    // |http://username:password@hostname:8080/path?arg=value|
+    // +-------------------------------------------+----------
+    //                                             |
+    //                                             +
+    //                                            Pos
+
     // Extract query
     Pos = StrFind(String, "?");
     If Pos > 0 Then 
-        QueryPart = DecodeString(Mid(String, Pos + 1), StringEncodingMethod.URLInURLEncoding);
-        For Each Param In StrSplit(QueryPart, "&") Do
-            ParamParts = StrSplit(Param, "=");
-            If ParamParts.Count() > 1 Then 
-                Self.Query.Insert(ParamParts[0], ParamParts[1]);
-            ElsIf ParamParts.Count() = 1 Then 
-                Self.Query.Insert(ParamParts[0]);
+        QueryPart = Mid(String, Pos + 1);
+
+        // +----------------------------------------+
+        // |arg1=value1&arg1=value2&arg3=value3&arg4|
+        // +----------------------------------------+
+        // |arg1       |arg1       |arg3       |arg4|
+        // +---------------------------------------------+
+        // |arg1=[value1, value2]  |arg3=value3|arg4=true|
+        // +---------------------------------------------+
+
+        For Each Arg In StrSplit(QueryPart, "&") Do
+            
+            Arg = DecodeString(Arg, StringEncodingMethod.URLInURLEncoding);
+            
+            // +-----------+  +------------------------------+ +----+
+            // |arg1=value1|  |arg2=a >=0 AND b = 1 OR c <= 0| |arg3|
+            // +----+------+  +----+-------------------------+ +----+
+            //      ^              ^                           ^
+            //      +              +                           +
+            //    EqPos          EqPos                        EqPos
+            // 
+            
+            EqPos = StrFind(Arg, "=");
+            
+            If EqPos = 0 Then
+                ItemKey = Arg;
+                ItemValue = True;
             Else
-                Raise RuntimeError(
-                    NStr("en = 'Error while parsing query';
-                         |ru = 'Ошибка при разборе запроса'")
-                );
+                ItemKey = Left(Arg, EqPos - 1);
+                ItemValue = Mid(Arg, EqPos + 1);
             EndIf;
+            
+            AddQueryKeyValue(Self.Query, ItemKey, ItemValue);
+            
         EndDo;
         String = Left(String, Pos - 1);
     EndIf;
     
+    // +------+
+    // |Scheme|
+    // +---------------------------------------------+
+    //   |http://username:password@hostname:8080/path|
+    //   +----+--+-----------------------------------+
+    //        ^  ^
+    //        +  +
+    //      Pos  Pos+3
+    //
+ 
     // Extract Scheme
     Pos = StrFind(String, ":");
     If Pos > 0 Then 
         Self.Scheme = Lower(Left(String, Pos - 1));
-        String = Mid(String, Pos + 3);
+        SchemeShift = 3;
+        String = Mid(String, Pos + SchemeShift);
     EndIf;
     
+    // +------------------------------------+
+    // |username:password@hostname:8080/path|
+    // +-----------------+-------------+----+
+    //                   ^             ^
+    //                   +             +
+    //                  Pos         SlashPos
+    // 
+    // +-----------------------------------------+
+    // |http://mt0.google.com/vt/lyrs=m@114&hl=en|
+    // +---------------------+---------+---------+
+    //                       ^         ^
+    //                       +         +
+    //                    SlashPos    Pos
+    //
+
     // Extract username:password
     Pos = StrFind(String, "@");
     SlashPos = StrFind(String, "/");
@@ -104,6 +178,14 @@ Function URL(Val String, Query = Undefined) Export
         String = Mid(String, Pos + 1);
     EndIf;
     
+    // +------------------+  +-------------+
+    // |hostname:8080/path|  |hostname:8080|
+    // +-------------+----+  +-------------+
+    //               ^                     ^
+    //               +                     +
+    //              Pos                   Pos
+    //
+
     // Extract host:port
     PortPart = "";
     Pos = StrFind(String, "/");
@@ -112,9 +194,19 @@ Function URL(Val String, Query = Undefined) Export
     EndIf;
     If StrStartsWith(String, "[") Then 
         // IPv6 host - http://tools.ietf.org/html/draft-ietf-6man-text-addr-representation-04#section-6
+
+        // +------------------------------------------+
+        // |[1080:0:0:0:8:800:200C:417A]:61616/foo/bar|
+        // +---------------------------+------+-------+
+        //                             ^      ^
+        //                             +      +
+        //                      BracketPos   Pos
+        //
+        
         BracketPos = StrFind(String, "]");
         Self.Host = Lower(Mid(String, 1, BracketPos));
-        PortPart = Mid(String, BracketPos + 2, Pos - BracketPos - 2);
+        BracketShift = 2;
+        PortPart = Mid(String, BracketPos + BracketShift, Pos - BracketPos - BracketShift);
     Else
         HostPort = Lower(Left(String, Pos - 1));
         HostPortParts = StrSplit(HostPort, ":");
@@ -129,8 +221,14 @@ Function URL(Val String, Query = Undefined) Export
     Self.Port = Integer.AdjustValue(PortPart);
     String = Mid(String, Pos);
     
+    // +-------+
+    // |foo/bar|
+    // +-------+
+
     // Last part must be the path
-    Self.Path = String;
+    If Not IsBlankString(String) Then
+        Self.Path = String;
+    EndIf;
     
     // Set default port
     If Self.Port = 0 Then
@@ -138,12 +236,10 @@ Function URL(Val String, Query = Undefined) Export
             Self.Port = 443;
         ElsIf Self.Scheme = "http" Then
             Self.Port = 80;
-        ElsIf Self.Scheme = "ftp" Then
-            Self.Port = 21;
         Else 
-            Raise NotImplementedError(StrTemplate(
-                NStr("en = 'Not supported default protocol Scheme port <%1>';
-                     |ru = 'Не поддерживаемый порт по умолчанию для протокола <%1>'"),
+            Raise RuntimeError(StrTemplate(
+                NStr("en = 'Not supported protocol <%1>';
+                     |ru = 'Не поддерживаемый протокол <%1>'"),
                 Self.Scheme
             ));
         EndIf;
@@ -152,22 +248,7 @@ Function URL(Val String, Query = Undefined) Export
     // Add custom query to URL
     If ValueIsFilled(Query) Then 
         For Each Param In Query Do
-            If Self.Query.Get(Param.Key) = Undefined Then 
-                Self.Query.Insert(Param.Key, Param.Value);
-            Else 
-                If TypeOf(Self.Query[Param.Key]) <> Type("Array") Then
-                    CurrentValue = Self.Query[Param.Key]; 
-                    Self.Query[Param.Key] = New Array;
-                    Self.Query[Param.Key].Add(CurrentValue);
-                 EndIf;
-                If TypeOf(Param.Value) = Type("Array") Then
-                    For Each Value In Param.Value Do
-                        Self.Query[Param.Key].Add(Value);
-                    EndDo;
-                Else
-                    Self.Query[Param.Key].Add(Param.Value);
-                EndIf;
-            EndIf;
+            AddQueryKeyValue(Self.Query, Param.Key, Param.Value);
         EndDo;
     EndIf;
     
@@ -199,6 +280,9 @@ Function URL(Val String, Query = Undefined) Export
     Return New FixedStructure(Self);
     
 EndFunction
+// BSLLS:CommentedCode-on
+// BSLLS:Typo-on
+// BSLLS:MethodSize-on
 
 // Description
 // 
@@ -270,7 +354,7 @@ EndFunction
 //  Query - Map - Description
 //  Param - see Param
 // Returns:
-//  DataProcessor.HTTPResponse
+//  DataProcessor.HTTPResponse - response object
 //
 Function Get(URL, Query = Undefined, Param = Undefined) Export
     
@@ -284,9 +368,8 @@ EndFunction
 // Parameters:
 //  URL - String - Description
 //  Param - see Param
-//  Session - see Session
 // Returns:
-//  DataProcessor.HTTPResponse
+//  DataProcessor.HTTPResponse - response object
 //
 Function Options(URL, Param = Undefined) Export
     
@@ -307,6 +390,9 @@ EndFunction
 //  Data - Structure - Description
 //  Files - Array contains see TransferedFile - Description
 //  Param - see Param
+//
+// Returns:
+//  DataProcessor.HTTPResponse - response object
 //
 Function Post(URL, Data = Undefined, Files = Undefined, Param = Undefined) Export
     
@@ -382,6 +468,27 @@ Function DefaultHeaders()
     Return Self;
     
 EndFunction
+
+Procedure AddQueryKeyValue(Query, Key, Value)
+    
+    If Query.Get(Key) = Undefined Then 
+        Query.Insert(Key, Value);
+    Else 
+        If TypeOf(Query[Key]) <> Type("Array") Then
+            CurrentValue = Query[Key]; 
+            Query[Key] = New Array;
+            Query[Key].Add(CurrentValue);
+        EndIf;
+        If TypeOf(Value) = Type("Array") Then
+            For Each CurrentValue In Value Do
+                Query[Key].Add(CurrentValue);
+            EndDo;
+        Else
+            Query[Key].Add(Value);
+        EndIf;
+    EndIf;
+    
+EndProcedure
 
 // poolmanager
 

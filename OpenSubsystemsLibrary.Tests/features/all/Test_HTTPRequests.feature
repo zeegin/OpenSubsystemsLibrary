@@ -59,6 +59,11 @@ Scenario: Test_URLDontConvertAuthToLower
 	| 'Test_HTTPRequests.Test_URLDontConvertAuthToLower(Context());' |
 
 @OnServer
+Scenario: Test_URLEmptyAuth
+	And I execute 1C:Enterprise script at server
+	| 'Test_HTTPRequests.Test_URLEmptyAuth(Context());' |
+
+@OnServer
 Scenario: Test_URLAcceptAtInPath
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_URLAcceptAtInPath(Context());' |
@@ -67,6 +72,21 @@ Scenario: Test_URLAcceptAtInPath
 Scenario: Test_URLSemanticAttack
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_URLSemanticAttack(Context());' |
+
+@OnServer
+Scenario: Test_URLJQLQuery
+	And I execute 1C:Enterprise script at server
+	| 'Test_HTTPRequests.Test_URLJQLQuery(Context());' |
+
+@OnServer
+Scenario: Test_URLQueryArrayArgs
+	And I execute 1C:Enterprise script at server
+	| 'Test_HTTPRequests.Test_URLQueryArrayArgs(Context());' |
+
+@OnServer
+Scenario: Test_URLIncludeURLEncoded
+	And I execute 1C:Enterprise script at server
+	| 'Test_HTTPRequests.Test_URLIncludeURLEncoded(Context());' |
 
 @OnServer
 Scenario: Test_PassQueryToRequest
