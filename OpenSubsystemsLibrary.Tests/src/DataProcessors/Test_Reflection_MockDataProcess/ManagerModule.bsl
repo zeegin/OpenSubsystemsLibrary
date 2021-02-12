@@ -1,4 +1,3 @@
-// BSLLS:CommonModuleNameWords-off
 // BSLLS:PublicMethodsDescription-off
 // BSLLS:Typo-off
 

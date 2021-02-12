@@ -6,7 +6,7 @@
 //  Message - String - message of exception
 // 
 // Returns:
-//  String - resoult exception text
+//  String - result exception text
 // 
 // Example:
 //  Raise RuntimeError();
@@ -24,7 +24,7 @@ EndFunction
 //  Message - String - message of exception
 // 
 // Returns:
-//  String - resoult exception text
+//  String - result exception text
 // 
 // Example:
 //  Raise TypeError();
@@ -44,7 +44,7 @@ EndFunction
 //  Message - String - message of exception
 // 
 // Returns:
-//  String - resoult exception text
+//  String - result exception text
 // 
 // Example:
 //  Raise AssertError(1, 2);
@@ -72,7 +72,7 @@ EndFunction
 //  Message - String - message of exception
 // 
 // Returns:
-//  String - resoult exception text
+//  String - result exception text
 // 
 // Example:
 //  Raise NotImplementedError();

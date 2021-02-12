@@ -8,11 +8,12 @@
             "CommonModuleInvalidType": false,
             "NestedFunctionInParameters": false,
             "CyclomaticComplexity": {
-                "complexityThreshold": 30
+                "complexityThreshold": 60
             },
             "CognitiveComplexity": {
-                "complexityThreshold": 30
-            }
+                "complexityThreshold": 60
+            },
+            "CommonModuleNameWords": false
         }
     }
 }

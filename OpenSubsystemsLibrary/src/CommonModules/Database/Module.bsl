@@ -1,5 +1,13 @@
 #Region Public
 
+// Check the reference exists in infobase at privilaged mode.
+// 
+// Parameters:
+//  Ref - AnyRef - reference to checking
+// 
+// Returns:
+//  Boolean - exists result
+// 
 Function Exists(Ref) Export 
     
     Query = New Query;
