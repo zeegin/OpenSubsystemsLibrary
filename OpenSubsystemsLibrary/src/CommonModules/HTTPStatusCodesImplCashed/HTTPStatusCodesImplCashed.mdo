@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b0af0f18-781c-4746-ad3c-8335e0d82fec">
+  <name>HTTPStatusCodesImplCashed</name>
+  <synonym>
+    <key>en</key>
+    <value>HTTPStatus codes impl cashed</value>
+  </synonym>
+  <server>true</server>
+  <returnValuesReuse>DuringSession</returnValuesReuse>
+</mdclass:CommonModule>

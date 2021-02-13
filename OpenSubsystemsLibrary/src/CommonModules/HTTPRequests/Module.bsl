@@ -87,8 +87,9 @@ Function URL(Val String, Query = Undefined) Export
     //                                             |
     //                                             +
     //                                            Pos
-
+    
     // Extract query
+    TempQuery = New Array;
     Pos = StrFind(String, "?");
     If Pos > 0 Then 
         QueryPart = Mid(String, Pos + 1);
@@ -123,7 +124,7 @@ Function URL(Val String, Query = Undefined) Export
                 ItemValue = Mid(Arg, EqPos + 1);
             EndIf;
             
-            AddQueryKeyValue(Self.Query, ItemKey, ItemValue);
+            TempQuery.Add(New Structure("Key, Value", ItemKey, ItemValue));
             
         EndDo;
         String = Left(String, Pos - 1);
@@ -248,12 +249,16 @@ Function URL(Val String, Query = Undefined) Export
     // Add custom query to URL
     If ValueIsFilled(Query) Then 
         For Each Param In Query Do
-            AddQueryKeyValue(Self.Query, Param.Key, Param.Value);
+            TempQuery.Add(New Structure("Key, Value", Param.Key, Param.Value));
         EndDo;
     EndIf;
     
+    For Each Param In TempQuery Do
+        AddQueryKeyValue(Self.Query, Param.Key, Param.Value);
+    EndDo;
+    
     // Prepare resource property
-    QueryPart = ToFormURLEncode(Self.Query);
+    QueryPart = ToFormURLEncode(TempQuery);
     Self.Resource = Self.Path;
     If StrLen(QueryPart) > 0 Then
         Self.Resource = Self.Resource + "?" + QueryPart;
@@ -434,17 +439,22 @@ Function HeaderValue(Headers, Key, DefaultValue) Export
     
 EndFunction
 
-Function ToFormURLEncode(Object) Export 
+Function ToFormURLEncode(Object) Export
+    
+    If Object.Count() = 0 Then
+        Return "";
+    EndIf;
     
     ObjectParts = New Array;
+    
     For Each Param In Object Do
         If TypeOf(Param.Value) = Type("Array") Then
             // Object param has multiple values
             For Each Value In Param.Value Do
-                ObjectParts.Add(Param.Key + "=" + Value);
+                ObjectParts.Add(KeyValueEncodingPart(Param.Key, Value));
             EndDo;
         Else 
-            ObjectParts.Add(Param.Key + "=" + Param.Value);
+            ObjectParts.Add(KeyValueEncodingPart(Param.Key, Param.Value));
         EndIf;
     EndDo;
     
@@ -490,6 +500,16 @@ Procedure AddQueryKeyValue(Query, Key, Value)
     
 EndProcedure
 
-// poolmanager
+Function KeyValueEncodingPart(Key, Value)
+    
+    If Value = True Then
+        KeyValuePart = Key;
+    Else
+        KeyValuePart = Key + "=" + EncodeString(Value, StringEncodingMethod.URLEncoding);
+    EndIf;
+    
+    Return KeyValuePart;
+    
+EndFunction
 
 #EndRegion

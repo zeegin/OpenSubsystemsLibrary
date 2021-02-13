@@ -44,6 +44,7 @@
   <roles>Role.FullAccess</roles>
   <commonModules>CommonModule.Test_Assert</commonModules>
   <commonModules>CommonModule.Test_Cryptography</commonModules>
+  <commonModules>CommonModule.Test_GZip</commonModules>
   <commonModules>CommonModule.Test_HTTPRequests</commonModules>
   <commonModules>CommonModule.Test_Json</commonModules>
   <commonModules>CommonModule.Test_Metadata</commonModules>

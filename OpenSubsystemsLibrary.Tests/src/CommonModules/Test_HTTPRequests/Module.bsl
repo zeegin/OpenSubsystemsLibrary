@@ -208,6 +208,52 @@ EndProcedure
 
 #EndRegion
 
+#Region ToFormURLEncode
+
+// @unit-test
+Procedure Test_ToFormURLEncodeEmptyQuery(Context) Export
+   
+   Query = New Map;
+   
+   Result = HTTPRequests.ToFormURLEncode(Query);
+   
+   Assert.AreEqual("", Result);
+   
+EndProcedure
+
+// @unit-test
+Procedure Test_ToFormURLEncodeURLEncoded(Context) Export
+   
+   Query = New Array;
+   Query.Add(New Structure("Key, Value", "url", "http://www.kuku.ru/?s=1&b=2"));
+   Query.Add(New Structure("Key, Value", "OTHER", "1"));
+   
+   Result = HTTPRequests.ToFormURLEncode(Query);
+   
+   Assert.AreEqual("url=http%3A%2F%2Fwww.kuku.ru%2F%3Fs%3D1%26b%3D2&OTHER=1", Result);
+   
+EndProcedure
+
+// @unit-test
+Procedure Test_ToFormURLEncodeMultyQueryArg(Context) Export
+   
+   Arg1 = New Array;
+   Arg1.Add("value1");
+   Arg1.Add("value2");
+   
+   Query = New Array;
+   Query.Add(New Structure("Key, Value", "arg1", Arg1));
+   Query.Add(New Structure("Key, Value", "arg3", "value3"));
+   Query.Add(New Structure("Key, Value", "arg4", True));
+   
+   Result = HTTPRequests.ToFormURLEncode(Query);
+   
+   Assert.AreEqual("arg1=value1&arg1=value2&arg3=value3&arg4", Result);
+   
+EndProcedure
+
+#EndRegion
+
 #Region BasicRequests
 
 // @unit-test
@@ -216,12 +262,18 @@ Procedure Test_PassQueryToRequest(Context) Export
     Query = New Structure;
     Query.Insert("name", StrSplit("Иванов|Петров", "|"));
     Query.Insert("salary", XMLString(100000));
+    Query.Insert("time", "01:47");
     
     Response = HTTPRequests.Get("https://httpbin.org/anything/params", Query);
     Result = Response.Json();
     
+    Assert.AreEqual(
+        "https://httpbin.org/anything/params?name=%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2&name=%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2&salary=100000&time=01%3A47",
+        Response.URL.Href
+    );
     Assert.AreEqual("100000", Result["args"]["salary"]);
     Assert.AreEqual("Иванов|Петров", StrConcat(Result["args"]["name"], "|"));
+    Assert.AreEqual("01:47", Result["args"]["time"]);
     
 EndProcedure
 
@@ -558,6 +610,26 @@ Procedure Test_GetGZipYaRu(Context) Export
     Result = HTTPRequests.Get("http://ya.ru").Text();
     
     Assert.AreEqual(1, StrFind(Result, "<!DOCTYPE html>"));
+    
+EndProcedure
+
+// @unit-test
+Procedure Test_PostGZip(Context) Export
+    
+    Data = New Structure;
+    Data.Insert("field", "value");
+    Data.Insert("field2", "value2");
+    
+    Param = HTTPRequests.Param();
+    Param.Headers.Insert("Content-Encoding", "gzip");
+    
+    Result = HTTPRequests.Post("http://httpbin.org/anything", Json.Dumps(Data), , Param).Json();
+    
+    Assert.AreEqual("gzip", Result["headers"]["Content-Encoding"]);
+    Assert.AreEqual(
+        "data:application/octet-stream;base64,H4sIAAAAAAAA/6vm5VJKy0zNSVGyUlAqS8wpTVXSgQkZwcWMlHi5agFVEpHzKwAAAA==",
+        Result["data"]
+    );
     
 EndProcedure
 

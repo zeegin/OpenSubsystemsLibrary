@@ -1,8 +1,5 @@
 #Region Variables
 
-Var STATUS_CODE_OK;
-Var STATUS_CODE_CLIENT_ERROR;
-
 Var Headers Export;
 Var StatusCode Export;
 Var Encoding Export;
@@ -16,7 +13,7 @@ Var HTTPResponse;
 
 Procedure RaiseForStatus() Export 
     
-    If StatusCode <> STATUS_CODE_OK Then 
+    If Not Ok() Then 
         Raise RuntimeError(StrTemplate(
             NStr("en = 'Got status <%1> for <%2>.';
                  |ru = 'Получен статус <%1> при запросе <%2>.'"),
@@ -33,7 +30,7 @@ Function BinaryData() Export
     
 #If Not MobileAppServer Then
     If Lower(ContentEncoding) = "gzip" Then
-        Return GZipStreamToBinaryData(HTTPResponse.GetBodyAsStream());
+        Return GZip.Decompress(HTTPResponse.GetBodyAsStream());
     EndIf;
 #EndIf
     
@@ -77,8 +74,13 @@ EndFunction
 //
 Function Ok() Export 
     
-    Return StatusCode >= STATUS_CODE_OK
-        And StatusCode < STATUS_CODE_CLIENT_ERROR;
+    StatusCodeClass = HTTPStatusCodes.StatusCodesClass(StatusCode);
+    
+    OkClasses = New Array;
+    OkClasses.Add("Success");
+    OkClasses.Add("Redirection");
+    
+    Return OkClasses.Find(StatusCodeClass) <> Undefined;
     
 EndFunction
 
@@ -120,122 +122,5 @@ Function ResponseEncoding(HTTPResponse)
     Return "us-ascii";
     
 EndFunction
-
-#Region GZip
-
-#If Not MobileAppServer Then
-
-Function GZipStreamToBinaryData(Stream)
-    
-    GZipPrefixSize = 10;
-    GZipPostfixSize = 8;
-    LHFSize = 34;
-    DDSize = 16;
-    CDHSize = 50;
-    EOCDSize = 22;
-    
-    DataReader = New DataReader(Stream);
-    DataReader.Skip(GZipPrefixSize);
-    CompresedSize = DataReader.SourceStream().Size() - GZipPrefixSize - GZipPostfixSize;
-    
-    ZipStream = New MemoryStream(LHFSize + CompresedSize + DDSize + CDHSize + EOCDSize);
-    
-    DataASCII = GetBinaryDataBufferFromString("data", "ascii", False);
-    
-    LHF = New BinaryDataBuffer(LHFSize);
-    LHF.WriteInt32(0, 67324752);  // signature 0x04034b50
-    LHF.WriteInt16(4, 20);  // version
-    LHF.WriteInt16(6, 10);  // bit flags
-    LHF.WriteInt16(8, 8);   // compression method
-    LHF.WriteInt16(10, 0);  // time
-    LHF.WriteInt16(12, 0);  // date
-    LHF.WriteInt32(14, 0);  // crc-32
-    LHF.WriteInt32(18, 0);  // compressed size
-    LHF.WriteInt32(22, 0);  // uncompressed size
-    LHF.WriteInt16(26, 4);  // filename legth - "data"
-    LHF.WriteInt16(28, 0);  // extra field length
-    LHF.Write(30, DataASCII);
-    
-    DataWriter = New DataWriter(ZipStream);
-    DataWriter.WriteBinaryDataBuffer(LHF);
-    
-    DataReader.CopyTo(DataWriter, CompresedSize);
-    
-    DataWriter.Close();
-    
-    CRC32 = DataReader.ReadInt32();
-    UncopressedSize = DataReader.ReadInt32();
-    
-    DataReader.Close();
-    
-    DD = New BinaryDataBuffer(DDSize);
-    DD.WriteInt32(0, 134695760);
-    DD.WriteInt32(4, CRC32);
-    DD.WriteInt32(8, CompresedSize);
-    DD.WriteInt32(12, UncopressedSize);
-    
-    CDH = New BinaryDataBuffer(CDHSize);
-    CDH.WriteInt32(0, 33639248);  // signature 0x02014b50
-    CDH.WriteInt16(4, 798); // version made by
-    CDH.WriteInt16(6, 20);  // version needed to extract
-    CDH.WriteInt16(8, 10);  // bit flags
-    CDH.WriteInt16(10, 8);  // compression method
-    CDH.WriteInt16(12, 0);  // time
-    CDH.WriteInt16(14, 0);  // date
-    CDH.WriteInt32(16, CRC32);  // crc-32
-    CDH.WriteInt32(20, CompresedSize);  // compressed size
-    CDH.WriteInt32(24, UncopressedSize);  // uncompressed size
-    CDH.WriteInt16(28, 4);  // file name length
-    CDH.WriteInt16(30, 0);  // extra field length
-    CDH.WriteInt16(32, 0);  // file comment length
-    CDH.WriteInt16(34, 0);  // disk number start
-    CDH.WriteInt16(36, 0);  // internal file attributes
-    CDH.WriteInt32(38, 2176057344);  // external file attributes
-    CDH.WriteInt32(42, 0);  // relative offset of local header
-    CDH.Write(46, DataASCII);
-    
-    EOCD = New BinaryDataBuffer(EOCDSize);
-    EOCD.WriteInt32(0, 101010256);  // signature 0x06054b50
-    EOCD.WriteInt16(4, 0);   // number of this disk
-    EOCD.WriteInt16(6, 0);   // number of the disk with the start of the central directory
-    EOCD.WriteInt16(8, 1);   // total number of entries in the central directory on this disk
-    EOCD.WriteInt16(10, 1);  // total number of entries in the central directory
-    EOCD.WriteInt32(12, CDHSize); // size of the central directory
-    // offset of start of central directory with respect to the starting disk number
-    EOCD.WriteInt32(16, LHFSize + CompresedSize + DDSize); 
-    EOCD.WriteInt16(20, 0);  // the starting disk number
-    
-    DataWriter = New DataWriter(ZipStream);
-    DataWriter.WriteBinaryDataBuffer(DD);
-    DataWriter.WriteBinaryDataBuffer(CDH);
-    DataWriter.WriteBinaryDataBuffer(EOCD);
-    DataWriter.Close();
-    
-    TempDir = GetTempFileName();
-    ZipFileReader = New ZipFileReader(ZipStream);
-    
-    ZipItem = ZipFileReader.Items.Get(0);
-    
-    ZipFileReader.Extract(ZipItem, TempDir, ZIPRestoreFilePathsMode.DontRestore);
-    ZipFileReader.Close();
-    
-    Result = New BinaryData(OS.PathJoin(TempDir, ZipItem.Name));
-    
-    DeleteFiles(TempDir);
-    
-    Return Result;
-    
-EndFunction
-
-#EndIf
-
-#EndRegion
-
-#EndRegion
-
-#Region Initialize
-
-STATUS_CODE_OK = 200;
-STATUS_CODE_CLIENT_ERROR = 400;
 
 #EndRegion

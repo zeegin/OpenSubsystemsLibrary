@@ -89,6 +89,21 @@ Scenario: Test_URLIncludeURLEncoded
 	| 'Test_HTTPRequests.Test_URLIncludeURLEncoded(Context());' |
 
 @OnServer
+Scenario: Test_ToFormURLEncodeEmptyQuery
+	And I execute 1C:Enterprise script at server
+	| 'Test_HTTPRequests.Test_ToFormURLEncodeEmptyQuery(Context());' |
+
+@OnServer
+Scenario: Test_ToFormURLEncodeURLEncoded
+	And I execute 1C:Enterprise script at server
+	| 'Test_HTTPRequests.Test_ToFormURLEncodeURLEncoded(Context());' |
+
+@OnServer
+Scenario: Test_ToFormURLEncodeMultyQueryArg
+	And I execute 1C:Enterprise script at server
+	| 'Test_HTTPRequests.Test_ToFormURLEncodeMultyQueryArg(Context());' |
+
+@OnServer
 Scenario: Test_PassQueryToRequest
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_PassQueryToRequest(Context());' |
@@ -222,6 +237,11 @@ Scenario: Test_GetGZip
 Scenario: Test_GetGZipYaRu
 	And I execute 1C:Enterprise script at server
 	| 'Test_HTTPRequests.Test_GetGZipYaRu(Context());' |
+
+@OnServer
+Scenario: Test_PostGZip
+	And I execute 1C:Enterprise script at server
+	| 'Test_HTTPRequests.Test_PostGZip(Context());' |
 
 @OnServer
 Scenario: Test_PostMultipartFormDataAsDataFile

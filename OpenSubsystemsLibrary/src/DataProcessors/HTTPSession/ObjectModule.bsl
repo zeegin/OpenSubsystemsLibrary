@@ -4,6 +4,7 @@ Var Cookies Export;
 Var ValidateSSL Export;
 Var AllowRedirect Export; // AllowRedirects
 Var MaxRedirectCount Export; // MaxRedirects
+Var PoolManager;
 
 #EndRegion
 
@@ -177,7 +178,7 @@ Function HTTP(Val Method, Val Href, Query, Data, Files, Param = Undefined, Redir
             If TypeOf(Data) = Type("Structure")
                 Or TypeOf(Data) = Type("FixedStructure")
                 Or TypeOf(Data) = Type("Map")
-                Or TypeOf(Data) = Type("FixedMap")Then
+                Or TypeOf(Data) = Type("FixedMap") Then
                 
                 HTTPRequest.Headers.Insert("content-type", "application/x-www-form-urlencoded");
                 HTTPRequest.SetBodyFromString(
@@ -206,6 +207,11 @@ Function HTTP(Val Method, Val Href, Query, Data, Files, Param = Undefined, Redir
         Else
             HTTPRequest.Headers.Insert("content-type", "text/plain");
         EndIf;
+    EndIf;
+    
+    ContentEncoding = HTTPRequests.HeaderValue(HTTPRequest.Headers, "content-encoding", "none");
+    If ContentEncoding = "gzip" Then
+        HTTPRequest.SetBodyFromBinaryData(GZip.Compress(HTTPRequest.GetBodyAsBinaryData()));
     EndIf;
     
     SecureConnection = Undefined;
@@ -306,11 +312,16 @@ EndFunction
 
 Function IsRedirect(StatusCode)
     
-    Return StatusCode = 301
-        Or StatusCode = 302
-        Or StatusCode = 303
-        Or StatusCode = 307
-        Or StatusCode = 308;
+    StatusCodes = HTTPStatusCodesImplCashed.StatusCodes();
+    
+    RedirectCodes = New Array;
+    RedirectCodes.Add(StatusCodes["MOVED_PERMANENTLY_301"].Code);
+    RedirectCodes.Add(StatusCodes["FOUND_302"].Code);
+    RedirectCodes.Add(StatusCodes["SEE_OTHER_303"].Code);
+    RedirectCodes.Add(StatusCodes["TEMPORARY_REDIRECT_307"].Code);
+    RedirectCodes.Add(StatusCodes["PERMANENT_REDIRECT_308"].Code);
+    
+    Return RedirectCodes.Find(StatusCode) <> Undefined;
     
 EndFunction
 

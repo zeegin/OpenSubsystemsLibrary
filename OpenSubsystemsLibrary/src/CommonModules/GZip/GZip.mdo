@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="13dc4f4e-44d4-4e77-905f-7fa80d0870aa">
+  <name>GZip</name>
+  <synonym>
+    <key>en</key>
+    <value>GZip</value>
+  </synonym>
+  <server>true</server>
+</mdclass:CommonModule>

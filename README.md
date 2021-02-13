@@ -84,13 +84,13 @@ Expand table of feature status.
 | + POST multipart/form-data             | Support     |
 | + Timeouts                             | Support     |
 | + Redirects                            | Support     |
+| + GZip request body encoding           | Support     |
 | + GZip response content encoding       | Support     |
 | + Sessions                             | In process  |
 | + Cookies                              | In process  |
 | + Digest auth                          | Not started |
 | + OAuth                                | Not started |
-| + Proxy                                | Not started |
-| + getproxylist.com integration (idea?) | Not started |
+| + Proxy and cert infobase config       | Not started |
 | + Pool manager                         | Not started |
 | + Unit tests                           | Support     |
 | Lock data by date                      | Not started |
@@ -111,8 +111,8 @@ Expand table of feature status.
 | + Network disk                         | Not started |
 | + One drive                            | Not started |
 | + Yandex disk                          | Not started |
-| Notification                           | In process  |
-| + Telegram                             | In process  |
+| Notification                           | Not started |
+| + Telegram                             | Not started |
 | + Slack                                | Not started |
 | Update                                 | Not started |
 | Users                                  | In process  |

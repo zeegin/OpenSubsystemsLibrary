@@ -83,8 +83,11 @@
   <commonModules>CommonModule.DataHistoryImpl</commonModules>
   <commonModules>CommonModule.ExceptionsGlobal</commonModules>
   <commonModules>CommonModule.FullTextSearchImpl</commonModules>
+  <commonModules>CommonModule.GZip</commonModules>
   <commonModules>CommonModule.HTTPAuthDigest</commonModules>
   <commonModules>CommonModule.HTTPRequests</commonModules>
+  <commonModules>CommonModule.HTTPStatusCodes</commonModules>
+  <commonModules>CommonModule.HTTPStatusCodesImplCashed</commonModules>
   <commonModules>CommonModule.Json</commonModules>
   <commonModules>CommonModule.Locale</commonModules>
   <commonModules>CommonModule.OS</commonModules>
