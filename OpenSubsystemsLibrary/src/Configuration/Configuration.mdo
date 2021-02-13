@@ -87,7 +87,7 @@
   <commonModules>CommonModule.HTTPAuthDigest</commonModules>
   <commonModules>CommonModule.HTTPRequests</commonModules>
   <commonModules>CommonModule.HTTPStatusCodes</commonModules>
-  <commonModules>CommonModule.HTTPStatusCodesImplCashed</commonModules>
+  <commonModules>CommonModule.HTTPStatusCodesImplCached</commonModules>
   <commonModules>CommonModule.Json</commonModules>
   <commonModules>CommonModule.Locale</commonModules>
   <commonModules>CommonModule.OS</commonModules>

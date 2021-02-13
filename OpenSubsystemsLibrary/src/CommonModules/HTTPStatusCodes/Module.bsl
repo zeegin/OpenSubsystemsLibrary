@@ -21,7 +21,7 @@ Function StatusCodesClass(Val Code) Export
         GroupNumber = UNDEFINED_CLASS;
     EndIf;
     
-    Return HTTPStatusCodesImplCashed.StatusCodesClasses()[GroupNumber];
+    Return HTTPStatusCodesImplCached.StatusCodesClasses()[GroupNumber];
     
 EndFunction
 

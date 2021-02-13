@@ -312,7 +312,7 @@ EndFunction
 
 Function IsRedirect(StatusCode)
     
-    StatusCodes = HTTPStatusCodesImplCashed.StatusCodes();
+    StatusCodes = HTTPStatusCodesImplCached.StatusCodes();
     
     RedirectCodes = New Array;
     RedirectCodes.Add(StatusCodes["MOVED_PERMANENTLY_301"].Code);

@@ -33,7 +33,6 @@
 //
 //
 // BSLLS:CommentedCode-off
-// BSLLS:Typo-off
 // BSLLS:MethodSize-off
 //
 Function URL(Val String, Query = Undefined) Export
@@ -286,7 +285,6 @@ Function URL(Val String, Query = Undefined) Export
     
 EndFunction
 // BSLLS:CommentedCode-on
-// BSLLS:Typo-on
 // BSLLS:MethodSize-on
 
 // Description

@@ -2,7 +2,6 @@
 // BSLLS:MissingParameterDescription-off
 // BSLLS:CodeOutOfRegion-off
 // BSLLS:NonStandardRegion-off
-// BSLLS:Typo-off
 
 #Region GetModule
 

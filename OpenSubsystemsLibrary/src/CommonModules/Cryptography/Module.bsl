@@ -17,7 +17,6 @@ Function MD5(BinaryData) Export
     
 EndFunction
 
-
 // Compute HMAC (hash-based message authentication code)
 // 
 // Origin: https://github.com/vbondarevsky/Connector

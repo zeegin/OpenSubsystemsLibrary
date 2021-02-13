@@ -13,7 +13,8 @@
             "CognitiveComplexity": {
                 "complexityThreshold": 60
             },
-            "CommonModuleNameWords": false
+            "CommonModuleNameWords": false,
+            "Typo": false
         }
     }
 }

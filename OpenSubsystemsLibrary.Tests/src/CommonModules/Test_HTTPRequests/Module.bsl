@@ -2,8 +2,8 @@
 // BSLLS:MissingParameterDescription-off
 // BSLLS:CodeOutOfRegion-off
 // BSLLS:NonStandardRegion-off
-// BSLLS:Typo-off
 // BSLLS:UsingHardcodeNetworkAddress-off
+// BSLLS:LineLength-off
 
 #Region URL
 
