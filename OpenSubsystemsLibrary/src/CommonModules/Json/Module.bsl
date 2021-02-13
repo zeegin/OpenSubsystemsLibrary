@@ -28,7 +28,7 @@ EndFunction
 // Parameters:
 //  Object - String - loaded JSON
 //         - BinaryData - loaded JSON
-//  DeserializeSettings - see DeserializerSettings
+//  DeserializerSettings - see DeserializerSettings
 //
 // Returns:
 //  Arbitrary - converted object

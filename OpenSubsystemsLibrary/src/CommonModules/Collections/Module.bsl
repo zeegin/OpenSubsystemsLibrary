@@ -21,4 +21,21 @@ Function Contains(Self, Value) Export
     
 EndFunction
 
+// Check the collection to use in foreach k-v loops.
+// 
+// Parameters:
+//  Self - Structure, FixedStructure, Map, FixedMap - collection
+// 
+// Returns:
+//  Boolean - result checking
+// 
+Function IsDictionary(Self) Export
+    
+    Return TypeOf(Self) = Type("Structure")
+        Or TypeOf(Self) = Type("FixedStructure")
+        Or TypeOf(Self) = Type("Map")
+        Or TypeOf(Self) = Type("FixedMap");
+    
+EndFunction
+
 #EndRegion

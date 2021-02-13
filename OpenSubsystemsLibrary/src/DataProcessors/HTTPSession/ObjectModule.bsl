@@ -175,10 +175,7 @@ Function HTTP(Val Method, Val Href, Query, Data, Files, Param = Undefined, Redir
             
         ElsIf ValueIsFilled(Data) Then
             
-            If TypeOf(Data) = Type("Structure")
-                Or TypeOf(Data) = Type("FixedStructure")
-                Or TypeOf(Data) = Type("Map")
-                Or TypeOf(Data) = Type("FixedMap") Then
+            If Collections.IsDictionary(Data) Then
                 
                 HTTPRequest.Headers.Insert("content-type", "application/x-www-form-urlencoded");
                 HTTPRequest.SetBodyFromString(
