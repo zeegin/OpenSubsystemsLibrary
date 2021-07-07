@@ -96,6 +96,7 @@
   <commonModules>CommonModule.Strings</commonModules>
   <commonModules>CommonModule.SystemImplClient</commonModules>
   <commonModules>CommonModule.SystemImplServerCall</commonModules>
+  <commonModules>CommonModule.TupleGlobal</commonModules>
   <commonModules>CommonModule.Users</commonModules>
   <scheduledJobs>ScheduledJob.MergePartialFullTextSearchIndex</scheduledJobs>
   <scheduledJobs>ScheduledJob.UpdateDataHistory</scheduledJobs>

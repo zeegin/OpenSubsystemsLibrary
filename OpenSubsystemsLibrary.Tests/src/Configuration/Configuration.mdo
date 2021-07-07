@@ -51,6 +51,7 @@
   <commonModules>CommonModule.Test_Reflection</commonModules>
   <commonModules>CommonModule.Test_Reflection_MockModule</commonModules>
   <commonModules>CommonModule.Test_Reflection_MockModuleClient</commonModules>
+  <commonModules>CommonModule.Test_Tuple</commonModules>
   <commonForms>CommonForm.Test_Diagnostic</commonForms>
   <catalogs>Catalog.Users</catalogs>
   <dataProcessors>DataProcessor.Test_BackgroundWorker</dataProcessors>
