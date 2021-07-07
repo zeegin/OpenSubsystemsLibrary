@@ -38,4 +38,18 @@ Function IsDictionary(Self) Export
     
 EndFunction
 
+// Adding non Null value to collection
+// 
+// Parameters:
+//  Self - Array, FixedArray - collection
+//  Value - Any - value to add
+//
+Procedure AddNonNullValue(Self, Value) Export
+
+    If Value <> Null Then
+        Self.Add(Value);
+    EndIf;
+
+EndProcedure
+
 #EndRegion
