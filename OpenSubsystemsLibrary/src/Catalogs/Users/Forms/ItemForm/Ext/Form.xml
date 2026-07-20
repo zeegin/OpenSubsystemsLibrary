@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">OnReadAtServer</Event>
+		<Event name="OnWriteAtServer">OnWriteAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="CatalogUserDitails" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Catalog user ditails</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+			<ExtendedTooltip name="CatalogUserDitailsExtendedTooltip" id="8"/>
+			<ChildItems>
+				<InputField name="FullName" id="1">
+					<DataPath>Object.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="FullNameContextMenu" id="2"/>
+					<ExtendedTooltip name="FullNameExtendedTooltip" id="3"/>
+				</InputField>
+				<CheckBoxField name="Disabled" id="4">
+					<DataPath>Object.Disabled</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="DisabledContextMenu" id="5"/>
+					<ExtendedTooltip name="DisabledExtendedTooltip" id="6"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="InfobaseUserDitails" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Infobase user ditails</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+			<ExtendedTooltip name="InfobaseUserDitailsExtendedTooltip" id="10"/>
+			<ChildItems>
+				<Page name="PageMain" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Main</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Page main</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>HorizontalIfPossible</Group>
+					<ExtendedTooltip name="PageMainExtendedTooltip" id="12"/>
+					<ChildItems>
+						<UsualGroup name="PageProperties" id="51">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Properties</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<CurrentRowUse>DontUse</CurrentRowUse>
+							<ExtendedTooltip name="PagePropertiesExtendedTooltip" id="52"/>
+							<ChildItems>
+								<InputField name="Name" id="13">
+									<DataPath>Name</DataPath>
+									<ContextMenu name="NameContextMenu" id="14"/>
+									<ExtendedTooltip name="NameExtendedTooltip" id="15"/>
+								</InputField>
+								<CheckBoxField name="StandardAuthentication" id="16">
+									<DataPath>StandardAuthentication</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="StandardAuthenticationContextMenu" id="17"/>
+									<ExtendedTooltip name="StandardAuthenticationExtendedTooltip" id="18"/>
+								</CheckBoxField>
+								<CheckBoxField name="PasswordIsSet" id="74">
+									<DataPath>PasswordIsSet</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="PasswordIsSetContextMenu" id="75"/>
+									<ExtendedTooltip name="PasswordIsSetExtendedTooltip" id="76"/>
+								</CheckBoxField>
+								<CheckBoxField name="CannotChangePassword" id="25">
+									<DataPath>CannotChangePassword</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="CannotChangePasswordContextMenu" id="26"/>
+									<ExtendedTooltip name="CannotChangePasswordExtendedTooltip" id="27"/>
+								</CheckBoxField>
+								<CheckBoxField name="ShowInList" id="28">
+									<DataPath>ShowInList</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ShowInListContextMenu" id="29"/>
+									<ExtendedTooltip name="ShowInListExtendedTooltip" id="30"/>
+								</CheckBoxField>
+								<CheckBoxField name="AuthOS" id="31">
+									<DataPath>OSAuthentication</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="AuthOSContextMenu" id="32"/>
+									<ExtendedTooltip name="AuthOSExtendedTooltip" id="33"/>
+								</CheckBoxField>
+								<InputField name="UserOS" id="37">
+									<DataPath>OSUser</DataPath>
+									<ContextMenu name="UserOSContextMenu" id="38"/>
+									<ExtendedTooltip name="UserOSExtendedTooltip" id="39"/>
+								</InputField>
+								<CheckBoxField name="AuthOpenID" id="34">
+									<DataPath>OpenIDAuthentication</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="AuthOpenIDContextMenu" id="35"/>
+									<ExtendedTooltip name="AuthOpenIDExtendedTooltip" id="36"/>
+								</CheckBoxField>
+								<CheckBoxField name="UnsafeOperationProtection" id="40">
+									<DataPath>UnsafeOperationProtection</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="UnsafeOperationProtectionContextMenu" id="41"/>
+									<ExtendedTooltip name="UnsafeOperationProtectionExtendedTooltip" id="42"/>
+								</CheckBoxField>
+								<InputField name="Language" id="43">
+									<DataPath>Language</DataPath>
+									<ListChoiceMode>true</ListChoiceMode>
+									<AutoShowClearButtonMode>Always</AutoShowClearButtonMode>
+									<ContextMenu name="LanguageContextMenu" id="44"/>
+									<ExtendedTooltip name="LanguageExtendedTooltip" id="45"/>
+								</InputField>
+								<InputField name="RunMode" id="46">
+									<DataPath>RunMode</DataPath>
+									<ClearButton>true</ClearButton>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="RunModeContextMenu" id="47"/>
+									<ExtendedTooltip name="RunModeExtendedTooltip" id="48"/>
+									<Events>
+										<Event name="Clearing">RunModeClearing</Event>
+									</Events>
+								</InputField>
+								<InputField name="DefaultInterface" id="77">
+									<DataPath>DefaultInterface</DataPath>
+									<ClearButton>true</ClearButton>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="DefaultInterfaceContextMenu" id="78"/>
+									<ExtendedTooltip name="DefaultInterfaceExtendedTooltip" id="79"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="PageRoles" id="53">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Roles</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<CurrentRowUse>DontUse</CurrentRowUse>
+							<ExtendedTooltip name="PageRolesExtendedTooltip" id="54"/>
+							<ChildItems>
+								<Table name="AvailableRoles" id="55">
+									<Representation>List</Representation>
+									<TitleLocation>Top</TitleLocation>
+									<Header>false</Header>
+									<HorizontalLines>false</HorizontalLines>
+									<VerticalLines>false</VerticalLines>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>AvailableRoles</DataPath>
+									<RowPictureDataPath>AvailableRoles.Picture</RowPictureDataPath>
+									<ContextMenu name="AvailableRolesContextMenu" id="56"/>
+									<AutoCommandBar name="AvailableRolesCommandBar" id="57">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ExtendedTooltip name="AvailableRolesExtendedTooltip" id="58"/>
+									<SearchStringAddition name="AvailableRolesSearchString" id="59">
+										<AdditionSource>
+											<Item>AvailableRoles</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="AvailableRolesSearchStringContextMenu" id="60"/>
+										<ExtendedTooltip name="AvailableRolesSearchStringExtendedTooltip" id="61"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="AvailableRolesViewStatus" id="62">
+										<AdditionSource>
+											<Item>AvailableRoles</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<HorizontalLocation>Left</HorizontalLocation>
+										<ContextMenu name="AvailableRolesViewStatusContextMenu" id="63"/>
+										<ExtendedTooltip name="AvailableRolesViewStatusExtendedTooltip" id="64"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="AvailableRolesSearchControl" id="65">
+										<AdditionSource>
+											<Item>AvailableRoles</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="AvailableRolesSearchControlContextMenu" id="66"/>
+										<ExtendedTooltip name="AvailableRolesSearchControlExtendedTooltip" id="67"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<CheckBoxField name="AvailableRolesCheck" id="71">
+											<DataPath>AvailableRoles.Check</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="AvailableRolesCheckContextMenu" id="72"/>
+											<ExtendedTooltip name="AvailableRolesCheckExtendedTooltip" id="73"/>
+										</CheckBoxField>
+										<InputField name="AvailableRolesValue" id="68">
+											<DataPath>AvailableRoles.Value</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="AvailableRolesValueContextMenu" id="69"/>
+											<ExtendedTooltip name="AvailableRolesValueExtendedTooltip" id="70"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Users</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="Name" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Name (Login)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="StandardAuthentication" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>1C:Enterprise authenticate</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="CannotChangePassword" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>User cannot change password</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ShowInList" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show in list</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="OSAuthentication" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Operationg system authentication</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="OpenIDAuthentication" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>OpenID authentication</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="OSUser" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>User</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="UnsafeOperationProtection" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Unsafe operation protection</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="Language" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Language</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="RunMode" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Run mode</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="AvailableRoles" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Available roles</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Settings>
+		</Attribute>
+		<Attribute name="PasswordIsSet" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Password is set</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="DefaultInterface" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Default interface</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

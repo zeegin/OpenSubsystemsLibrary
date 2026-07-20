@@ -24,12 +24,9 @@ Open Subsystems Library provide what you don't want to do — no more, no less.
 ## Dependencies
 
 This project built with:
-1. [1C:Enterprise](https://1c-dn.com) 8.3.18.1289+ (8.3.18 compatibility mode)
-2. [1C:Enterprise Development Tools](https://edt.1c.ru) 2020.6.1
-3. [1Unit](https://github.com/DoublesunRUS/ru.capralow.dt.unit.launcher)
-4. [vanessa-automation](https://github.com/Pr-Mex/vanessa-automation)
-5. [bslls-connector-for-edt](https://github.com/otymko/bslls-connector-for-edt)
-6. [BSL Language Server](https://github.com/1c-syntax/bsl-language-server)
+1. [1C:Enterprise](https://1c-dn.com) 8.3.27.2074+ (8.3.27 compatibility mode)
+2. [vanessa-automation](https://github.com/Pr-Mex/vanessa-automation)
+3. [BSL Language Server](https://github.com/1c-syntax/bsl-language-server)
 
 ## Features map
 <details>

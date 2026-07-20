@@ -45,7 +45,7 @@
 
 2.2.2. **!!! In the plans... [#20](https://github.com/zeegin/OpenSubsystemsLibrary/issues/20)** This is a requirement for the subsystem "Update", not yet implemented.
 
-2.3.1. Metadata names to contains not over 80 chars is controlled by 1C:Designer and 1C:EDT.
+2.3.1. Metadata names to contains not over 80 chars is controlled by 1C:Designer.
 
 2.3.2. Synonyms concise.
 
@@ -81,7 +81,7 @@
 
 2.5.2. **!!! Not compatible!** We use 4 spaces per indentation level!
 
-2.5.3. We use 3 static analizers: 1C:Designer, 1C:EDT and BSLLS. Public results of static control is [Sonar Gate](https://sonar.openbsl.ru/dashboard?id=osl).
+2.5.3. We use 2 static analyzers: 1C:Designer and BSL Language Server. Public results of static control is [Sonar Gate](https://sonar.openbsl.ru/dashboard?id=osl).
 
 2.5.4. All configuration checks are always passed.
 
@@ -122,9 +122,9 @@
 
 2.5.19. Library don't store of external code or data processors or reports.
 
-2.5.20. `OnExit` event handlers to use async invocations are controlled with 1C:Designer and 1C:EDT.
+2.5.20. `OnExit` event handlers to use async invocations are controlled with 1C:Designer and BSL Language Server.
 
-2.5.21. `BeforeExit` event handlers to use async invocations are controlled with 1C:Designer and 1C:EDT.
+2.5.21. `BeforeExit` event handlers to use async invocations are controlled with 1C:Designer and BSL Language Server.
 
 2.6.1. **!!! Not compatible!** We don't devide `SystemAdministarator` and `Full rights` because we don't support SaaS mode and it's excessively for us.
 
@@ -138,7 +138,7 @@
 
 2.6.6. **!!! Make static analize** to control roles rights.
 
-2.7. [...] Query keyworks controlled with 1C:EDT.
+2.7. [...] Query keywords are controlled with BSL Language Server.
 
 2.8.1. All user messages polite and concise.
 
