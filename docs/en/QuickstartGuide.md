@@ -9,34 +9,19 @@
 ## Ok, I want to contribute
 
 1. Be sure that you are ready to contribute. See [1C Junior Developer Training course](https://www.youtube.com/watch?v=NJF0_zUBHYo&list=PLhwgyD6RxHxh21KkMLtuvUaziCn8TRkmC).
-2. You must have a 1C:Enterprise license. After you purchase the licenses you will be available to download [1C:Enterprise Development Tools](https://1c-dn.com/user/updates/1c_enterprise_development_tools/).
-3. Install EDT plugins ([video instruction](https://www.youtube.com/watch?v=2rro6MFjh2s&feature=youtu.be)) from the following repositories:
-```
-http://capralow.ru/edt/unit.launcher/latest/
-https://otymko.github.io/bslls-connector-for-edt/update/bslls-connector-for-edt/latest/
-```
+2. Install a licensed [1C:Enterprise](https://1c-dn.com) platform 8.3.27.2074 or later.
+3. Clone the repository:
 
-4. Clone this project:
-    - Open **EDT** and select a new workspace.
-    - Close a welcome page: click **Get started**.
-    - Click **Import project...** in the left sidebar.
-    - Select **Git** and **Project from Git**, click **Next >**.
-    - Select **Clone URI** and click **Next >**.
-    - Insert `https://github.com/zeegin/OpenSubsystemsLibrary.git` into the **URI** field, click **Next >**.
-    - Check that the **master** checkbox is checked and click **Next >**.
-    - Chose the directory to store the git repository local copy and click **Next >**.
-    - Wait until the project is loaded and click **Next >**.
-    - Click **Finish**.
+   ```bash
+   git clone https://github.com/zeegin/OpenSubsystemsLibrary.git
+   cd OpenSubsystemsLibrary
+   ```
 
-5. First build and run application:
-    - Right-click on `OpenSubsystemsLibrary` project.
-    - Click **Run As** and click **1C:Enterprise thin client**.
-    - Select the infobase or create a new one (Waring! if you select the existing infobase, you can lost your data).
-    - Change the access type to **Infobase**.
-    - Select a platform to **<8.3.18>**.
-    - Click **OK**.
+4. Create an empty infobase and open it in Designer 8.3.27.
+5. Select **Configuration > Load configuration from files...** and choose `OpenSubsystemsLibrary/src`.
+6. Update the database configuration when Designer prompts you.
+7. Open **Configuration extensions**, create an extension named `Tests`, select **Load configuration from files...**, and choose `OpenSubsystemsLibrary.Tests/src`.
+8. Verify that the `Tests` extension can be applied, then run the application in thin-client mode.
+9. Run the Vanessa Automation feature files from `OpenSubsystemsLibrary.Tests/features`.
 
-6. Run unit tests:
-    - Right-click on `OpenSubsystemsLibrary.Tests` project.
-    - Click **Debug As** and click **1C:Enterprise Unit tests**.
-    - Wait until tests are passed.
+Both source trees use the hierarchical Designer XML format. The configuration and the test extension use compatibility mode 8.3.27.

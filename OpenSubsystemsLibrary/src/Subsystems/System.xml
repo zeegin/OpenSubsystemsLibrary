@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Subsystem uuid="4fa1fee6-273a-43b9-80e9-b32ae9c99799">
+		<Properties>
+			<Name>System</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>System</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<IncludeInCommandInterface>false</IncludeInCommandInterface>
+			<UseOneCommand>false</UseOneCommand>
+			<Explanation/>
+			<Picture/>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ExceptionsGlobal</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.Collections</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.Assert</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.Database</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.FullAccess</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.Json</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.Strings</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.OS</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.Cryptography</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.Locale</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.Reflection</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">SessionParameter.ClientContext</xr:Item>
+			</Content>
+		</Properties>
+		<ChildObjects>
+			<Subsystem>AggregatesAndTotals</Subsystem>
+			<Subsystem>BackgroundJobs</Subsystem>
+			<Subsystem>DataExchange</Subsystem>
+			<Subsystem>DataHistory</Subsystem>
+			<Subsystem>DeleteMarkedObjects</Subsystem>
+			<Subsystem>DigitalSignature</Subsystem>
+			<Subsystem>EventLog</Subsystem>
+			<Subsystem>FullTextSearch</Subsystem>
+			<Subsystem>HTTPRequests</Subsystem>
+			<Subsystem>LockDataByDate</Subsystem>
+			<Subsystem>Notifications</Subsystem>
+			<Subsystem>Reports</Subsystem>
+			<Subsystem>ScheduledJobs</Subsystem>
+			<Subsystem>SecureStorage</Subsystem>
+			<Subsystem>SessionsLock</Subsystem>
+			<Subsystem>StoredFiles</Subsystem>
+			<Subsystem>Tasks</Subsystem>
+			<Subsystem>Update</Subsystem>
+			<Subsystem>Users</Subsystem>
+		</ChildObjects>
+	</Subsystem>
+</MetaDataObject>

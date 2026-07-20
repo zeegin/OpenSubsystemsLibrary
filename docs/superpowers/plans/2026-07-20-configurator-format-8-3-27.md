@@ -17,7 +17,7 @@
 - Preserve Vanessa Automation feature files outside the metadata source trees.
 - Do not hand-create missing metadata XML when the official exporter or Designer reports an error.
 - Do not leave temporary infobases, EDT workspaces, installer files, or export folders in the repository.
-- Use `/Applications/1cv8.localized/8.3.27.2074/1cv8.app/Contents/MacOS/1cv8` for every platform-side operation.
+- Use `/opt/1cv8/8.3.27.2074/1cv8.app/Contents/MacOS/1cv8` for every platform-side operation. The application wrapper under `/Applications` forks and returns before the Designer operation is complete.
 
 ## File Map
 
@@ -53,7 +53,7 @@ Run:
 ```bash
 MIGRATION_ROOT=$(mktemp -d /tmp/osl-configurator-migration.XXXXXX)
 printf '%s\n' "$MIGRATION_ROOT" > /tmp/osl-configurator-migration.path
-mkdir -p "$MIGRATION_ROOT"/{baseline,edt-workspace,export-main,export-tests,canonical-main,canonical-tests,logs}
+mkdir -p "$MIGRATION_ROOT"/{baseline,edt-workspace,export-main,export-tests,logs}
 ```
 
 Expected: the recorded path exists and is outside the Git checkout.
@@ -113,7 +113,7 @@ Expected: both UUID lists are non-empty. They include configuration, form, langu
 Run:
 
 ```bash
-test -x /Applications/1cv8.localized/8.3.27.2074/1cv8.app/Contents/MacOS/1cv8
+test -x /opt/1cv8/8.3.27.2074/1cv8.app/Contents/MacOS/1cv8
 git diff --check
 git status --short --branch
 ```
@@ -272,7 +272,7 @@ Run:
 
 ```bash
 MIGRATION_ROOT=$(cat /tmp/osl-configurator-migration.path)
-V8=/Applications/1cv8.localized/8.3.27.2074/1cv8.app/Contents/MacOS/1cv8
+V8=/opt/1cv8/8.3.27.2074/1cv8.app/Contents/MacOS/1cv8
 "$V8" CREATEINFOBASE "File=$MIGRATION_ROOT/ib" /Out "$MIGRATION_ROOT/logs/create-infobase.log"
 test -f "$MIGRATION_ROOT/ib/1Cv8.1CD"
 ```
@@ -285,7 +285,7 @@ Run:
 
 ```bash
 MIGRATION_ROOT=$(cat /tmp/osl-configurator-migration.path)
-V8=/Applications/1cv8.localized/8.3.27.2074/1cv8.app/Contents/MacOS/1cv8
+V8=/opt/1cv8/8.3.27.2074/1cv8.app/Contents/MacOS/1cv8
 "$V8" DESIGNER /F "$MIGRATION_ROOT/ib" /DisableStartupDialogs \
   /LoadConfigFromFiles "$MIGRATION_ROOT/export-main" /UpdateDBCfg \
   /Out "$MIGRATION_ROOT/logs/designer-load-main.log"
@@ -300,7 +300,7 @@ Run:
 
 ```bash
 MIGRATION_ROOT=$(cat /tmp/osl-configurator-migration.path)
-V8=/Applications/1cv8.localized/8.3.27.2074/1cv8.app/Contents/MacOS/1cv8
+V8=/opt/1cv8/8.3.27.2074/1cv8.app/Contents/MacOS/1cv8
 "$V8" DESIGNER /F "$MIGRATION_ROOT/ib" /DisableStartupDialogs \
   /LoadConfigFromFiles "$MIGRATION_ROOT/export-tests" -Extension Tests \
   /Out "$MIGRATION_ROOT/logs/designer-load-tests.log"
@@ -318,7 +318,7 @@ Run:
 
 ```bash
 MIGRATION_ROOT=$(cat /tmp/osl-configurator-migration.path)
-V8=/Applications/1cv8.localized/8.3.27.2074/1cv8.app/Contents/MacOS/1cv8
+V8=/opt/1cv8/8.3.27.2074/1cv8.app/Contents/MacOS/1cv8
 "$V8" DESIGNER /F "$MIGRATION_ROOT/ib" /DisableStartupDialogs \
   /DumpConfigToFiles "$MIGRATION_ROOT/canonical-main" -Format Hierarchical \
   /Out "$MIGRATION_ROOT/logs/designer-dump-main.log"

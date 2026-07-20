@@ -14,22 +14,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v1
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
+    - name: Verify Configurator source format
+      run: bash scripts/verify-configurator-format.sh
     - name: Configure env vars for SonarCloud scan
-      env:  
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       run: |
-        echo "::set-env name=PATH::/opt/sonar-scanner/bin:$PATH"
+        echo "/opt/sonar-scanner/bin" >> "$GITHUB_PATH"
     - name: Compute branch name
       env:  
         ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       uses: nixel2007/branch-name@v3
     - name: Extract version
       shell: bash
-      run: echo "##[set-output name=version;]` cat ./OpenSubsystemsLibrary/src/Configuration/Configuration.mdo | grep -oP '(?<=\<version\>).[\d|.]*'`"
       id: extract_version
+      run: |
+        version=$(sed -n 's:.*<Version>\([^<]*\)</Version>.*:\1:p' ./OpenSubsystemsLibrary/src/Configuration.xml | head -1)
+        test -n "$version"
+        echo "version=$version" >> "$GITHUB_OUTPUT"
     
     - name: SonarCloud Scan on push
       if:  github.event_name == 'push'

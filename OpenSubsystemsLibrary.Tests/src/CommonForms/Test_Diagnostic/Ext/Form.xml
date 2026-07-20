@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="CurrentUser" id="1">
+			<DataPath>CurrentUser</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<ContextMenu name="CurrentUserContextMenu" id="2"/>
+			<ExtendedTooltip name="CurrentUserExtendedTooltip" id="3"/>
+		</InputField>
+		<UsualGroup name="PlatformGrid" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Platform grid</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<HorizontalAlign>Center</HorizontalAlign>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="PlatformGridExtendedTooltip" id="5"/>
+			<ChildItems>
+				<UsualGroup name="PlatformHeader" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Platform header</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="PlatformHeaderExtendedTooltip" id="7"/>
+					<ChildItems>
+						<LabelDecoration name="Platform" id="23">
+							<TextColor>style:AccentColor</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Platform</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="PlatformContextMenu" id="24"/>
+							<ExtendedTooltip name="PlatformExtendedTooltip" id="25"/>
+						</LabelDecoration>
+						<LabelDecoration name="Windows" id="28">
+							<TextColor>style:AccentColor</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Windows</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="WindowsContextMenu" id="29"/>
+							<ExtendedTooltip name="WindowsExtendedTooltip" id="30"/>
+						</LabelDecoration>
+						<LabelDecoration name="Linux" id="31">
+							<TextColor>style:AccentColor</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Linux</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="LinuxContextMenu" id="32"/>
+							<ExtendedTooltip name="LinuxExtendedTooltip" id="33"/>
+						</LabelDecoration>
+						<LabelDecoration name="MacOS" id="34">
+							<TextColor>style:AccentColor</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>macOS</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="MacOSContextMenu" id="35"/>
+							<ExtendedTooltip name="MacOSExtendedTooltip" id="36"/>
+						</LabelDecoration>
+						<LabelDecoration name="FileMode" id="37">
+							<TextColor>style:AccentColor</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>File mode</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="FileModeContextMenu" id="38"/>
+							<ExtendedTooltip name="FileModeExtendedTooltip" id="39"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="PlatformRow1" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Platform header</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="PlatformRow1ExtendedTooltip" id="9"/>
+					<ChildItems>
+						<LabelDecoration name="AtClient" id="14">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Client</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="AtClientContextMenu" id="15"/>
+							<ExtendedTooltip name="AtClientExtendedTooltip" id="16"/>
+						</LabelDecoration>
+						<CheckBoxField name="IsWindowsClientAtClient" id="40">
+							<DataPath>IsWindowsClientAtClient</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsWindowsClientAtClientContextMenu" id="41"/>
+							<ExtendedTooltip name="IsWindowsClientAtClientExtendedTooltip" id="42"/>
+						</CheckBoxField>
+						<CheckBoxField name="IsLinuxClientAtClient" id="55">
+							<DataPath>IsLinuxClientAtClient</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsLinuxClientAtClientContextMenu" id="56"/>
+							<ExtendedTooltip name="IsLinuxClientAtClientExtendedTooltip" id="57"/>
+						</CheckBoxField>
+						<CheckBoxField name="IsMacOSClientAtClient" id="64">
+							<DataPath>IsMacOSClientAtClient</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsMacOSClientAtClientContextMenu" id="65"/>
+							<ExtendedTooltip name="IsMacOSClientAtClientExtendedTooltip" id="66"/>
+						</CheckBoxField>
+						<CheckBoxField name="IsFileModeAtClient" id="70">
+							<DataPath>IsFileModeAtClient</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsFileModeAtClientContextMenu" id="71"/>
+							<ExtendedTooltip name="IsFileModeAtClientExtendedTooltip" id="72"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="PlatformRow2" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Platform header</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="PlatformRow2ExtendedTooltip" id="11"/>
+					<ChildItems>
+						<LabelDecoration name="ClientAtServer" id="17">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Client at Server</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ClientAtServerContextMenu" id="18"/>
+							<ExtendedTooltip name="ClientAtServerExtendedTooltip" id="19"/>
+						</LabelDecoration>
+						<CheckBoxField name="IsWindowsClientAtServer" id="43">
+							<DataPath>IsWindowsClientAtServer</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsWindowsClientAtServerContextMenu" id="44"/>
+							<ExtendedTooltip name="IsWindowsClientAtServerExtendedTooltip" id="45"/>
+						</CheckBoxField>
+						<CheckBoxField name="IsLinuxClientAtServer" id="52">
+							<DataPath>IsLinuxClientAtServer</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsLinuxClientAtServerContextMenu" id="53"/>
+							<ExtendedTooltip name="IsLinuxClientAtServerExtendedTooltip" id="54"/>
+						</CheckBoxField>
+						<CheckBoxField name="IsMacOSClientAtServer" id="61">
+							<DataPath>IsMacOSClientAtServer</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsMacOSClientAtServerContextMenu" id="62"/>
+							<ExtendedTooltip name="IsMacOSClientAtServerExtendedTooltip" id="63"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="PlatformRow3" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Platform header</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="PlatformRow3ExtendedTooltip" id="13"/>
+					<ChildItems>
+						<LabelDecoration name="AtServer" id="20">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Server</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="AtServerContextMenu" id="21"/>
+							<ExtendedTooltip name="AtServerExtendedTooltip" id="22"/>
+						</LabelDecoration>
+						<CheckBoxField name="IsWindowsServer" id="46">
+							<DataPath>IsWindowsServer</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsWindowsServerContextMenu" id="47"/>
+							<ExtendedTooltip name="IsWindowsServerExtendedTooltip" id="48"/>
+						</CheckBoxField>
+						<CheckBoxField name="IsLinuxServer" id="49">
+							<DataPath>IsLinuxServer</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsLinuxServerContextMenu" id="50"/>
+							<ExtendedTooltip name="IsLinuxServerExtendedTooltip" id="51"/>
+						</CheckBoxField>
+						<CheckBoxField name="IsMacOSServer" id="58">
+							<DataPath>IsMacOSServer</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsMacOSServerContextMenu" id="59"/>
+							<ExtendedTooltip name="IsMacOSServerExtendedTooltip" id="60"/>
+						</CheckBoxField>
+						<CheckBoxField name="IsFileModeAtServer" id="67">
+							<DataPath>IsFileModeAtServer</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsFileModeAtServerContextMenu" id="68"/>
+							<ExtendedTooltip name="IsFileModeAtServerExtendedTooltip" id="69"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="CurrentUser" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Current user</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Users</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="IsFileModeAtClient" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is file mode at server</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="IsFileModeAtServer" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is file mode at server</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="IsLinuxClientAtClient" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is linux client at client</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="IsLinuxClientAtServer" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is linux client at server</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="IsLinuxServer" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is linux server</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="IsMacOSClientAtClient" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is macOS client at client</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="IsMacOSClientAtServer" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is macOS client at server</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="IsMacOSServer" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is macOS server</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="IsWindowsClientAtClient" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is windows client at client</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="IsWindowsClientAtServer" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is windows client at server</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="IsWindowsServer" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is windows server</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>
