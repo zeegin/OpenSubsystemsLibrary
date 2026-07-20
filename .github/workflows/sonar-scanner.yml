@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0
     - name: Install XML validation tools
@@ -23,13 +23,6 @@ jobs:
         sudo apt-get install --yes libxml2-utils
     - name: Verify Configurator source format
       run: bash scripts/verify-configurator-format.sh
-    - name: Configure env vars for SonarCloud scan
-      run: |
-        echo "/opt/sonar-scanner/bin" >> "$GITHUB_PATH"
-    - name: Compute branch name
-      env:  
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-      uses: nixel2007/branch-name@v3
     - name: Extract version
       shell: bash
       id: extract_version
@@ -38,29 +31,27 @@ jobs:
         test -n "$version"
         echo "version=$version" >> "$GITHUB_OUTPUT"
     
-    - name: SonarCloud Scan on push
+    - name: SonarQube Scan on push
       if:  github.event_name == 'push'
-      uses: nixel2007/sonarcloud-github-action@v1.4
+      uses: SonarSource/sonarqube-scan-action@v8.1.0
       env:
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: https://sonar.openbsl.ru
       with:
         args: >
-          -Dsonar.host.url=https://sonar.openbsl.ru
-          -Dsonar.branch.name=${{ env.BRANCH_NAME }}
+          -Dsonar.branch.name=${{ github.ref_name }}
           -Dsonar.projectVersion=${{ steps.extract_version.outputs.version }}
-    - name: RSonarCloud Scan on pull request
+    - name: SonarQube Scan on pull request
       if: github.event_name == 'pull_request'
-      uses: nixel2007/sonarcloud-github-action@v1.4
+      uses: SonarSource/sonarqube-scan-action@v8.1.0
       env:
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: https://sonar.openbsl.ru
       with:
         args: >
           -Dsonar.projectVersion=${{ steps.extract_version.outputs.version }}
-          -Dsonar.host.url=https://sonar.openbsl.ru
           -Dsonar.pullrequest.provider=github
           -Dsonar.pullrequest.github.repository=${{ github.repository }}
           -Dsonar.pullrequest.github.token.secured=${{ secrets.GITHUB_TOKEN }}
